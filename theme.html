@@ -1,6 +1,7 @@
 <!-- $title Theme -->
 <!-- $bodyClass theme -->
 <!-- @include _header -->
+<!-- $data intro -->
 
 <!-- Fixed navbar -->
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -40,12 +41,15 @@
 
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
-    <h1>Hello, world!</h1>
-    <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+    <div id="content-placeholder-intro"></div>
     <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
   </div>
-
-
+    <script type="text/x-handlebars-template" id="intro-template">
+    {{#texts}}
+    <h1>{{heading}}</h1>
+    <p>{{description}}</p>
+    {{/texts}}
+    </script>
 
   <div class="page-header">
     <h1>Buttons</h1>
@@ -726,5 +730,5 @@
 
 
 </div>
-
 <!-- @include _footer -->
+<script src="assets/data/<!-- $data -->.json"></script>
