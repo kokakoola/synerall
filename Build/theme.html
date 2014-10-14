@@ -75,10 +75,10 @@
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Content <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
+            <li><a href="#navs">Navs</a></li>
+            <li><a href="#navbars">Navbars</a></li>
             <li><a href="#">Something else here</a></li>
             <li class="divider"></li>
             <li class="dropdown-header">Nav header</li>
@@ -93,6 +93,8 @@
 
 <div class="container theme-showcase" role="main">
 
+  
+
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
     <div id="content-placeholder-intro"></div>
@@ -106,9 +108,53 @@
     </script>
 
   <div class="page-header">
+    <h1>Typography</h1>
+  </div>
+  <h1>h1. Bootstrap heading</h1>
+<h2>h2. Bootstrap heading</h2>
+<h3>h3. Bootstrap heading</h3>
+<h4>h4. Bootstrap heading</h4>
+<h5>h5. Bootstrap heading</h5>
+<h6>h6. Bootstrap heading</h6>
+
+<h3>small</h3>
+<h1>h1. Bootstrap heading <small>Secondary text</small></h1>
+<h2>h2. Bootstrap heading <small>Secondary text</small></h2>
+<h3>h3. Bootstrap heading <small>Secondary text</small></h3>
+<h4>h4. Bootstrap heading <small>Secondary text</small></h4>
+<h5>h5. Bootstrap heading <small>Secondary text</small></h5>
+<h6>h6. Bootstrap heading <small>Secondary text</small></h6>
+
+<p class="lead">
+Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+
+
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla</p>.
+
+<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+</p>
+
+<p>You can use the mark tag to <mark>highlight</mark> text.</p>
+<p><del>This line of text is meant to be treated as deleted text.</del></p>
+<p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+<p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+<p><u>This line of text will render as underlined</u></p>
+<p><small>This line of text is meant to be treated as fine print.</small></p>
+<p><strong>rendered as bold text</strong></p>
+<p><em>rendered as italicized text</em></p>
+<p class="text-left">Left aligned text.</p>
+<p class="text-center">Center aligned text.</p>
+<p class="text-right">Right aligned text.</p>
+<p class="text-justify">Justified text.</p>
+<p class="text-nowrap">No wrap text.</p>
+<p class="text-lowercase">Lowercased text.</p>
+<p class="text-uppercase">Uppercased text.</p>
+<p class="text-capitalize">Capitalized text.</p>
+
+  <div class="page-header">
     <h1>Buttons</h1>
   </div>
-  <p>
+    <p>
     <button type="button" class="btn btn-lg btn-default">Default</button>
     <button type="button" class="btn btn-lg btn-primary">Primary</button>
     <button type="button" class="btn btn-lg btn-success">Success</button>
@@ -145,87 +191,77 @@
     <button type="button" class="btn btn-xs btn-link">Link</button>
   </p>
 
-
-
   <div class="page-header">
     <h1>Tables</h1>
   </div>
   <div class="row">
-    <div class="col-md-6">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="col-md-6">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <div class="row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Username</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <div class="row">
-    <ul class="list-group">
-      <li class="list-group-item">Cras justo odio</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Morbi leo risus</li>
-      <li class="list-group-item">Porta ac consectetur ac</li>
-      <li class="list-group-item">Vestibulum at eros</li>
-    </ul>
+  <div class="col-md-6">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Username</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <div class="row">
+</div>
+<div class="row">
     <div class="col-md-6">
       <table class="table table-bordered">
         <thead>
@@ -294,7 +330,7 @@
       </table>
     </div>
   </div>
-
+  </div>
 
 
   <div class="page-header">
@@ -369,7 +405,7 @@
   <div class="page-header">
     <h1>Badges</h1>
   </div>
-  <p>
+    <p>
     <a href="#">Inbox <span class="badge">42</span></a>
   </p>
   <ul class="nav nav-pills">
@@ -382,7 +418,7 @@
   <div class="page-header">
     <h1>Dropdown menus</h1>
   </div>
-  <div class="dropdown theme-dropdown clearfix">
+    <div class="dropdown theme-dropdown clearfix">
     <a id="dropdownMenu1" href="#" role="button" class="sr-only dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
       <li class="active" role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
@@ -393,12 +429,10 @@
     </ul>
   </div>
 
-
-
-  <div class="page-header">
+  <div class="page-header" id="navs">
     <h1>Navs</h1>
   </div>
-  <ul class="nav nav-tabs" role="tablist">
+    <ul class="nav nav-tabs" role="tablist">
     <li class="active"><a href="#">Home</a></li>
     <li><a href="#">Profile</a></li>
     <li><a href="#">Messages</a></li>
@@ -410,11 +444,9 @@
   </ul>
 
 
-
-  <div class="page-header">
+  <div class="page-header" id="navbars">
     <h1>Navbars</h1>
   </div>
-
   <div class="navbar navbar-default">
     <div class="container">
       <div class="navbar-header">
@@ -481,12 +513,10 @@
     </div>
   </div>
 
-
-
   <div class="page-header">
     <h1>Alerts</h1>
   </div>
-  <div class="alert alert-success" role="alert">
+    <div class="alert alert-success" role="alert">
     <strong>Well done!</strong> You successfully read this important alert message.
   </div>
   <div class="alert alert-info" role="alert">
@@ -504,7 +534,7 @@
   <div class="page-header">
     <h1>Progress bars</h1>
   </div>
-  <div class="progress">
+    <div class="progress">
     <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"><span class="sr-only">60% Complete</span></div>
   </div>
   <div class="progress">
@@ -528,11 +558,10 @@
     <div class="progress-bar progress-bar-danger" style="width: 10%"><span class='sr-only'>10% Complete (danger)</span></div>
   </div>
 
-
-
   <div class="page-header">
     <h1>List groups</h1>
   </div>
+
   <div class="row">
     <div class="col-sm-4">
       <ul class="list-group">
@@ -571,8 +600,6 @@
       </div>
     </div><!-- /.col-sm-4 -->
   </div>
-
-
 
   <div class="page-header">
     <h1>Panels</h1>
@@ -648,7 +675,7 @@
   <div class="page-header">
     <h1>Carousel</h1>
   </div>
-  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
       <li data-target="#carousel-example-generic" data-slide-to="1"></li>
@@ -673,7 +700,6 @@
     </a>
   </div>
 
-
 </div> <!-- /container -->
 
 <div class="container">
@@ -681,114 +707,10 @@
   <div class="page-header">
     <h1>Bootstrap grid examples</h1>
     <p class="lead">Basic grid layouts to get you familiar with building within the Bootstrap grid system.</p>
+    <p>Take a look at it <a href="grid.html">here</a></p>
   </div>
 
-  <h3>Three equal columns</h3>
-  <p>Get three equal-width columns <strong>starting at desktops and scaling to large desktops</strong>. On mobile devices, tablets and below, the columns will automatically stack.</p>
-  <div class="row">
-    <div class="col-md-4">.col-md-4</div>
-    <div class="col-md-4">.col-md-4</div>
-    <div class="col-md-4">.col-md-4</div>
-  </div>
-
-  <h3>Three unequal columns</h3>
-  <p>Get three columns <strong>starting at desktops and scaling to large desktops</strong> of various widths. Remember, grid columns should add up to twelve for a single horizontal block. More than that, and columns start stacking no matter the viewport.</p>
-  <div class="row">
-    <div class="col-md-3">.col-md-3</div>
-    <div class="col-md-6">.col-md-6</div>
-    <div class="col-md-3">.col-md-3</div>
-  </div>
-
-  <h3>Two columns</h3>
-  <p>Get two columns <strong>starting at desktops and scaling to large desktops</strong>.</p>
-  <div class="row">
-    <div class="col-md-8">.col-md-8</div>
-    <div class="col-md-4">.col-md-4</div>
-  </div>
-
-  <h3>Full width, single column</h3>
-  <p class="text-warning">No grid classes are necessary for full-width elements.</p>
-
-  <hr>
-
-  <h3>Two columns with two nested columns</h3>
-  <p>Per the documentation, nesting is easy—just put a row of columns within an existing column. This gives you two columns <strong>starting at desktops and scaling to large desktops</strong>, with another two (equal widths) within the larger column.</p>
-  <p>At mobile device sizes, tablets and down, these columns and their nested columns will stack.</p>
-  <div class="row">
-    <div class="col-md-8">
-      .col-md-8
-      <div class="row">
-        <div class="col-md-6">.col-md-6</div>
-        <div class="col-md-6">.col-md-6</div>
-      </div>
-    </div>
-    <div class="col-md-4">.col-md-4</div>
-  </div>
-
-  <hr>
-
-  <h3>Mixed: mobile and desktop</h3>
-  <p>The Bootstrap 3 grid system has four tiers of classes: xs (phones), sm (tablets), md (desktops), and lg (larger desktops). You can use nearly any combination of these classes to create more dynamic and flexible layouts.</p>
-  <p>Each tier of classes scales up, meaning if you plan on setting the same widths for xs and sm, you only need to specify xs.</p>
-  <div class="row">
-    <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
-    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-  </div>
-  <div class="row">
-    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-  </div>
-  <div class="row">
-    <div class="col-xs-6">.col-xs-6</div>
-    <div class="col-xs-6">.col-xs-6</div>
-  </div>
-
-  <hr>
-
-  <h3>Mixed: mobile, tablet, and desktop</h3>
-  <p></p>
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-lg-8">.col-xs-12 .col-sm-6 .col-lg-8</div>
-    <div class="col-xs-6 col-lg-4">.col-xs-6 .col-lg-4</div>
-  </div>
-  <div class="row">
-    <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
-    <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
-    <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
-  </div>
-
-  <hr>
-
-  <h3>Column clearing</h3>
-  <p><a href="http://getbootstrap.com/css/#grid-responsive-resets">Clear floats</a> at specific breakpoints to prevent awkward wrapping with uneven content.</p>
-  <div class="row">
-    <div class="col-xs-6 col-sm-3">
-      .col-xs-6 .col-sm-3
-      <br>
-      Resize your viewport or check it out on your phone for an example.
-    </div>
-    <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
-
-    <!-- Add the extra clearfix for only the required viewport -->
-    <div class="clearfix visible-xs"></div>
-
-    <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
-    <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
-  </div>
-
-  <hr>
-
-  <h3>Offset, push, and pull resets</h3>
-  <p>Reset offsets, pushes, and pulls at specific breakpoints.</p>
-  <div class="row">
-    <div class="col-sm-5 col-md-6">.col-sm-5 .col-md-6</div>
-    <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">.col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0</div>
-  </div>
-  <div class="row">
-    <div class="col-sm-6 col-md-5 col-lg-6">.col-sm-6 .col-md-5 .col-lg-6</div>
-    <div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0">.col-sm-6 .col-md-5 .col-md-offset-2 .col-lg-6 .col-lg-offset-0</div>
-  </div>
+  
 
 
 </div>
