@@ -1,0 +1,74 @@
+<h1>Ladda for Bootstrap 3</h1>
+
+<p>Buttons with built-in loading indicators, effectively bridging the gap between action and feedback. </p>
+
+<p><a href="http://msurguy.github.io/ladda-bootstrap/">Check out the demo page</a>.</p>
+
+<h2>Instructions</h2>
+
+<p>Please see the demo page for the details: (http://msurguy.github.io/ladda-bootstrap/).</p>
+
+<h4>HTML</h4>
+
+<p>Ladda buttons must be given the class <code>ladda-button</code> and the button label needs to have the <code>ladda-label</code> class. The <code>ladda-label</code> will be automatically created if it does not exist in the DOM. Below is an example of a button which will use the expand-right animation style.</p>
+
+<p><code>html
+&lt;button class="ladda-button" data-style="expand-right"&gt;&lt;span class="ladda-label"&gt;Submit&lt;/span&gt;&lt;/button&gt;
+</code></p>
+
+<p>Buttons accepts three attributes:
+- <strong>data-style</strong>: one of the button styles, full list in <a href="http://lab.hakim.se/ladda/">demo</a> <em>[required]</em>
+- <strong>data-color</strong>: green/red/blue/purple/mint
+- <strong>data-size</strong>: xs/s/l/xl, defaults to medium
+- <strong>data-spinner-size</strong>: 40, pixel dimensions of spinner, defaults to dynamic size based on the button height
+- <strong>data-spinner-color</strong>: A hex code or any <a href="http://css-tricks.com/snippets/css/named-colors-and-hex-equivalents/">named CSS color</a>. </p>
+
+<h4>JavaScript</h4>
+
+<p>If you will be using the loading animation for a form that is submitted to the server (always resulting in a page reload) you can use the <code>bind()</code> method:</p>
+
+<p>```javascript
+// Automatically trigger the loading animation on click
+Ladda.bind( ‘input[type=submit]’ );</p>
+
+<p>// Same as the above but automatically stops after two seconds
+Ladda.bind( ‘input[type=submit]’, { timeout: 2000 } );
+```</p>
+
+<p>If you want JavaScript control over your buttons you can use the following approach:</p>
+
+<p>```javascript
+// Create a new instance of ladda for the specified button
+var l = Ladda.create( document.querySelector( ‘.my-button’ ) );</p>
+
+<p>// Start loading
+l.start();</p>
+
+<p>// Will display a progress bar for 50% of the button width
+l.setProgress( 0.5 );</p>
+
+<p>// Stop loading
+l.stop();</p>
+
+<p>// Toggle between loading/not loading states
+l.toggle();</p>
+
+<p>// Check the current state
+l.isLoading();
+```</p>
+
+<p>All loading animations on the page can be stopped by using:</p>
+
+<p><code>javascript
+Ladda.stopAll();
+</code></p>
+
+<h2>Browser support</h2>
+
+<p>The project is tested in Chrome and Firefox. It Should Work™ in the current stable releases of Chrome, Firefox, Safari as well as IE9 and up.</p>
+
+<h2>License</h2>
+
+<p>MIT licensed</p>
+
+<p>Copyright (C) 2013 Hakim El Hattab, http://hakim.se</p>

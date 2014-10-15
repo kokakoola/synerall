@@ -1,0 +1,120 @@
+<h1>Nestable</h1>
+
+<h3>Drag &amp; drop hierarchical list with mouse and touch compatibility (jQuery / Zepto plugin)</h3>
+
+<p><a href="http://dbushell.github.com/Nestable/"><strong>Try Nestable Demo</strong></a></p>
+
+<p>Nestable is an experimental example and not under active development. If it suits your requirements feel free to expand upon it!</p>
+
+<h2>Usage</h2>
+
+<p>Write your nested HTML lists like so:</p>
+
+<pre><code>&lt;div class="dd"&gt;
+    &lt;ol class="dd-list"&gt;
+        &lt;li class="dd-item" data-id="1"&gt;
+            &lt;div class="dd-handle"&gt;Item 1&lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li class="dd-item" data-id="2"&gt;
+            &lt;div class="dd-handle"&gt;Item 2&lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li class="dd-item" data-id="3"&gt;
+            &lt;div class="dd-handle"&gt;Item 3&lt;/div&gt;
+            &lt;ol class="dd-list"&gt;
+                &lt;li class="dd-item" data-id="4"&gt;
+                    &lt;div class="dd-handle"&gt;Item 4&lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class="dd-item" data-id="5"&gt;
+                    &lt;div class="dd-handle"&gt;Item 5&lt;/div&gt;
+                &lt;/li&gt;
+            &lt;/ol&gt;
+        &lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Then activate with jQuery like so:</p>
+
+<pre><code>$('.dd').nestable({ /* config options */ });
+</code></pre>
+
+<h3>Events</h3>
+
+<p>The <code>change</code> event is fired when items are reordered.</p>
+
+<pre><code>$('.dd').on('change', function() {
+    /* on change event */
+});
+</code></pre>
+
+<h3>Methods</h3>
+
+<p>You can get a serialised object with all <code>data-*</code> attributes for each item.</p>
+
+<pre><code>$('.dd').nestable('serialize');
+</code></pre>
+
+<p>The serialised JSON for the example above would be:</p>
+
+<pre><code>[{"id":1},{"id":2},{"id":3,"children":[{"id":4},{"id":5}]}]
+</code></pre>
+
+<h3>Configuration</h3>
+
+<p>You can change the follow options:</p>
+
+<ul>
+  <li><code>maxDepth</code> number of levels an item can be nested (default <code>5</code>)</li>
+  <li><code>group</code> group ID to allow dragging between lists (default <code>0</code>)</li>
+</ul>
+
+<p>These advanced config options are also available:</p>
+
+<ul>
+  <li><code>listNodeName</code> The HTML element to create for lists (default <code>'ol'</code>)</li>
+  <li><code>itemNodeName</code> The HTML element to create for list items (default <code>'li'</code>)</li>
+  <li><code>rootClass</code> The class of the root element <code>.nestable()</code> was used on (default <code>'dd'</code>)</li>
+  <li><code>listClass</code> The class of all list elements (default <code>'dd-list'</code>)</li>
+  <li><code>itemClass</code> The class of all list item elements (default <code>'dd-item'</code>)</li>
+  <li><code>dragClass</code> The class applied to the list element that is being dragged (default <code>'dd-dragel'</code>)</li>
+  <li><code>handleClass</code> The class of the content element inside each list item (default <code>'dd-handle'</code>)</li>
+  <li><code>collapsedClass</code> The class applied to lists that have been collapsed (default <code>'dd-collapsed'</code>)</li>
+  <li><code>placeClass</code> The class of the placeholder element (default <code>'dd-placeholder'</code>)</li>
+  <li><code>emptyClass</code> The class used for empty list placeholder elements (default <code>'dd-empty'</code>)</li>
+  <li><code>expandBtnHTML</code> The HTML text used to generate a list item expand button (default <code>'&lt;button data-action="expand"&gt;Expand&gt;&lt;/button&gt;'</code>)</li>
+  <li><code>collapseBtnHTML</code> The HTML text used to generate a list item collapse button (default <code>'&lt;button data-action="collapse"&gt;Collapse&lt;/button&gt;'</code>)</li>
+</ul>
+
+<p><strong>Inspect the <a href="http://dbushell.github.com/Nestable/">Nestable Demo</a> for guidance.</strong></p>
+
+<h2>Change Log</h2>
+
+<h3>15th October 2012</h3>
+
+<ul>
+  <li>Merge for Zepto.js support</li>
+  <li>Merge fix for remove/detach items</li>
+</ul>
+
+<h3>27th June 2012</h3>
+
+<ul>
+  <li>Added <code>maxDepth</code> option (default to 5)</li>
+  <li>Added empty placeholder</li>
+  <li>Updated CSS class structure with options for <code>listClass</code> and <code>itemClass</code>.</li>
+  <li>Fixed to allow drag and drop between multiple Nestable instances (off by default).</li>
+  <li>Added <code>group</code> option to enabled the above.</li>
+</ul>
+
+<hr />
+
+<p>Author: David Bushell <a href="http://dbushell.com/">http://dbushell.com</a> <a href="http://twitter.com/dbushell/">@dbushell</a></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Copyright © 2012 David Bushell</td>
+      <td>BSD &amp; MIT license</td>
+    </tr>
+  </tbody>
+</table>

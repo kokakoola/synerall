@@ -1,0 +1,60 @@
+<h1>jQuery.appear</h1>
+
+<p>This is a total revamp of original jquery.appear plugin hosted on http://code.google.com/p/jquery-appear/</p>
+
+<p>Check <a href="http://morr.github.com/appear.html">demo page</a>!</p>
+
+<p>This plugin can be used to prevent unnecessary processeing for content that is hidden or is outside of the browser viewport.</p>
+
+<p>It implements a custom <em>appear</em>/<em>disappear</em> events which are fired when an element became visible/invisible in the browser viewport.</p>
+
+<pre><code>    $('someselector').appear(); // It supports optinal hash with "force_process" and "interval" keys. Check source code for details.
+
+    $('&lt;div&gt;test&lt;/div&gt;').appear(); // It also supports raw DOM nodes wrapped in jQuery.
+
+    $('someselector').on('appear', function(event, $all_appeared_elements) {
+      // this element is now inside browser viewport
+    });
+    $('someselector').on('disappear', function(event, $all_disappeared_elements) {
+      // this element is now outside browser viewport
+    });
+</code></pre>
+
+<p>If you want to fire <em>appear</em> event for elements which are close to vieport but are not visible yet, you may add data attributes <em>appear-top-offset</em> and <em>appear-left-offset</em> to DOM nodes.</p>
+
+<pre><code>    &lt;div class="postloader" data-appear-top-offset="600"&gt;...&lt;/div&gt; # appear will be fired when an element is below browser viewport for 600 or less pixels
+</code></pre>
+
+<p>Appear check can be forced by calling <em>$.force_appear()</em>. This is suitable in cases when page is in initial state (not scrolled and not resized) and when you want manually trigger appearance check.</p>
+
+<p>Also this plugin provides custom jQuery filter for manual checking element appearance.</p>
+
+<pre><code>    $('someselector').is(':appeared')
+</code></pre>
+
+<h1>License</h1>
+
+<blockquote>
+  <p>Licensed under <a href="http://opensource.org/licenses/MIT">MIT license</a>.</p>
+
+  <p>Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the “Software”), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:</p>
+
+  <p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+
+  <p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.</p>
+</blockquote>

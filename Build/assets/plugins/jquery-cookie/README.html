@@ -1,0 +1,152 @@
+<h1>jquery.cookie <a href="https://travis-ci.org/carhartl/jquery-cookie"><img src="https://travis-ci.org/carhartl/jquery-cookie.png?branch=master" alt="Build Status" /></a></h1>
+
+<p><a href="https://saucelabs.com/u/carhartl"><img src="https://saucelabs.com/browser-matrix/carhartl.svg" alt="Selenium Test Status" /></a></p>
+
+<p>A simple, lightweight jQuery plugin for reading, writing and deleting cookies.</p>
+
+<h2>Installation</h2>
+
+<p>Include script <em>after</em> the jQuery library (unless you are packaging scripts somehow else):</p>
+
+<p><code>html
+&lt;script src="/path/to/jquery.cookie.js"&gt;&lt;/script&gt;
+</code></p>
+
+<p><strong>Do not include the script directly from GitHub (http://raw.github.com/…).</strong> The file is being served as text/plain and as such being blocked
+in Internet Explorer on Windows 7 for instance (because of the wrong MIME type). Bottom line: GitHub is not a CDN.</p>
+
+<p>The plugin can also be loaded as AMD module.</p>
+
+<h2>Usage</h2>
+
+<p>Create session cookie:</p>
+
+<p><code>javascript
+$.cookie('the_cookie', 'the_value');
+</code></p>
+
+<p>Create expiring cookie, 7 days from then:</p>
+
+<p><code>javascript
+$.cookie('the_cookie', 'the_value', { expires: 7 });
+</code></p>
+
+<p>Create expiring cookie, valid across entire site:</p>
+
+<p><code>javascript
+$.cookie('the_cookie', 'the_value', { expires: 7, path: '/' });
+</code></p>
+
+<p>Read cookie:</p>
+
+<p><code>javascript
+$.cookie('the_cookie'); // =&gt; "the_value"
+$.cookie('not_existing'); // =&gt; undefined
+</code></p>
+
+<p>Read all available cookies:</p>
+
+<p><code>javascript
+$.cookie(); // =&gt; { "the_cookie": "the_value", "...remaining": "cookies" }
+</code></p>
+
+<p>Delete cookie:</p>
+
+<p>```javascript
+// Returns true when cookie was found, false when no cookie was found…
+$.removeCookie(‘the_cookie’);</p>
+
+<p>// Same path as when the cookie was written…
+$.removeCookie(‘the_cookie’, { path: ‘/’ });
+```</p>
+
+<p><em>Note: when deleting a cookie, you must pass the exact same path, domain and secure options that were used to set the cookie, unless you’re relying on the default options that is.</em></p>
+
+<h2>Configuration</h2>
+
+<h3>raw</h3>
+
+<p>By default the cookie value is encoded/decoded when writing/reading, using <code>encodeURIComponent</code>/<code>decodeURIComponent</code>. Bypass this by setting raw to true:</p>
+
+<p><code>javascript
+$.cookie.raw = true;
+</code></p>
+
+<h3>json</h3>
+
+<p>Turn on automatic storage of JSON objects passed as the cookie value. Assumes <code>JSON.stringify</code> and <code>JSON.parse</code>:</p>
+
+<p><code>javascript
+$.cookie.json = true;
+</code></p>
+
+<h2>Cookie Options</h2>
+
+<p>Cookie attributes can be set globally by setting properties of the <code>$.cookie.defaults</code> object or individually for each call to <code>$.cookie()</code> by passing a plain object to the options argument. Per-call options override the default options.</p>
+
+<h3>expires</h3>
+
+<pre><code>expires: 365
+</code></pre>
+
+<p>Define lifetime of the cookie. Value can be a <code>Number</code> which will be interpreted as days from time of creation or a <code>Date</code> object. If omitted, the cookie becomes a session cookie.</p>
+
+<h3>path</h3>
+
+<pre><code>path: '/'
+</code></pre>
+
+<p>Define the path where the cookie is valid. <em>By default the path of the cookie is the path of the page where the cookie was created (standard browser behavior).</em> If you want to make it available for instance across the entire domain use <code>path: '/'</code>. Default: path of page where the cookie was created.</p>
+
+<p><strong>Note regarding Internet Explorer:</strong></p>
+
+<blockquote>
+  <p>Due to an obscure bug in the underlying WinINET InternetGetCookie implementation, IE’s document.cookie will not return a cookie if it was set with a path attribute containing a filename.</p>
+</blockquote>
+
+<p>(From <a href="http://blogs.msdn.com/b/ieinternals/archive/2009/08/20/wininet-ie-cookie-internals-faq.aspx">Internet Explorer Cookie Internals (FAQ)</a>)</p>
+
+<p>This means one cannot set a path using <code>path: window.location.pathname</code> in case such pathname contains a filename like so: <code>/check.html</code> (or at least, such cookie cannot be read correctly).</p>
+
+<h3>domain</h3>
+
+<pre><code>domain: 'example.com'
+</code></pre>
+
+<p>Define the domain where the cookie is valid. Default: domain of page where the cookie was created.</p>
+
+<h3>secure</h3>
+
+<pre><code>secure: true
+</code></pre>
+
+<p>If true, the cookie transmission requires a secure protocol (https). Default: <code>false</code>.</p>
+
+<h2>Converters</h2>
+
+<p>Provide a conversion function as optional last argument for reading, in order to change the cookie’s value
+to a different representation on the fly.</p>
+
+<p>Example for parsing a value into a number:</p>
+
+<p><code>javascript
+$.cookie('foo', '42');
+$.cookie('foo', Number); // =&gt; 42
+</code></p>
+
+<p>Dealing with cookies that have been encoded using <code>escape</code> (3rd party cookies):</p>
+
+<p><code>javascript
+$.cookie.raw = true;
+$.cookie('foo', unescape);
+</code></p>
+
+<p>You can pass an arbitrary conversion function.</p>
+
+<h2>Contributing</h2>
+
+<p>Check out the <a href="CONTRIBUTING.md">Contributing Guidelines</a></p>
+
+<h2>Authors</h2>
+
+<p><a href="https://github.com/carhartl">Klaus Hartl</a></p>
