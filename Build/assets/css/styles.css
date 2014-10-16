@@ -105,7 +105,7 @@ a:hover, a:focus, a:active {
 }
 
 h1, h2, h3, h4 {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 300;
 }
 .text-bold h1, h1.text-bold, h1 .text-bold, .text-bold h2, h2.text-bold, h2 .text-bold, .text-bold h3, h3.text-bold, h3 .text-bold, .text-bold h4, h4.text-bold, h4 .text-bold {
@@ -4975,7 +4975,7 @@ div.timeline .column_center .timeline_element:before, div.timeline .column_cente
 
 .fc-header-title h2 {
   color: #666666;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 200;
   letter-spacing: -1px;
 }
@@ -5951,7 +5951,7 @@ body.lock-screen .user-info {
 
 body.lock-screen .user-info h1 {
   color: #666666;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 30px;
   font-weight: 300;
   line-height: 32px;
