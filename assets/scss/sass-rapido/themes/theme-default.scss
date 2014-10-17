@@ -29,6 +29,7 @@ body {
 }
 .topbar {
   background: $header-color;
+  border-radius: 0;
   @include background-gradient(lighten($header-color,10%) 0px, $header-color 100%);
   > .container .navbar-brand, .logo {
     color: $white;

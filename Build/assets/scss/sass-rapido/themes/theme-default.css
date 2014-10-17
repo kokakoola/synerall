@@ -20,6 +20,7 @@ body {
 
 .topbar {
   background: #5f8295;
+  border-radius: 0;
   background-color: #7c9bab 0px;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#7c9bab 0px), to(#5f8295 100%));
   background-image: -webkit-linear-gradient(top, #7c9bab 0px, #5f8295 100%);

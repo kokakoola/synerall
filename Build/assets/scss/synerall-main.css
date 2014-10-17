@@ -12691,6 +12691,7 @@ body {
 
 .topbar {
   background: #5f8295;
+  border-radius: 0;
   background-color: #7c9bab 0px;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#7c9bab 0px), to(#5f8295 100%));
   background-image: -webkit-linear-gradient(top, #7c9bab 0px, #5f8295 100%);
@@ -12849,3 +12850,157 @@ ul.main-navigation-menu .mega-menu .mega-menu-content ul.mega-sub-menu li a:hove
 
 footer {
   background-color: #22262f; }
+
+.theme-showcase {
+  margin-top: 80px; }
+
+#nav-wizard a:hover {
+  text-decoration: none;
+  cursor: default; }
+
+#nav-wizard ul.nav-wizard li.completed {
+  background-color: #555555; }
+
+#nav-wizard ul.nav-wizard li.completed:after {
+  border-left: 16px solid #555555; }
+
+#nav-wizard ul.nav-wizard {
+  /*background-color: transparent;*/
+  background: #e8e8e8;
+  border: 1px solid #ffffff;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  *zoom: 1;
+  position: relative;
+  overflow: hidden;
+  padding-left: 0; }
+
+#nav-wizard ul.nav-wizard:before {
+  display: block;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 46px;
+  height: 47px;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  z-index: 11;
+  content: " "; }
+
+#nav-wizard ul.nav-wizard:after {
+  display: block;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 138px;
+  height: 47px;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  z-index: 11;
+  content: " "; }
+
+#nav-wizard ul.nav-wizard li {
+  position: relative;
+  float: left;
+  height: 46px;
+  display: inline-block;
+  text-align: center;
+  padding: 0 31px 0 31px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 46px; }
+
+#nav-wizard ul.nav-wizard li a {
+  color: #eeeeee;
+  padding: 0; }
+
+#nav-wizard ul.nav-wizard li a:hover {
+  background-color: transparent; }
+
+#nav-wizard ul.nav-wizard li:before {
+  position: absolute;
+  display: block;
+  border: 24px solid transparent;
+  border-left: 16px solid #ffffff;
+  border-right: 0;
+  top: -1px;
+  z-index: 10;
+  content: '';
+  right: -16px; }
+
+#nav-wizard ul.nav-wizard li:after {
+  position: absolute;
+  display: block;
+  border: 24px solid transparent;
+  border-left: 16px solid transparent;
+  border-right: 0;
+  top: -1px;
+  z-index: 10;
+  content: '';
+  right: -15px; }
+
+#nav-wizard ul.nav-wizard li.active {
+  color: #ffffff;
+  background: #0d8fda; }
+
+#nav-wizard ul.nav-wizard li.active:after {
+  border-left: 16px solid #0d8fda; }
+
+#nav-wizard ul.nav-wizard li.active a,
+#nav-wizard ul.nav-wizard li.active a:active,
+#nav-wizard ul.nav-wizard li.active a:visited,
+#nav-wizard ul.nav-wizard li.active a:focus {
+  color: #ffffff;
+  background: #0d8fda; }
+
+#nav-wizard ul.nav-wizard .active ~ li {
+  color: #4d4d4d;
+  background: #e8e8e8; }
+
+#nav-wizard ul.nav-wizard .active ~ li:after {
+  border-left: 16px solid #e8e8e8; }
+
+#nav-wizard ul.nav-wizard .active ~ li a,
+#nav-wizard ul.nav-wizard .active ~ li a:active,
+#nav-wizard ul.nav-wizard .active ~ li a:visited,
+#nav-wizard ul.nav-wizard .active ~ li a:focus {
+  color: #4d4d4d;
+  background: #e8e8e8; }
+
+#nav-wizard ul.nav-wizard.nav-wizard-backnav li:hover {
+  color: #eeeeee;
+  background: #19a2f1; }
+
+#nav-wizard ul.nav-wizard.nav-wizard-backnav li:hover:after {
+  border-left: 16px solid #19a2f1; }
+
+#nav-wizard ul.nav-wizard.nav-wizard-backnav li:hover a,
+#nav-wizard ul.nav-wizard.nav-wizard-backnav li:hover a:active,
+#nav-wizard ul.nav-wizard.nav-wizard-backnav li:hover a:visited,
+#nav-wizard ul.nav-wizard.nav-wizard-backnav li:hover a:focus {
+  color: #eeeeee;
+  background: #19a2f1; }
+
+#nav-wizard ul.nav-wizard.nav-wizard-backnav .active ~ li {
+  color: #4d4d4d;
+  background: #e8e8e8; }
+
+#nav-wizard ul.nav-wizard.nav-wizard-backnav .active ~ li:after {
+  border-left: 16px solid #e8e8e8; }
+
+#nav-wizard ul.nav-wizard.nav-wizard-backnav .active ~ li a,
+#nav-wizard ul.nav-wizard.nav-wizard-backnav .active ~ li a:active,
+#nav-wizard ul.nav-wizard.nav-wizard-backnav .active ~ li a:visited,
+#nav-wizard ul.nav-wizard.nav-wizard-backnav .active ~ li a:focus {
+  color: #4d4d4d;
+  background: #e8e8e8; }
+
+#nav-wizard ul.nav-wizard li.last2 {
+  padding: 0 50px 0 35px; }
+
+#nav-wizard ul.nav-wizard li.last:after, #nav-wizard ul.nav-wizard li.las2:after {
+  border: none; }
+
+#nav-wizard ul.nav-wizard li.last:before, #nav-wizard ul.nav-wizard li.last2:before {
+  border-left: none; }
