@@ -28,16 +28,12 @@ body {
   }
 }
 .topbar {
-  background: $header-color;
+  background: $white;
   border-radius: 0;
-  @include background-gradient(lighten($header-color,10%) 0px, $header-color 100%);
   > .container .navbar-brand, .logo {
     color: $white;
   }
   .topbar-tools > ul > li {
-    > a {
-      color: $white;
-    }
     &.right-menu-toggle > a {
       border-left-width: 1px;
       border-left-style: solid;
@@ -46,10 +42,8 @@ body {
   }
   .nav li.dropdown.open > .dropdown-toggle, .nav li.dropdown.active > .dropdown-toggle, .nav li.dropdown.open.active > .dropdown-toggle {
     background: none;
-    color: $white;
   }
   .nav > li:hover > a, .nav > li:active > a, .nav > li > a:focus {
-    color: $white;
     background: none;
   }
 }

@@ -19,29 +19,17 @@ body {
   background: #5f8295; }
 
 .topbar {
-  background: #5f8295;
-  border-radius: 0;
-  background-color: #7c9bab 0px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#7c9bab 0px), to(#5f8295 100%));
-  background-image: -webkit-linear-gradient(top, #7c9bab 0px, #5f8295 100%);
-  background-image: -moz-linear-gradient(top, #7c9bab 0px, #5f8295 100%);
-  background-image: -ms-linear-gradient(top, #7c9bab 0px, #5f8295 100%);
-  background-image: -o-linear-gradient(top, #7c9bab 0px, #5f8295 100%);
-  background-image: linear-gradient(top, #7c9bab 0px, #5f8295 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#7c9bab 0px', endColorStr='#5f8295 100%'); }
+  background: white;
+  border-radius: 0; }
   .topbar > .container .navbar-brand, .topbar .logo {
-    color: white; }
-  .topbar .topbar-tools > ul > li > a {
     color: white; }
   .topbar .topbar-tools > ul > li.right-menu-toggle > a {
     border-left-width: 1px;
     border-left-style: solid;
     border-left-color: #5f8295; }
   .topbar .nav li.dropdown.open > .dropdown-toggle, .topbar .nav li.dropdown.active > .dropdown-toggle, .topbar .nav li.dropdown.open.active > .dropdown-toggle {
-    background: none;
-    color: white; }
+    background: none; }
   .topbar .nav > li:hover > a, .topbar .nav > li:active > a, .topbar .nav > li > a:focus {
-    color: white;
     background: none; }
 
 ul.main-navigation-menu > li a {
