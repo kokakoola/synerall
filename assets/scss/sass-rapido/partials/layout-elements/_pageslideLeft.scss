@@ -72,7 +72,8 @@
     }
     img{
       margin-right: 10px;
-      @include border-radius(10px);  
+      @include border-radius(10px);
+      height: 39px;  
     }
   }
   .slide-tools {

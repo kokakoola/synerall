@@ -7142,7 +7142,8 @@ h1, h2, h3, h4 {
       margin-right: 10px;
       -moz-border-radius: 10px;
       -webkit-border-radius: 10px;
-      border-radius: 10px; }
+      border-radius: 10px;
+      height: 39px; }
   #pageslide-left .slide-tools {
     height: 50px;
     line-height: 50px;
@@ -12722,11 +12723,11 @@ ul.main-navigation-menu > li a {
   ul.main-navigation-menu > li a i {
     color: #676869;
     font-weight: normal; }
-ul.main-navigation-menu > li.active > a {
+ul.main-navigation-menu > li.current > a {
   background: #32353e !important;
   border-top: none !important;
   color: white; }
-  ul.main-navigation-menu > li.active > a i {
+  ul.main-navigation-menu > li.current > a i {
     color: white; }
 
 ul.main-navigation-menu li > ul.sub-menu > li > a:hover {

@@ -317,7 +317,8 @@ h1, h2, h3, h4 {
       margin-right: 10px;
       -moz-border-radius: 10px;
       -webkit-border-radius: 10px;
-      border-radius: 10px; }
+      border-radius: 10px;
+      height: 39px; }
   #pageslide-left .slide-tools {
     height: 50px;
     line-height: 50px;

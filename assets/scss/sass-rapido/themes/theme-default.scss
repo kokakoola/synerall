@@ -64,7 +64,7 @@ ul.main-navigation-menu > li {
       font-weight: normal;
     }
   }
-  &.active > a {
+  &.current > a {
     background: desaturate(lighten($base-color,6%),5%) !important;
     border-top: none !important;
     color: $white;
