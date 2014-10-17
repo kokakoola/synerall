@@ -1,0 +1,884 @@
+/**
+ * T1 - Settings
+ */
+
+var T1 = T1 || {};
+T1.settings = {
+	"eprivacy": {
+		"delay": null,
+		"version": 3,
+		"type": "explicit",
+		"levels": [
+			20,
+			30,
+			40
+		],
+		"defaultLevel": 40
+	},
+	"bazaarVoiceApiLink": "http://toyota.ugc.bazaarvoice.com/bvstaging/static/6687-de_de/bvapi.js",
+	"bazaarVoiceJsonLink": "http://api.bazaarvoice.com/data/reviews.json?apiversion=5.4&passkey=liuzndnjtjam4ecryicpwkji8&filter=ProductId:<id>&Include=Products&Stats=Reviews&callback=?",
+	"enableFacebookLike": "true",
+	"enableEprivacy": "true",
+	"hidePrices": "false",
+	"hideQuickSpecs": "false",
+	"urlPromoOverview": "/current-offers/index.json",
+	"useBrightTag": "true",
+	"useEcoLabels": "false",
+	"trackNav": "true",
+	"trackScroll": "false",
+	"hidePromotions": "false",
+	"feedBackId": "GLEN",
+	"enableRating": "true",
+	"urlWorldOfToyota": "/world-of-toyota/index.json",
+	"showPromoDisclaimerDirect": "false",
+	"showMonthlyRepaymentRatesBox": "false",
+	"showIncompatibleBrowser": "false",
+	"useExtendedWheelColourFiltering": "true",
+	"formsDealersByCity": "false",
+	"ecoLabel": {
+		"title": "CO<sub>2</sub> - EFFIZIENZ",
+		"intro": "Auf der Grundlage der gemessenen CO2-Emmissionen unter Berücksichtingung der Masse des Fahrzeugs ermittelt.",
+		"disclaimer": "Weitere Informationen zum offiziellen Kraftstoffverbrauch und den offiziellen spezifischen CO2-Emissionen neuer Personenkraftwagen können dem \"Leitfaden über den Kraftstoffverbrauch, die CO2-Emissionen und den Stromverbrauch neuer Personenkraftwagen\" entnommen werden, der an allen Verkaufstellen und bei der Deutschen Automobil Treuhand GmbH (<a href=\"http://www.dat.de\" target=\"_blank\">DAT</a>) [link: www.dat.de] unentgeltlich erhältlich ist.",
+		"configuredTitle": "Ihres konfigurierten [modelname]",
+		"label": "Pkw Label",
+		"images": {
+			"a": "http://d1hu588lul0tna.cloudfront.net/toyotaone/eeet/eec-label-a_tcm-3019-35627.png",
+			"aPlus": "http://d1hu588lul0tna.cloudfront.net/toyotaone/eeet/eec-label-aplus_tcm-3019-35628.png",
+			"b": "http://d1hu588lul0tna.cloudfront.net/toyotaone/eeet/eec-label-b_tcm-3019-35629.png",
+			"c": "http://d1hu588lul0tna.cloudfront.net/toyotaone/eeet/eec-label-c_tcm-3019-35630.png",
+			"d": "http://d1hu588lul0tna.cloudfront.net/toyotaone/eeet/eec-label-d_tcm-3019-35631.png",
+			"e": "http://d1hu588lul0tna.cloudfront.net/toyotaone/eeet/eec-label-e_tcm-3019-35632.png",
+			"f": "http://d1hu588lul0tna.cloudfront.net/toyotaone/eeet/eec-label-f_tcm-3019-35633.png",
+			"g": "http://d1hu588lul0tna.cloudfront.net/toyotaone/eeet/eec-label-g_tcm-3019-35634.png"
+		}
+	},
+	"modelMap": {
+		"PROACE": {
+			"id": "456305c2-361e-4c72-beac-1a1abbdad15d",
+			"internalCode": "PROACE",
+			"localCode": "PROACE",
+			"name": "Proace",
+			"ccVersion": "5.x",
+			"links": {
+				"CarChapter": "http://www.toyota.ee/new-cars/proace",
+				"CarConfigurator": "http://www.toyota.ee/car-configurator/index.tmex?model=proace",
+				"PrintPage": "http://www.toyota.ee/car-configurator/print.tmex",
+				"PromoPage": "http://www.toyota.ee/cars/new_cars/proace/promos.tmex"
+			}
+		},
+		"AURIS-TS": {
+			"id": "9b583dc1-c747-44db-b6b1-f85e5dedb871",
+			"internalCode": "AURIS-TS",
+			"localCode": "AURIS-TS",
+			"name": "Auris Touring Sports",
+			"ccVersion": "5.x",
+			"links": {
+				"CarChapter": "http://www.toyota.ee/new-cars/auris-touring-sports",
+				"CarConfigurator": "http://www.toyota.ee/car-configurator/index.tmex?model=auris-ts",
+				"PrintPage": "http://www.toyota.ee/car-configurator/print.tmex",
+				"PromoPage": "http://www.toyota.ee/cars/new_cars/auris-touring-sports/promos.tmex"
+			},
+			"subModels": [
+				{
+					"id": "9d48b391-57e9-49f7-bfbd-53cbe9992d7f",
+					"internalCode": "Auris TS",
+					"localCode": "Auris TS",
+					"name": "Auris TS",
+					"hybrid": false
+				},
+				{
+					"id": "67dfcd21-d556-4a0a-a4b9-f07fb3184955",
+					"internalCode": "Auris HSD TS",
+					"localCode": "Auris HSD TS",
+					"name": "Auris HSD TS",
+					"hybrid": true
+				}
+			]
+		},
+		"PG": {
+			"id": "d27a100c-76fc-4d03-8ed4-ab4a152b09da",
+			"internalCode": "PG",
+			"localCode": "Prius Plug-in Hybrid",
+			"name": "Prius Plug-in Hybrid",
+			"ccVersion": "4.x",
+			"links": {
+				"CarChapter": "http://www.toyota.ee/new-cars/prius-plugin",
+				"CarConfigurator": "http://www.toyota.ee/car-configurator/index.tmex?model=pg",
+				"PrintPage": "http://www.toyota.ee/car-configurator/print.tmex",
+				"PromoPage": "http://www.toyota.ee/cars/new_cars/prius-plugin/promos.tmex"
+			}
+		},
+		"GT": {
+			"id": "c8652c8a-3e64-4f82-a694-0dbbe23af42e",
+			"internalCode": "GT",
+			"localCode": "GT",
+			"name": "GT86",
+			"ccVersion": "4.x",
+			"links": {
+				"CarChapter": "http://www.toyota.ee/new-cars/gt86",
+				"CarConfigurator": "http://www.toyota.ee/car-configurator/index.tmex?model=gt",
+				"PrintPage": "http://www.toyota.ee/car-configurator/print.tmex",
+				"PromoPage": "http://www.toyota.ee/cars/new_cars/gt86/promos.tmex"
+			}
+		},
+		"PI-MPV": {
+			"id": "3c619710-904a-4a52-8d39-e32c57731f3b",
+			"internalCode": "PI-MPV",
+			"localCode": "Prius+",
+			"name": "Prius+",
+			"ccVersion": "4.x",
+			"links": {
+				"CarChapter": "http://www.toyota.ee/new-cars/prius-plus",
+				"CarConfigurator": "http://www.toyota.ee/car-configurator/index.tmex?model=pi-mpv",
+				"PrintPage": "http://www.toyota.ee/car-configurator/print.tmex",
+				"PromoPage": "http://www.toyota.ee/cars/new_cars/prius-plus/promos.tmex"
+			}
+		},
+		"AURIS": {
+			"id": "b163d626-70cf-446b-996f-ce93db94e80e",
+			"internalCode": "AURIS",
+			"localCode": "AURIS",
+			"name": "Auris",
+			"ccVersion": "4.x",
+			"links": {
+				"CarChapter": "http://www.toyota.ee/new-cars/auris",
+				"CarConfigurator": "http://www.toyota.ee/car-configurator/index.tmex?model=auris",
+				"PrintPage": "http://www.toyota.ee/car-configurator/print.tmex",
+				"PromoPage": "http://www.toyota.ee/cars/new_cars/auris/promos.tmex"
+			},
+			"subModels": [
+				{
+					"id": "6ee36359-47be-4902-ae31-9c7bdcd3f594",
+					"internalCode": "Auris",
+					"localCode": "Auris",
+					"name": "Auris",
+					"hybrid": false
+				},
+				{
+					"id": "9bb11a50-11b7-4b0f-a662-fc4002fde706",
+					"internalCode": "Auris HSD",
+					"localCode": "Auris HSD",
+					"name": "Auris HSD",
+					"hybrid": true
+				}
+			]
+		},
+		"AVENSIS": {
+			"id": "c4d74416-8a40-4308-8b01-95fc4d072dc1",
+			"internalCode": "AVENSIS",
+			"localCode": "AVENSIS",
+			"name": "Avensis",
+			"ccVersion": "4.x",
+			"links": {
+				"CarChapter": "http://www.toyota.ee/new-cars/avensis",
+				"CarConfigurator": "http://www.toyota.ee/car-configurator/index.tmex?model=avensis",
+				"PrintPage": "http://www.toyota.ee/car-configurator/print.tmex",
+				"PromoPage": "http://www.toyota.ee/cars/new_cars/avensis/promos.tmex"
+			}
+		},
+		"AG": {
+			"id": "813b0db9-bca0-4893-9167-cc0c4f69cfc2",
+			"internalCode": "AG",
+			"localCode": "AG",
+			"name": "Aygo",
+			"ccVersion": "6.HD",
+			"links": {
+				"CarChapter": "http://www.toyota.ee/new-cars/aygo",
+				"CarConfigurator": "http://www.toyota.ee/carconfig/aygo",
+				"PromoPage": "http://www.toyota.ee/cars/new_cars/aygo/promos.tmex"
+			}
+		},
+		"COROLLA": {
+			"id": "65bfd91d-f2a8-4cbb-bdbc-3834b400492a",
+			"internalCode": "COROLLA",
+			"localCode": "COROLLA",
+			"name": "Corolla",
+			"ccVersion": "5.x",
+			"links": {
+				"CarChapter": "http://www.toyota.ee/new-cars/corolla",
+				"CarConfigurator": "http://www.toyota.ee/car-configurator/index.tmex?model=corolla",
+				"PrintPage": "http://www.toyota.ee/car-configurator/print.tmex",
+				"PromoPage": "http://www.toyota.ee/cars/new_cars/corolla/promos.tmex"
+			}
+		},
+		"HILUX": {
+			"id": "e1610f96-e7f9-4cb1-8d64-a659fee2b768",
+			"internalCode": "HILUX",
+			"localCode": "HILUX",
+			"name": "Hilux",
+			"ccVersion": "4.x",
+			"links": {
+				"CarChapter": "http://www.toyota.ee/new-cars/hilux",
+				"CarConfigurator": "http://www.toyota.ee/car-configurator/index.tmex?model=hilux",
+				"PrintPage": "http://www.toyota.ee/car-configurator/print.tmex",
+				"PromoPage": "http://www.toyota.ee/cars/new_cars/hilux/promos.tmex"
+			}
+		},
+		"LANDCRUISER100": {
+			"id": "c682e0ba-ed3a-4a8b-823d-a337fd3ae522",
+			"internalCode": "LANDCRUISER100",
+			"localCode": "Land Cruiser V8",
+			"name": "Land Cruiser V8",
+			"ccVersion": "4.x",
+			"links": {
+				"CarChapter": "http://www.toyota.ee/new-cars/land_cruiser-v8",
+				"CarConfigurator": "http://www.toyota.ee/car-configurator/index.tmex?model=landcruiser100",
+				"PrintPage": "http://www.toyota.ee/car-configurator/print.tmex",
+				"PromoPage": "http://www.toyota.ee/cars/new_cars/land_cruiser-v8/promos.tmex"
+			}
+		},
+		"LANDCRUISER150": {
+			"id": "60ae2897-f9e1-4ff6-bc61-974d2d0edb5f",
+			"internalCode": "LANDCRUISER150",
+			"localCode": "Land Cruiser",
+			"name": "Land Cruiser",
+			"ccVersion": "5.x",
+			"links": {
+				"CarChapter": "http://www.toyota.ee/new-cars/land_cruiser",
+				"CarConfigurator": "http://www.toyota.ee/car-configurator/index.tmex?model=landcruiser150",
+				"PrintPage": "http://www.toyota.ee/car-configurator/print.tmex",
+				"PromoPage": "http://www.toyota.ee/cars/new_cars/land_cruiser/promos.tmex"
+			}
+		},
+		"PRIUS": {
+			"id": "8ce29243-9376-4d0e-9c82-80841d56e517",
+			"internalCode": "PRIUS",
+			"localCode": "PRIUS",
+			"name": "Prius",
+			"ccVersion": "4.x",
+			"links": {
+				"CarChapter": "http://www.toyota.ee/new-cars/prius",
+				"CarConfigurator": "http://www.toyota.ee/car-configurator/index.tmex?model=prius",
+				"PrintPage": "http://www.toyota.ee/car-configurator/print.tmex",
+				"PromoPage": "http://www.toyota.ee/cars/new_cars/prius/promos.tmex"
+			}
+		},
+		"RA": {
+			"id": "a68a58fb-a10e-41ae-9459-3a7c4060500f",
+			"internalCode": "RA",
+			"localCode": "RAV4",
+			"name": "RAV4",
+			"ccVersion": "4.x",
+			"links": {
+				"CarChapter": "http://www.toyota.ee/new-cars/rav4",
+				"CarConfigurator": "http://www.toyota.ee/car-configurator/index.tmex?model=rav4",
+				"PrintPage": "http://www.toyota.ee/car-configurator/print.tmex",
+				"PromoPage": "http://www.toyota.ee/cars/new_cars/rav4/promos.tmex"
+			}
+		},
+		"VERSO": {
+			"id": "392913d2-ba3c-4190-868c-ec8898c85072",
+			"internalCode": "VERSO",
+			"localCode": "VERSO",
+			"name": "Verso",
+			"ccVersion": "4.x",
+			"links": {
+				"CarChapter": "http://www.toyota.ee/new-cars/verso",
+				"CarConfigurator": "http://www.toyota.ee/car-configurator/index.tmex?model=verso",
+				"PrintPage": "http://www.toyota.ee/car-configurator/print.tmex",
+				"PromoPage": "http://www.toyota.ee/cars/new_cars/verso/promos.tmex"
+			}
+		},
+		"VERSO-S": {
+			"id": "525c4704-7aeb-4b1d-8de8-f5a4417fb412",
+			"internalCode": "VERSO-S",
+			"localCode": "VERSO-S",
+			"name": "Verso-S",
+			"ccVersion": "5.x",
+			"links": {
+				"CarChapter": "http://www.toyota.ee/new-cars/verso-s",
+				"CarConfigurator": "http://www.toyota.ee/car-configurator/index.tmex?model=verso-s",
+				"PrintPage": "http://www.toyota.ee/car-configurator/print.tmex",
+				"PromoPage": "http://www.toyota.ee/cars/new_cars/verso-s/promos.tmex"
+			}
+		},
+		"YA": {
+			"id": "09a6531a-c3f1-4d2d-b4d3-eb45cbb35478",
+			"internalCode": "YA",
+			"localCode": "YA",
+			"name": "Yaris",
+			"ccVersion": "6.HD",
+			"links": {
+				"CarChapter": "http://www.toyota.ee/new-cars/yaris",
+				"CarConfigurator": "http://www.toyota.ee/carconfig/yaris",
+				"PromoPage": "http://www.toyota.ee/cars/new_cars/yaris/promos.tmex"
+			}
+		}
+	},
+	"culture": {
+		"name": "et-EE",
+		"englishName": "Estonian (Estonia)",
+		"nativeName": "eesti (Eesti)",
+		"isRTL": false,
+		"language": "et",
+		"numberFormat": {
+			"pattern": [
+				"-n"
+			],
+			"decimals": 2,
+			",": " ",
+			".": ",",
+			"groupSizes": [
+				3
+			],
+			"+": "+",
+			"-": "-",
+			"NaN": "avaldamatu",
+			"negativeInfinity": "miinuslõpmatus",
+			"positiveInfinity": "plusslõpmatus",
+			"percent": {
+				"pattern": [
+					"-n%",
+					"n%"
+				],
+				"decimals": 2,
+				"groupSizes": [
+					3
+				],
+				",": " ",
+				".": ",",
+				"symbol": "%"
+			},
+			"currency": {
+				"pattern": [
+					"-n $",
+					"n $"
+				],
+				"decimals": 0,
+				"groupSizes": [
+					3
+				],
+				",": " ",
+				".": ".",
+				"symbol": "€"
+			}
+		},
+		"calendars": {
+			"standard": {
+				"name": "Gregorian_USEnglish",
+				"/": ".",
+				":": ":",
+				"firstDay": 1,
+				"days": {
+					"names": [
+						"pühapäev",
+						"esmaspäev",
+						"teisipäev",
+						"kolmapäev",
+						"neljapäev",
+						"reede",
+						"laupäev"
+					],
+					"namesAbbr": [
+						"P",
+						"E",
+						"T",
+						"K",
+						"N",
+						"R",
+						"L"
+					],
+					"namesShort": [
+						"P",
+						"E",
+						"T",
+						"K",
+						"N",
+						"R",
+						"L"
+					]
+				},
+				"months": {
+					"names": [
+						"jaanuar",
+						"veebruar",
+						"märts",
+						"aprill",
+						"mai",
+						"juuni",
+						"juuli",
+						"august",
+						"september",
+						"oktoober",
+						"november",
+						"detsember",
+						""
+					],
+					"namesAbbr": [
+						"jaan",
+						"veebr",
+						"märts",
+						"apr",
+						"mai",
+						"juuni",
+						"juuli",
+						"aug",
+						"sept",
+						"okt",
+						"nov",
+						"dets",
+						""
+					]
+				},
+				"AM": [
+					"EL",
+					"el",
+					"EL"
+				],
+				"PM": [
+					"PL",
+					"pl",
+					"PL"
+				],
+				"eras": [
+					{
+						"name": "A.D.",
+						"start": null,
+						"offset": 0
+					}
+				],
+				"twoDigitYearMax": 2029,
+				"patterns": {
+					"d": "d.MM.yyyy",
+					"D": "d. MMMM yyyy'. a.'",
+					"t": "H:mm",
+					"T": "H:mm:ss",
+					"f": "d. MMMM yyyy'. a.' H:mm",
+					"F": "d. MMMM yyyy'. a.' H:mm:ss",
+					"M": "d. MMMM",
+					"Y": "MMMM yyyy'. a.'",
+					"S": "yyyy'-'MM'-'dd'T'HH':'mm':'ss"
+				}
+			}
+		},
+		"messages": {},
+		"calendar": {
+			"name": "Gregorian_USEnglish",
+			"/": ".",
+			":": ":",
+			"firstDay": 1,
+			"days": {
+				"names": [
+					"pühapäev",
+					"esmaspäev",
+					"teisipäev",
+					"kolmapäev",
+					"neljapäev",
+					"reede",
+					"laupäev"
+				],
+				"namesAbbr": [
+					"P",
+					"E",
+					"T",
+					"K",
+					"N",
+					"R",
+					"L"
+				],
+				"namesShort": [
+					"P",
+					"E",
+					"T",
+					"K",
+					"N",
+					"R",
+					"L"
+				]
+			},
+			"months": {
+				"names": [
+					"jaanuar",
+					"veebruar",
+					"märts",
+					"aprill",
+					"mai",
+					"juuni",
+					"juuli",
+					"august",
+					"september",
+					"oktoober",
+					"november",
+					"detsember",
+					""
+				],
+				"namesAbbr": [
+					"jaan",
+					"veebr",
+					"märts",
+					"apr",
+					"mai",
+					"juuni",
+					"juuli",
+					"aug",
+					"sept",
+					"okt",
+					"nov",
+					"dets",
+					""
+				]
+			},
+			"AM": [
+				"EL",
+				"el",
+				"EL"
+			],
+			"PM": [
+				"PL",
+				"pl",
+				"PL"
+			],
+			"eras": [
+				{
+					"name": "A.D.",
+					"start": null,
+					"offset": 0
+				}
+			],
+			"twoDigitYearMax": 2029,
+			"patterns": {
+				"d": "d.MM.yyyy",
+				"D": "d. MMMM yyyy'. a.'",
+				"t": "H:mm",
+				"T": "H:mm:ss",
+				"f": "d. MMMM yyyy'. a.' H:mm",
+				"F": "d. MMMM yyyy'. a.' H:mm:ss",
+				"M": "d. MMMM",
+				"Y": "MMMM yyyy'. a.'",
+				"S": "yyyy'-'MM'-'dd'T'HH':'mm':'ss"
+			}
+		}
+	},
+	"country": "ee",
+	"language": "et",
+	"cardbImageHost": "http://t1-carassets.toyota-europe.com/",
+	"tridionImageHost": "http://d1hu588lul0tna.cloudfront.net/toyotaone",
+	"CCISHost": "http://d60d6o25njma0.cloudfront.net/ee/",
+	"CCISServer": "http://d60d6o25njma0.cloudfront.net",
+	"loadSaveHost": "http://www.toyota.ee/proxy/config",
+	"loadSaveServer": "http://t1-production-proxy.herokuapp.com",
+	"ebrochure": {
+		"page_width": 550,
+		"page_height": 410,
+		"zoom_double_click": 1,
+		"zoom_step": 0.06,
+		"double_click_enabled": true,
+		"tooltip_visible": true,
+		"toolbar_visible": true,
+		"gotopage_width": 30,
+		"deeplinking_enabled": false,
+		"rtl": false,
+		"full_area": false
+	},
+	"dealer": {
+		"distanceUnit": "km",
+		"markerPath": "/images/dealer_finder/",
+		"formUrl": "/forms/forms.json",
+		"hideServices": "false",
+		"googleAPIKey": "AIzaSyCzSqwC9jetkTnZquwQN13TC0wvVK0MeEg",
+		"googleClientId": "gme-toyotamotoreurope"
+	},
+	"carconfig": {
+		"urlContent": "/carconfig/",
+		"urlPrint": "/carconfig/print/",
+		"country": "ee",
+		"language": "et",
+		"brand": "toyota",
+		"modelID": "",
+		"gateway": "http://d3czx64ojsumqz.cloudfront.net/car/",
+		"monthlyRate": "http://tfsmrws.synectics-solutions.com/ccMonthlyPayment.asmx/ccGetMonthlyPayment",
+		"monthlyRateDisclaimer": "http://tfsmrws.synectics-solutions.com/ccMonthlyPayment.asmx/ccGetLegalText",
+		"currencySymbol": "€",
+		"currencySymbolPosition": "RIGHT",
+		"digitGroupingSymbol": " ",
+		"decimalSymbol": ".",
+		"numberOfDecimals": "2",
+		"showPrice": true,
+		"ccisPath": "http://d60d6o25njma0.cloudfront.net",
+		"filterImagePath": "http://t1-carassets.toyota-europe.com/",
+		"cardbAssetPath": "http://www.toyota.ee/proxy/resize/cardb/",
+		"showFilterGrades": "true",
+		"usePromo": "true",
+		"showPromo": "true",
+		"hidePromoButtons": "false",
+		"saveLocation": "http://www.toyota.ee/proxy/config/find/json/legacy",
+		"financing": "http://TFSCalcV3UAT.synectics-solutions.com/3AB2D36A-40EC-409F-9B31-23AB7613B71D",
+		"insurance": "http://TFSCalcV3UAT.synectics-solutions.com/5CF4B8BF-E510-4B83-98EB-4CD8C5157EA6",
+		"forceShowFinanceButtonCarConfig": "false",
+		"showFinanceButtonCarConfig": "true",
+		"showInsuranceButtonCarConfig": "true",
+		"showMonthlyRateCarConfig": "true",
+		"showMonthlyRateToggleCarConfig": "false",
+		"monthlyRateToggleDefaultValueCarConfig": "true",
+		"urlSendToDealer": "/forms/send-to-dealer.json?tab=pane-contact-dealer",
+		"inOverlay": "true",
+		"showQRCode": "true",
+		"enableCarconfigWebserviceTimeout": "true",
+		"carconfigWebserviceTimeout": "25000",
+		"enableListSearch": "false",
+		"carconfigWebserviceSegmentMaxLength": "570"
+	},
+	"carconfigMini": {
+		"showFinanceButtonMiniConfig": "true",
+		"showInsuranceButtonMiniConfig": "true",
+		"showMonthlyRateMiniConfig": "true",
+		"showFinanceDisclaimerInOverlayMiniConfig": "true"
+	},
+	"finance": {
+		"urlContent": "/finance/calculator",
+		"urlMyFinanceMiniCC": "http://TFSCalcV3UAT.synectics-solutions.com/1A951604-12B5-489B-A09C-F4D0F9D06661",
+		"urlMyInsuranceMiniCC": "http://Tfscalcv3.synectics-solutions.com/61CFCBB5-5042-4E31-901A-A0A71C49C7A8",
+		"showRatesMonthly": "false"
+	}
+};
+T1.labels = {
+	"close": "Sulge",
+	"compare": "Võrdle",
+	"configureButton": "Konfigureeri",
+	"downloads": "Materjalid allalaadimiseks",
+	"hybrid": "Hübriid",
+	"menu": "Menüü",
+	"moreAbout": "Lisateave",
+	"playMovie": "Vaata videoklippi",
+	"priceFrom": "Alates %s",
+	"readMore": "Loe edasi",
+	"save": "Salvesta",
+	"search": "Otsi Toyota lehelt",
+	"share": "Jaga",
+	"validFromUntilDate": "Kehtib alates %s kuni %s",
+	"validUntilDate": "Kehtib kuni %s",
+	"viewAll": "Vaata kõiki",
+	"viewAllModels": "Vaata kõiki mudeleid",
+	"viewLess": "Vaata vähem",
+	"viewPrices": "Vaata hindu",
+	"viewDisclaimer": "Vaata kohustustest lahtiütlemise teavet",
+	"selectAll": "Vali kõik",
+	"deselectAll": "Tühista kõik",
+	"reset": "Lähtesta",
+	"viewOnlyHybridModels": "Vaata ainult hübriidmudeleid",
+	"yes": "Jah",
+	"no": "Nr",
+	"on": "On",
+	"age": "Vanus",
+	"by": "By",
+	"from": "Alates",
+	"of": "of",
+	"gender": "Sugu",
+	"promotions": "Kampaaniad",
+	"promotionSpecialOffer": "Eripakkumine",
+	"viewAllPromotions": "Vaata kõiki kampaaniaid",
+	"toastText": "Lohista ja klõpsa, et vaadata rohkem",
+	"flashError": "Viga: ei vasta seose nõuetele",
+	"flashYouNeed": "Teil on vaja:",
+	"flashFlashplayer": "Flash-pleierit",
+	"flashToPlay": "soovitud sisu vaatamiseks",
+	"menuPriceDisclaimer": "Kuvatud hinnad võivad olla seotud kampaaniaga.",
+	"learnMore": "Loe lisaks",
+	"carconfigMini": {
+		"yourChoice": "Teie valik",
+		"chooseModel": "Vali mudel",
+		"chooseBodytype": "Vali keretüüp",
+		"chooseEngine": "Vali mootor",
+		"chooseTransmission": "Vali käigukast",
+		"chooseWheeldrive": "Vali kahe- või neljarattavedu",
+		"chooseGrade": "Vali varustustase",
+		"chooseColour": "Vali värv",
+		"price": "Hind",
+		"extraColour": "Lisavärv",
+		"totalPrice": "Hind kokku",
+		"monthlyRate": "Kuumakse",
+		"conditions": "Tingimused",
+		"selectedModel": "Mudel",
+		"selectedBodyType": "Kere kujundus",
+		"selectedEngine": "Mootor",
+		"selectedTransmission": "Käigukast",
+		"selectedWheelDrive": "Kahe- või neljarattavedu",
+		"selectedGrade": "Varustustase",
+		"selectedColour": "Värv",
+		"priceRates": "[productName]{value}<br/>[/productName][taeg]TAEG {value}[/taeg][term], {value} months[/term]"
+	},
+	"sitemap": "Sisukaart",
+	"copyright": "Autoriõigus © Toyota",
+	"topics": "Teemad",
+	"chooseTopic": "Vali teema",
+	"searchKeyword": "Otsi võtmesõna järgi",
+	"showMore": "Kuva veel",
+	"update": "Uuendused",
+	"closeFilters": "Sule filtrid",
+	"backToTop": "Tagasi üles",
+	"filters": "Filtrid",
+	"more": "Lisaks",
+	"overview": "Ülevaade",
+	"discoverTheRange": "Tutvu Toyota mudelivalikuga",
+	"cancel": "Tühista",
+	"restart": "Alusta uuesti",
+	"changeSelection": "Muuda valikut",
+	"backTo": "Tagasi",
+	"page": "lehele",
+	"selectOn": "Sisse",
+	"selectOff": "Välja",
+	"edit": "Muuda",
+	"editSave": "Muuda ja salvesta",
+	"delete": "Kustuta",
+	"saved": "Salvestatud!",
+	"enterCode": "Sisesta kood",
+	"newCar": "Uus auto",
+	"toyotaCodeEg": "Toyota kood (nt ABC123)",
+	"saveToMyCars": "Salvesta „Minu autodesse”",
+	"login": "Logi sisse",
+	"logout": "Logi välja",
+	"dealerDetails": "Edasimüüja andmed",
+	"switchTo": "Kuva hoopis",
+	"listView": "Loendivaade",
+	"imageView": "Kujutisevaade",
+	"relatedOffers": "Seonduvad pakkumised",
+	"promotionAvailableMultipleModels": "Paljude mudelite kampaaniad",
+	"reviews": {
+		"voteSuccess": "Hääl on registreeritud!",
+		"voteFailure": "Viga hääle salvestamisel:",
+		"alreadyVoted": "Te olete selle arvustuse poolt juba hääletanud",
+		"outOfFive": "viiest",
+		"createNew": "Sisesta oma arvustus",
+		"overallRating": "Üldine hinnang",
+		"feedback": "Kas sellest oli abi?",
+		"report": "Aruanne",
+		"reported": "Selle arvustuse kohta on saadetud märkus.",
+		"pageName": "Omanike arvustused",
+		"submissionReturn": "Edastamine ebaõnnestus"
+	},
+	"forms": {
+		"errorInValid": "Tekkisid probleemid, vaadake alljärgnevat teavet",
+		"errorSubmit": "Vormi edastamisel tekkis viga",
+		"ratingSuccess": "Tänud, et hindasid seda lehte!",
+		"selectItemsRestriction": "Palun vali maksimaalselt [0] valikut"
+	},
+	"rate": "Hinda",
+	"pressToRate": "Vajuta tähekesele selle lehe hindamiseks",
+	"rateSubmitted": "Tänud, et hindasid seda lehte!",
+	"rateAlreadySubmitted": "Oled seda lehte juba hinnanud!",
+	"tel": "Telefon",
+	"fax": "Faks",
+	"website": "Veebileht",
+	"saveToMyDealers": "Salvesta „Minu edasimüüjatesse”",
+	"saveToMyToyota": "Salvesta „Minu Toyotasse”",
+	"printDetails": "Prindi üksikasjad",
+	"send": "Saada",
+	"submit": "Edasta",
+	"editTerms": "Muuda tingimusi",
+	"mytoyota": {
+		"carConfigurationNotFound": "Auto konfiguratsiooni ei leitud",
+		"carAlreadySaved": "Auto on juba salvestatud",
+		"saveCarNotLoggedIn": "Te peate olema sisse loginud",
+		"dealerAlreadySaved": "Edasimüüja on juba salvestatud",
+		"dealerCarNotLoggedIn": "selle toimingu tegemiseks peate olema sisse loginud",
+		"dealerSaved": "Edasimüüja on salvestatud!"
+	},
+	"like": "Meeldib",
+	"financeLink": "Finantseeri oma Toyota",
+	"download": "Laadi alla",
+	"zoomIn": "Suurenda",
+	"zoomOut": "Vähenda",
+	"zoomAuto": "Automaatne suurendamine/vähendamine",
+	"zoomOriginal": "Algne suurus",
+	"allPages": "Kõik lehed",
+	"print": "Prindi",
+	"homepage": "Esileht",
+	"fullNormalScreen": "Täisekraan/tavaekraan",
+	"brochureGoTo": "Mine",
+	"otherInterestingPacks": "Teised huvitavad paketid",
+	"packsOtherModels": "Saadaval teiste mudelite jaoks",
+	"accentColors": "Saadaval nendes värvides",
+	"standardOptions": "Standardsed lisad",
+	"optionalOptions": "Lisavarustusse kuuluvad lisad",
+	"configureModel": "Konfigureeri see mudel",
+	"returnToHomepage": "Naase esilehele",
+	"returnToPreviousPage": "Naase eelmisele lehele",
+	"chooseACountry": "Vali riik",
+	"pricePerMonth": "% eurot aastas / % eurot kuus",
+	"showMonthlyRepaymentRates": "Kuva kuumaksete suurus",
+	"monthlyRepaymentRatesExplanation": "Te võite valida, kas standardsete hindade kõrvale kuvatakse Toyota kuumaksed või mitte. Selleks aktiveerige või inaktiveerige ülal valik „Kuva kuumaksed”.",
+	"reviewsOverallRating": "Üldine hinnang",
+	"exceptions": "Erandid",
+	"exceptionsDetails": "Erandite üksikasjad kuvatakse tööriistana (erandite selgitus)",
+	"readMoreNews": "Loe veel uudiseid, lugusid ja sündmuste ülevaateid",
+	"eBrochurePage": "leheküljed",
+	"hybridAvailable": "Hübriid saadaval",
+	"insuranceButton": "Kindlustus",
+	"features": "Features",
+	"standardFeatures": "Standard features",
+	"ratesInformation": "Rates information",
+	"wrongBrowser": {
+		"incompatibleBrowser": "<p>Vabandame, mõned Toyota lehe funktsioonid ei tööta selle brauseriversiooniga. Soovitame brauserit uuendada! <a href=\"https://browser-update.org/update.html\">Rohkem infot siit.</a></p>"
+	},
+	"changeLanguage": "Vali keel",
+	"languages": [
+		{
+			"key": "et",
+			"value": "Eesti"
+		},
+		{
+			"key": "ru",
+			"value": "По-русски"
+		}
+	],
+	"moreAboutModel": "Lisateave %s",
+	"viewFinanceDisclaimer": "Tutvu liisingutingimustega",
+	"comparator": {
+		"selectEngine": "Vali kuni kolm mootorit, et põhjalikumalt võrrelda",
+		"compareSelected": "Võrdle valitud mudeleid",
+		"compareMaxEng": "Võrdle kuni kolme mootorit",
+		"compareMinEng": "Võrdle vähemalt kaht mootorit",
+		"chooseFuel": "Vali kütuse tüüp",
+		"body": "Kere",
+		"engine": "Mootor",
+		"viewAllEngines": "Vaata kõiki mootoreid",
+		"available": "Saadaval",
+		"promotions": "Kampaaniad",
+		"engineSpecs": "% mootori spetsifikatsioonid",
+		"bodySpecs": "% kere spetsifikatsioonid",
+		"changeEngineSelect": "Muuda valitud mootoreid",
+		"selectGrade": "Vali kuni kolm mudelit, et põhjalikumalt võrrelda",
+		"viewFullGradeDetails": "Vaata varustustaseme täisspetsifikatsiooni",
+		"compareMaxEqu": "Võrdle kuni kolme mudelit",
+		"compareMinEqu": "Võrdle vähemalt kaht mudelit",
+		"equipmentAndOptions": "Varustus ja lisad",
+		"prices": "Hinnad",
+		"compareModels": "Võrdle % mudeleid",
+		"chooseBodytype": "Vali keretüüp",
+		"highlightDifferences": "Tõsta erinevused esile",
+		"standard": "Standardvarustus",
+		"optional": "Lisavarustus",
+		"notApplicable": "Ei kohaldu",
+		"changeModelSelect": "Muuda valitud mudeleid"
+	},
+	"dealer": {
+		"stepTitle1": "Dealer finder",
+		"searchBoxTitle": "Search by city or zip code",
+		"searchBoxTip": "Search",
+		"useLocation": "Use my current location",
+		"extraSearchInfo": "Looking for a Toyota contractual partner\r\n<br />\r\nEnter code start the search",
+		"dealerSearchOptions": "Search options",
+		"stepTitle2": "Dealers near you",
+		"logoInfo": "Select a dealer on the map or in the list below for contact details and directions",
+		"selectionInfo": "Select a dealer on the map or in the list below for contact details and directions",
+		"stepTitle3": "Dealers details",
+		"contactOpeningHours": "Contact & opening hours",
+		"callUs": "Call us now",
+		"visitWebsite": "Visit dealer website",
+		"getDirections": "Get directions",
+		"stepTitle4": "Dealers directions",
+		"errorGeoNotFound": "Geo not found",
+		"errorGeoFailed": "Geo failed",
+		"errorDealersNotFound": "Dealers not found",
+		"dealerSearchBy": "Search by city or zip code",
+		"dealersFound": "There are {%0} dealers nearby",
+		"dealerDirections": "Dealer directions",
+		"howToFindUs": "How to find us",
+		"chooseOtherDealer": "Choose another dealer",
+		"logoInformation": "Click on one of the Toyota logos for contact details and directions",
+		"printDirections": "Print directions",
+		"emailDirections": "Email directions",
+		"gps": "GPS",
+		"errorNoValue": "Please enter a value"
+	}
+};

@@ -2221,8 +2221,8 @@ fieldset[disabled] .note-editor .btn-link:focus {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url(../../bootstrap/fonts/glyphicons-halflings-regular.eot);
-  src: url(../../bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'), url(../../bootstrap/fonts/glyphicons-halflings-regular.woff) format('woff'), url(../../bootstrap/fonts/glyphicons-halflings-regular.ttf) format('truetype'), url(../../bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg');
+  src: url(../../../../www.toyota.ee/fonts/glyphicons-halflings-regular.eot);
+  src: url(../../../../www.toyota.ee/fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'), url(../../../../www.toyota.ee/fonts/glyphicons-halflings-regular.woff) format('woff'), url(../../../../www.toyota.ee/fonts/glyphicons-halflings-regular.ttf) format('truetype'), url(../../../../www.toyota.ee/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg');
 }
 .note-editor .glyphicon {
   position: relative;

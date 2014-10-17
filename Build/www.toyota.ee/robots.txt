@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /sys/
+Sitemap: http://www.toyota.ee/sitemap.xml
