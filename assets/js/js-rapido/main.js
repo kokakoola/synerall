@@ -224,21 +224,10 @@ var Main = function() {
                 'max-height': $windowHeight
             });
         }
-        if ($windowWidth > 991) {
-            mainNavigation.css({
-                height: $windowHeight - topBar.outerHeight(true) - $(".slide-tools").outerHeight(true)
-            });
-            $(".navbar-content").css({
-                height: $windowHeight - topBar.outerHeight(true)
-            });
-        } else {
-            mainNavigation.css({
-                height: $windowHeight - $(".slide-tools").outerHeight(true)
-            });
-            $(".navbar-content").css({
-                height: $windowHeight
-            });
-        }
+        
+        $(".navbar-content").css({
+            height: $windowHeight
+        });
 
         $(".right-wrapper").css({
             height: $windowHeight
