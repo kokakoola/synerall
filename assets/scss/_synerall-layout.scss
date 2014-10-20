@@ -190,6 +190,10 @@
 	padding-left: 5px;
 }
 
+.padding-right-5 {
+	padding-right: 5px;
+}
+
 .margin-top-10 {
 	margin-top: 10px;
 }
@@ -200,4 +204,24 @@
 
 .background-transparent {
 	background-color: transparent;
+}
+
+.green-panel-time {
+	text-align: right;
+	padding-right: 20px;
+	margin-top: -20px;
+	margin-bottom: 10px;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+
+.float-right-16 {
+	right: 16px;
 }
