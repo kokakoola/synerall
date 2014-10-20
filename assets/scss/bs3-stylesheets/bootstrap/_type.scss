@@ -212,7 +212,7 @@ dd {
       float: left;
       width: ($dl-horizontal-offset - 20);
       clear: left;
-      text-align: right;
+      text-align: left;
       @include text-overflow();
     }
     dd {
