@@ -2330,7 +2330,7 @@ td.small-width {
 
 .appointments {
   margin: 0;
-  padding: 15px 20px;
+  padding: 15px 20px 5px 20px;
   list-style: none;
   position: relative; }
   .appointments .owl-next, .appointments .owl-prev {
