@@ -14,7 +14,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <link href="assets/favicon.ico" rel="shortcut icon">
+  <!-- <link href="assets/favicon.ico" rel="shortcut icon"> -->
   <link href="assets/apple-touch-icon.png" rel="apple-touch-icon">
 
   <script src="assets/js/vendor/modernizr-2.6.2.min.js"></script>
@@ -130,15 +130,27 @@
           <i class="fa fa-bars"></i>
         </a>
       </div>
-      <div class="topbar-tools">
+      <div class="topbar-tools margin-top-10 margin-bottom-10">
         <!-- start: TOP NAVIGATION MENU -->
+        <div class="col-xs-3">
+        	<form class="" id="searchform" action="#">
+				<div class="input-group input-icon input-icon-right">
+					<input type="text" placeholder="Search" id="form-field-17" class="form-control">
+					<i class="fa fa-search"></i>
+				</div>
+			</form>
+        </div>
         <ul class="nav navbar-right">
           <!-- start: USER DROPDOWN -->
           <li class="dropdown current-user">
-            <span class="inline-block">Welcome, </span>
-            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle inline-block" data-close-others="true" href="#">
-              <span class="username hidden-xs">Peter Clark</span> <i class="fa fa-caret-down "></i>
+          	<i class="fa fa-envelope padding-right-20"></i>
+            <span>Welcome,</span>
+            <a class="dropdown-toggle" href="#">
+              <span class="username hidden-xs">Peter Clark</span>
             </a>
+            <i class="fa fa-cog"></i>
+            <span class="padding-left-20"><a href="#">Log out</a></span>
+            <i class="fa fa-power-off padding-left-5"></i>
             <ul class="dropdown-menu dropdown-dark">
               <li>
                 <a href="pages_user_profile.html">

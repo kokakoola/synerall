@@ -55,8 +55,9 @@
     }
    .topbar-tools {
       float: right;
+      width: 100%;
       height: $header-height;
-      margin-top: -13px;
+      margin-top: -2px;
       max-height: $header-height;
       > ul {
         list-style: none;
@@ -75,8 +76,9 @@
           &.current-user {
             .dropdown-toggle {
               line-height: $header-height;
-              padding-right: 20px;
+              padding-right: 5px;
               height: $header-height;
+              display: inline-block;
               i {
                 margin-left: 10px;
               }

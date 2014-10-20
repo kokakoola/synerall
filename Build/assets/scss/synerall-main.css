@@ -3706,7 +3706,6 @@ tbody.collapse.in {
   padding: 8px 15px;
   margin-bottom: 20px;
   list-style: none;
-  background-color: #cccccc;
   border-radius: 4px; }
   .breadcrumb > li {
     display: inline-block; }
@@ -7024,8 +7023,9 @@ h1, h2, h3, h4 {
           font-size: 20px; }
     .topbar .container .topbar-tools {
       float: right;
+      width: 100%;
       height: 36px;
-      margin-top: -13px;
+      margin-top: -2px;
       max-height: 36px; }
       .topbar .container .topbar-tools > ul {
         list-style: none;
@@ -7039,8 +7039,9 @@ h1, h2, h3, h4 {
             padding: 8px 8px 6px !important; }
           .topbar .container .topbar-tools > ul > li.current-user .dropdown-toggle {
             line-height: 36px;
-            padding-right: 20px;
-            height: 36px; }
+            padding-right: 5px;
+            height: 36px;
+            display: inline-block; }
             .topbar .container .topbar-tools > ul > li.current-user .dropdown-toggle i {
               margin-left: 10px; }
           .topbar .container .topbar-tools > ul > li.current-user .dropdown-menu:after {
@@ -12992,3 +12993,21 @@ footer {
 
 #nav-wizard ul.nav-wizard li.last:before, #nav-wizard ul.nav-wizard li.last2:before {
   border-left: none; }
+
+.padding-right-20 {
+  padding-right: 20px; }
+
+.padding-left-20 {
+  padding-left: 20px; }
+
+.padding-left-5 {
+  padding-left: 5px; }
+
+.margin-top-10 {
+  margin-top: 10px; }
+
+.margin-bottom-10 {
+  margin-bottom: 10px; }
+
+.background-transparent {
+  background-color: transparent; }
