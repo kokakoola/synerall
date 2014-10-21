@@ -1,0 +1,76 @@
+<h3>Installation</h3>
+
+<p>You can also use <a href="http://bower.io">bower</a> to install the component:</p>
+
+<p><code>
+$ bower install jquery.easy-pie-chart
+</code></p>
+
+<h3>jQuery</h3>
+
+<p>To use the easy pie chart plugin you need to load the current version of jQuery (&gt; 1.6.4) and the source of the plugin.</p>
+
+<p>```html
+&lt;div class="chart" data-percent="73" data-scale-color="#ffb400"&gt;73%&lt;/div&gt;</p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<script src="/path/to/jquery.easy-pie-chart.js"></script>
+
+<script>
+    $(function() {
+        $('.chart').easyPieChart({
+            //your options goes here
+        });
+    });
+</script>
+
+<p>```</p>
+
+<h3>Vanilla JS</h3>
+
+<p>If you don’t want to use jQuery, implement the Vanilla JS version without any dependencies.</p>
+
+<p>```html
+&lt;div class="chart" data-percent="73"&gt;73%&lt;/div&gt;</p>
+
+<script src="/path/to/easy-pie-chart.js"></script>
+
+<script>
+    var element = document.querySelector('.chart');
+    new EasyPieChart(element, {
+        // your options goes here
+    });
+</script>
+
+<p>```</p>
+
+<h3>AngularJS</h3>
+
+<p>```html
+&lt;div ng-controller="chartCtrl"&gt;
+    &lt;div easypiechart options="options" percent="percent"&gt;&lt;/div&gt;
+&lt;/div&gt;</p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+
+<script src="../dist/angular.easypiechart.min.js"></script>
+
+<script>
+    var app = angular.module('app', ['easypiechart']);
+    app.controller('chartCtrl', ['$scope', function ($scope) {
+        $scope.percent = 65;
+        $scope.options = {
+            animate:{
+                duration:0,
+                enabled:false
+            },
+            barColor:'#2C3E50',
+            scaleColor:false,
+            lineWidth:20,
+            lineCap:'circle'
+        };
+    }]);
+</script>
+
+<p>```</p>

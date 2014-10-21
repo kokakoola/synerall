@@ -1,0 +1,161 @@
+<h1>jQuery Knob</h1>
+
+<ul>
+  <li>canvas based ; no png or jpg sprites.</li>
+  <li>touch, mouse and mousewheel, keyboard events implemented.</li>
+  <li>downward compatible ; overloads an input element.</li>
+</ul>
+
+<h2>Example</h2>
+
+<pre><code>&lt;input type="text" value="75" class="dial"&gt;
+
+&lt;script&gt;
+$(function() {
+    $(".dial").knob();
+});
+&lt;/script&gt;
+</code></pre>
+
+<h2>Options</h2>
+
+<p>Options are provided as attributes ‘data-option’:</p>
+
+<pre><code>&lt;input type="text" class="dial" data-min="-50" data-max="50"&gt;
+</code></pre>
+
+<p>… or in the “knob()” call :</p>
+
+<pre><code>$(".dial").knob({
+                'min':-50
+                ,'max':50
+                });
+</code></pre>
+
+<p>The following options are supported :</p>
+
+<p>Behaviors :
+* min : min value | default=0.
+* max : max value | default=100.
+* step : step size | default=1.
+* angleOffset : starting angle in degrees | default=0.
+* angleArc : arc size in degrees | default=360.
+* stopper : stop at min &amp; max on keydown/mousewheel | default=true.
+* readOnly : disable input and events | default=false.</p>
+
+<p>UI :
+* cursor : display mode “cursor”, cursor size could be changed passing a numeric value to the option, default width is used when passing boolean value “true” | default=gauge.
+* thickness : gauge thickness.
+* lineCap : gauge stroke endings. | default=butt, round=rounded line endings
+* width : dial width.
+* displayInput : default=true | false=hide input.
+* displayPrevious : default=false | true=displays the previous value with transparency.
+* fgColor : foreground color.
+* inputColor : input value (number) color.
+* font : font family.
+* fontWeight : font weight.
+* bgColor : background color.</p>
+
+<h2>Hooks</h2>
+
+<pre><code>&lt;script&gt;
+$(".dial").knob({
+                    'release' : function (v) { /*make something*/ }
+                });
+&lt;/script&gt;
+</code></pre>
+
+<ul>
+  <li>
+    <p>‘release’ : executed on release</p>
+
+    <p>Parameters :
+  + value : int, current value</p>
+  </li>
+  <li>
+    <p>‘change’ : executed at each change of the value</p>
+
+    <p>Parameters :
+  + value : int, current value</p>
+  </li>
+  <li>
+    <p>‘draw’ : when drawing the canvas</p>
+
+    <p>Context :
+  - this.g : canvas context 2D (see Canvas documentation)
+  - this.$ : jQuery wrapped element
+  - this.o : options
+  - this.i : input
+  - … console.log(this);</p>
+  </li>
+  <li>
+    <p>‘cancel’ : triggered on [esc] keydown</p>
+  </li>
+  <li>
+    <p>‘error’ : called if the browser doesn’t support canvases and the plugin didn’t initialize as a result</p>
+  </li>
+</ul>
+
+<p>The scope (this) of each hook function is the current Knob instance (refer to the demo code).</p>
+
+<h2>Example</h2>
+
+<pre><code>&lt;input type="text" value="75" class="dial"&gt;
+
+&lt;script&gt;
+$(".dial").knob({
+                 'change' : function (v) { console.log(v); }
+                });
+&lt;/script&gt;
+</code></pre>
+
+<h2>Dynamically configure</h2>
+
+<pre><code>&lt;script&gt;
+$('.dial')
+    .trigger(
+        'configure',
+        {
+        "min":10,
+        "max":40,
+        "fgColor":"#FF0000",
+        "skin":"tron",
+        "cursor":true
+        }
+    );
+&lt;/script&gt;
+</code></pre>
+
+<h2>Set the value</h2>
+
+<pre><code>&lt;script&gt;
+$('.dial')
+    .val(27)
+    .trigger('change');
+&lt;/script&gt;
+</code></pre>
+
+<h2>Supported browser</h2>
+
+<p>Tested on Chrome, Safari, Firefox, IE 9.0.</p>
+
+<h2>MIT License</h2>
+
+<p>Copyright (C) 2013 Anthony Terrien</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the “Software”), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>

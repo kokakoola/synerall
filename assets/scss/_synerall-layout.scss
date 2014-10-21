@@ -198,6 +198,10 @@
 	margin-top: 10px;
 }
 
+.margin-top-0 {
+	margin-top: 0px;
+}
+
 .margin-bottom-10 {
 	margin-bottom: 10px;
 }
@@ -224,4 +228,44 @@
 
 .float-right-16 {
 	right: 16px;
+}
+
+.alert-danger-icon {
+	float: left;
+}
+
+.alert-danger-message {
+	margin: 0 25px;
+}
+
+.alert {
+	margin-bottom: 0;
+}
+
+.line-height-175 {
+	line-height: 200%;
+}
+
+.dl-horizontal dt {
+	padding-bottom: 10px;
+}
+
+.dl-horizontal {
+	margin-bottom: -10px;
+}
+
+.table thead tr {
+	color: black;	
+}
+
+.border-left-green {
+	border-left: 6px solid #20baa6;
+}
+
+.color-gray {
+	color: #c7c6c6;
+}
+
+h1 {
+	margin-bottom: 10px;
 }

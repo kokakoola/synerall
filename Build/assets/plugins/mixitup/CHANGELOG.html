@@ -1,0 +1,73 @@
+<h1>MixItUp ChangeLog</h1>
+
+<h2>2.1.5</h2>
+<ul>
+  <li>Fixed mis-naming issue preventing user-defined staggerSequence function from being called.</li>
+  <li>Fixed issue where filter-in animations broke if ‘fade’ effect was not present</li>
+</ul>
+
+<h2>2.1.4</h2>
+<ul>
+  <li>Made new sorting order available to futureState object during mixStart event</li>
+  <li>Made new display value available to futureState object during mixStart event</li>
+</ul>
+
+<h2>2.1.3</h2>
+<ul>
+  <li>Fixed scrolling issues when container height reduces document height past current scroll positiong</li>
+  <li>Added _isElement() helper for IE8 to test HTMLElement, fixing _parseInsertArgs bug in IE8</li>
+</ul>
+
+<h2>2.1.2</h2>
+<ul>
+  <li>Added <code>forceRefresh</code> method enabling on-demand re-synthesis of HTML5 data attributes to dataset properties for IE10 and below.</li>
+</ul>
+
+<h2>2.1.1</h2>
+<ul>
+  <li>Fixed issue from 2.0.5 preventing _buildState action hook from modifying state object, affected pagination extension.</li>
+</ul>
+
+<h2>2.1.0</h2>
+<ul>
+  <li>Fixed issue preventing clickable controls from controlling multiple instantiations simultaneously.</li>
+  <li>Fixed issue when using insert/append/prepend method on an empty container</li>
+  <li>Added new static API methods for extending $.MixItUp prototype, and hooking actions and filters.</li>
+</ul>
+
+<h2>2.0.6</h2>
+<ul>
+  <li>Retain scroll position if container height change decreases document height while filtering out targets. </li>
+  <li>Fixed animation bug when sorting by ‘default:desc’.</li>
+</ul>
+
+<h2>2.0.5</h2>
+<ul>
+  <li>Added a ‘futureState’ object as the second parameter for the <code>onMixStart</code> callback and <code>'mixStart'</code> event.</li>
+</ul>
+
+<h2>2.0.4</h2>
+<ul>
+  <li>Fixed issue with <code>controls.toggleFilterButtons</code> where <code>'none'</code> was included in toggleArray. Various toggle logic related improvements.</li>
+</ul>
+
+<h2>2.0.3</h2>
+<ul>
+  <li>Fixed <code>_updateControls()</code> bug when <code>controls.toggleFilterButtons</code> is set to <code>true</code></li>
+</ul>
+
+<h2>2.0.2</h2>
+<ul>
+  <li>Fixed <code>controls.toggleFilterButtons</code> config option</li>
+</ul>
+
+<h2>2.0.1</h2>
+<ul>
+  <li>Fixed some IE8 issues.</li>
+</ul>
+
+<h2>2.0.0</h2>
+<ul>
+  <li>Complete rewrite. See <a href="docs/version-1-migration.md">Version 1 Migration Guide</a> for more information.</li>
+</ul>
+
