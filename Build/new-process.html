@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Notification view</title>
+  <title>New process</title>
   <meta name="description" content="">
   <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
@@ -108,7 +108,7 @@
             <a href="customer_view.html"><i class="fa fa-user"></i> <span class="title">Customer view</span><i class="icon-arrow"></i> </a>
           </li>
           <li>
-            <a href="processes.html"><i class="fa fa-cubes"></i> <span class="title">Processes</span><i class="icon-arrow"></i> </a>
+            <a href="includes/_components-rapido/_simple-table-processes.html"><i class="fa fa-cubes"></i> <span class="title">Processes</span><i class="icon-arrow"></i> </a>
           </li>
         </ul>
         <!-- end: MAIN NAVIGATION MENU -->
@@ -230,11 +230,11 @@
     <ol class="breadcrumb">
       <li>
         <a href="#">
-          Notification view
+          Process
         </a>
       </li>
       <li class="active">
-        Notification view
+        New process
       </li>
     </ol>
   </div>
@@ -249,41 +249,68 @@
 
 <div class="row">
   <div class="col-sm-12">
-    <h1 class="margin-top-0">Notification</h1>
+    <h1 class="margin-top-0">New process</h1>
     <div class="panel panel-white">
-  <div class="panel-body">
-    <table class="table table-hover" id="sample-table-1">
-  <thead>
-    <tr>
-      <th class="hidden-xs"></th>
-      <th class="hidden-xs">Kuupäev</th>
-      <th>Pealkiri</th>
-      <th class="hidden-xs"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="border-left-green hidden-xs"></td>
-      <td class="hidden-xs">12.12.2014 </td>
-      <td class="hidden-xs"><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit.</strong></td>
-      <td><i class="fa fa-trash-o"></i></td>
-     </tr>
-     <tr>
-     <td class="border-left-green hidden-xs"></td>
-      <td class="hidden-xs">12.12.2014 </td>
-      <td class="hidden-xs"><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit.</strong></td>
-      <td><i class="fa fa-trash-o"></i></td>
-     </tr>
-     <tr>
-     <td class="hidden-xs"></td>
-      <td class="hidden-xs color-gray padding-left-6">12.12.2014 </td>
-      <td class="hidden-xs color-gray">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-      <td><i class="fa fa-trash-o"></i></td>
-     </tr>
-   </tbody>
-</table>
-  </div>
-</div>
+    	<div class="panel-body">
+			<form role="form" class="form-horizontal col-sm-9">
+				<div class="form-group">
+				<div class="col-sm-9">
+					<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+						Name
+					</label>
+				</div>
+					<div class="col-sm-9">
+						<input type="text" id="form-field-1" class="form-control">
+					</div>
+				</div>
+				<div class="form-group">
+				<div class="col-sm-9">
+					<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+						Description
+					</label>
+				</div>
+					<div class="col-sm-9">
+						<textarea id="form-field-22" class="form-control"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+				<div class="col-sm-9">
+					<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+						Customer
+					</label>
+				</div>
+					<div class="col-sm-9">
+						<input type="text" id="form-field-1" class="form-control">
+					</div>
+				</div>
+				<div class="form-group">
+				<div class="col-sm-9">
+					<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+						Arranged to
+					</label>
+				</div>
+					<div class="col-sm-9">
+						<input type="text" id="form-field-1" class="form-control">
+					</div>
+				</div>
+				<div class="col-sm-9">
+					<label class="checkbox-inline">
+						<input type="checkbox" class="orange" value="" checked="checked">
+							Generic
+					</label>
+				</div>
+				<div class="col-sm-9">
+					<label class="checkbox-inline">
+						<input type="checkbox" class="orange" value="" checked="checked">
+							Process related
+					</label>
+				</div>
+				<div class="col-sm-9 text-field-label margin-top-10">
+					<button type="button" class="btn btn-green">Submit</button>
+				</div>
+			</form>
+		</div>
+    </div>
   </div>
 </div>
 

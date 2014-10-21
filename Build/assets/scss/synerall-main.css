@@ -13003,6 +13003,11 @@ footer {
 .padding-left-5 {
   padding-left: 5px; }
 
+.text-field-label {
+  left: -15px;
+  padding-bottom: 5px;
+  width: 100%; }
+
 .padding-right-5 {
   padding-right: 5px; }
 
@@ -13062,3 +13067,12 @@ footer {
 
 h1 {
   margin-bottom: 10px; }
+
+.form-horizontal .control-label {
+  text-align: left; }
+
+.padding-right-130 {
+  padding-right: 130px; }
+
+.padding-top-70 {
+  padding-top: 70px; }

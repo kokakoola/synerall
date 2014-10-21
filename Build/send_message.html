@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Processes</title>
+  <title>Send new message</title>
   <meta name="description" content="">
   <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
@@ -81,7 +81,7 @@
         <!-- /Hammer reload -->
       
 </head>
-<body class="processes" role="document">
+<body class="customer" role="document">
 
   <!--[if lt IE 8]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
@@ -107,8 +107,8 @@
           <li>
             <a href="customer_view.html"><i class="fa fa-user"></i> <span class="title">Customer view</span><i class="icon-arrow"></i> </a>
           </li>
-          <li class='current'>
-            <a class='current' href="processes.html"><i class="fa fa-cubes"></i> <span class="title">Processes</span><i class="icon-arrow"></i> </a>
+          <li>
+            <a href="includes/_components-rapido/_simple-table-processes.html"><i class="fa fa-cubes"></i> <span class="title">Processes</span><i class="icon-arrow"></i> </a>
           </li>
         </ul>
         <!-- end: MAIN NAVIGATION MENU -->
@@ -221,166 +221,7 @@
         <div class="container">
 
     <!-- dont close! ends in footer! -->
-<!-- start: PAGE HEADER -->
-<!-- start: TOOLBAR -->
-<div class="toolbar row">
-  <div class="col-sm-6 hidden-xs">
-    <div class="page-header">
-      <h1> Processes <small>overview &amp; stats </small></h1>
-    </div>
-  </div>
-  <div class="col-sm-6 col-xs-12">
-    <a href="#" class="back-subviews">
-      <i class="fa fa-chevron-left"></i> BACK
-    </a>
-    <a href="#" class="close-subviews">
-      <i class="fa fa-times"></i> CLOSE
-    </a>
-    <div class="toolbar-tools pull-right">
-      <!-- start: TOP NAVIGATION MENU -->
-      <ul class="nav navbar-right">
-        <!-- start: TO-DO DROPDOWN -->
-        <li class="dropdown">
-          <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-            <i class="fa fa-plus"></i> SUBVIEW
-            <div class="tooltip-notification hide">
-              <div class="tooltip-notification-arrow"></div>
-              <div class="tooltip-notification-inner">
-                <div>
-                  <div class="semi-bold">
-                    HI THERE!
-                  </div>
-                  <div class="message">
-                    Try the Subview Live Experience
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <ul class="dropdown-menu dropdown-light dropdown-subview">
-            <li class="dropdown-header">
-              Notes
-            </li>
-            <li>
-              <a href="#newNote" class="new-note"><span class="fa-stack"> <i class="fa fa-file-text-o fa-stack-1x fa-lg"></i> <i class="fa fa-plus fa-stack-1x stack-right-bottom text-danger"></i> </span> Add new note</a>
-            </li>
-            <li>
-              <a href="#readNote" class="read-all-notes"><span class="fa-stack"> <i class="fa fa-file-text-o fa-stack-1x fa-lg"></i> <i class="fa fa-share fa-stack-1x stack-right-bottom text-danger"></i> </span> Read all notes</a>
-            </li>
-            <li class="dropdown-header">
-              Calendar
-            </li>
-            <li>
-              <a href="#newEvent" class="new-event"><span class="fa-stack"> <i class="fa fa-calendar-o fa-stack-1x fa-lg"></i> <i class="fa fa-plus fa-stack-1x stack-right-bottom text-danger"></i> </span> Add new event</a>
-            </li>
-            <li>
-              <a href="#showCalendar" class="show-calendar"><span class="fa-stack"> <i class="fa fa-calendar-o fa-stack-1x fa-lg"></i> <i class="fa fa-share fa-stack-1x stack-right-bottom text-danger"></i> </span> Show calendar</a>
-            </li>
-            <li class="dropdown-header">
-              Contributors
-            </li>
-            <li>
-              <a href="#newContributor" class="new-contributor"><span class="fa-stack"> <i class="fa fa-user fa-stack-1x fa-lg"></i> <i class="fa fa-plus fa-stack-1x stack-right-bottom text-danger"></i> </span> Add new contributor</a>
-            </li>
-            <li>
-              <a href="#showContributors" class="show-contributors"><span class="fa-stack"> <i class="fa fa-user fa-stack-1x fa-lg"></i> <i class="fa fa-share fa-stack-1x stack-right-bottom text-danger"></i> </span> Show all contributor</a>
-            </li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-            <span class="messages-count badge badge-default hide">3</span> <i class="fa fa-envelope"></i> MESSAGES
-          </a>
-          <ul class="dropdown-menu dropdown-light dropdown-messages">
-            <li>
-              <span class="dropdown-header"> You have 9 messages</span>
-            </li>
-            <li>
-              <div class="drop-down-wrapper ps-container">
-                <ul>
-                  <li class="unread">
-                    <a href="javascript:;" class="unread">
-                      <div class="clearfix">
-                        <div class="thread-image">
-                          <img src="./assets/images/avatar-2.jpg" alt="">
-                        </div>
-                        <div class="thread-content">
-                          <span class="author">Nicole Bell</span>
-                          <span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula...</span>
-                          <span class="time"> Just Now</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="javascript:;" class="unread">
-                      <div class="clearfix">
-                        <div class="thread-image">
-                          <img src="./assets/images/avatar-3.jpg" alt="">
-                        </div>
-                        <div class="thread-content">
-                          <span class="author">Steven Thompson</span>
-                          <span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula...</span>
-                          <span class="time">8 hrs</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="javascript:;">
-                      <div class="clearfix">
-                        <div class="thread-image">
-                          <img src="./assets/images/avatar-5.jpg" alt="">
-                        </div>
-                        <div class="thread-content">
-                          <span class="author">Kenneth Ross</span>
-                          <span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula...</span>
-                          <span class="time">14 hrs</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="view-all">
-              <a href="pages_messages.html">
-                See All
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="menu-search">
-          <a href="#">
-            <i class="fa fa-search"></i> SEARCH
-          </a>
-          <!-- start: SEARCH POPOVER -->
-          <div class="popover bottom search-box transition-all">
-            <div class="arrow"></div>
-            <div class="popover-content">
-              <!-- start: SEARCH FORM -->
-              <form class="" id="searchform" action="#">
-                <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search">
-                  <span class="input-group-btn">
-                    <button class="btn btn-main-color btn-squared" type="button">
-                      <i class="fa fa-search"></i>
-                    </button> </span>
-                  </div>
-                </form>
-                <!-- end: SEARCH FORM -->
-              </div>
-            </div>
-            <!-- end: SEARCH POPOVER -->
-          </li>
-        </ul>
-        <!-- end: TOP NAVIGATION MENU -->
-      </div>
-    </div>
-  </div>
-  <!-- end: TOOLBAR -->
-  <!-- end: PAGE HEADER -->
-            <!-- start: BREADCRUMB -->
+
 <div class="row">
   <div class="col-md-8">
     <!-- start: BREADCRUMB -->
@@ -389,31 +230,44 @@
     <ol class="breadcrumb">
       <li>
         <a href="#">
-          Processes
+          CRM
         </a>
       </li>
       <li class="active">
-        Processes
+        Send new message
       </li>
     </ol>
   </div>
 </div>
 <!-- end: BREADCRUMB -->
   </div>
+  <div class="col-md-4 text-right margin-top-10">
+    <span><button type="button" class="btn btn-red">Start new notification</button></span>
+    <span class="padding-left-5"><button type="button" class="btn btn-green">Start new process</button></span>
+  </div>
 </div>
 
-
 <div class="row">
-	<div class="col-xs-12">
-		<div id="nav-wizard">
-			<ul class="nav-wizard">
-		   	<li class="completed"><a href="#step1" data-toggle="tab">Signing contract 12 ( 3 )</a></li>
-		   	<li class="completed"><a href="#step2" data-toggle="tab">Waiting for Confirmation 5 ( 2 )</a></li>
-		   	<li class="active"><a>Receiving initial reading 7 ( 1 )</a></li>
-		   	<li class="last"><a>Sinalization 1 ( 0 )</a></li>
-			</ul>
+  <div class="col-sm-12">
+    <h1 class="margin-top-0">Send new message</h1>
+    <div class="panel panel-white">
+    	<div class="panel-body">
+			<form role="form" class="form-horizontal">
+				<div class="form-group">
+					<div class="col-sm-9">
+						<input type="text" placeholder="Subject" id="form-field-1" class="form-control">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-9">
+						<textarea placeholder="Hello! How are you?" id="form-field-22" class="form-control"></textarea>
+					</div>
+				</div>
+				<button type="button" class="btn btn-green">Send</button>
+			</form>
 		</div>
-	</div>
+    </div>
+  </div>
 </div>
 
                     </div>
