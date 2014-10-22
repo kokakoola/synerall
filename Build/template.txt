@@ -1,2 +1,0 @@
-Author: MAre Hunt
-Version: 1.0
