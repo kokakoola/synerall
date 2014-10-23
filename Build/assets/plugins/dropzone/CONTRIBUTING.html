@@ -1,0 +1,72 @@
+<h1>Contribute</h1>
+
+<blockquote>
+  <p>I have changed my branching model recently (November 2013)! Previously
+the latest version was always in develop, and pull request had to be
+made on this branch. This is no longer the case!</p>
+</blockquote>
+
+<p>The latest version is always in the <strong><a href="https://github.com/enyo/dropzone">master</a></strong>
+branch.</p>
+
+<blockquote>
+  <p>Please provide a test for any new feature (see the <a href="#testing">testing section</a> below).</p>
+</blockquote>
+
+<h2>Communicate</h2>
+
+<p>Before you start implementing new features, please create an issue about
+it first and discuss your intent.</p>
+
+<p>It might be something that someone else is already implementing or that
+goes against the concepts of Dropzone, and I really hate rejecting pull
+requests others spent hours writing on.</p>
+
+<h2>Developer Dependencies</h2>
+
+<p>The first thing you need to do, is to install the developer dependencies:</p>
+
+<p><code>bash
+$ npm install
+</code></p>
+
+<p>This will install all the tools you need to compile the source files and to test
+the library.</p>
+
+<h2>Coffeescript &amp; Stylus (-&gt; Javascript &amp; CSS)</h2>
+
+<p>Dropzone is written in <a href="http://coffeescript.org">Coffeescript</a> and
+<a href="http://learnboost.github.com/stylus/">Stylus</a> so <em>do not</em> make
+changes to the Javascript or CSS files</p>
+
+<p><strong>I will not merge requests written in Javascript or CSS.</strong></p>
+
+<p>Please don’t include compiled <code>.js</code> or <code>.css</code> files in your pull requests but only
+<code>.coffee</code> or <code>.styl</code> files. That way pull requests aren’t polluted and I can see
+immediately what you changed.</p>
+
+<p>To build the library use <a href="http://gruntjs.com">grunt</a>.</p>
+
+<p><code>bash
+$ grunt -h # Displays available options
+$ grunt # compiles all coffeescript and stylus files
+$ grunt watch # watches for changes and builds on the fly
+</code></p>
+
+<blockquote>
+  <p>I recommend using <code>grunt watch</code> when you begin developing. This way you can’t
+forget to compile the source files and will avoid headaches.</p>
+</blockquote>
+
+<h2>Testing</h2>
+
+<p>To test the library, open <code>test/test.html</code> in your browser or type <code>npm test</code>
+which will run the tests in your console in a headless browser.</p>
+
+<p>The tests are also written in coffeescript in the <code>test/test.coffee</code> file,
+and compiled with <code>grunt js</code> or <code>grunt watch</code>.</p>
+
+<ul>
+  <li>Thanks for contributing!*</li>
+</ul>
+

@@ -1,0 +1,206 @@
+<h2>Latest Release: 4.2.0</h2>
+
+<ul>
+  <li>Add Swedish locale</li>
+  <li>Add Latvian locale</li>
+  <li>Add Turkish locale</li>
+  <li>Add Hebrew locale</li>
+  <li>Add password input type</li>
+  <li>Add textarea input type</li>
+  <li>Add date input type</li>
+  <li>Add time input type</li>
+  <li>Add number input type</li>
+  <li>Support DOM selectors for container argument</li>
+  <li>UMD support</li>
+  <li>Better support on mobile devices</li>
+</ul>
+
+<h3>4.1.0</h3>
+
+<ul>
+  <li>Add support for placeholder attribute in prompts</li>
+  <li>Add select, email and checkbox types for prompts (thanks <a href="https://github.com/tarlepp">@tarlepp</a>)</li>
+  <li>Add Norwegian locale</li>
+  <li>Allow setDefaults to take two key/val arguments</li>
+  <li>Add unique classes for main dialog methods</li>
+  <li>Create bower package</li>
+</ul>
+
+<h3>4.0.0</h3>
+
+<ul>
+  <li>Bootstrap 3.0.0 compatibility</li>
+  <li>Complete rewrite (and new public API)</li>
+  <li>Use strict mode</li>
+  <li>Add close buttons to wrapper methods (GH-92)</li>
+  <li>Allow dialog titles to be specified (GH-51, GH-112)</li>
+  <li>Allow optional extra class on dialog wrapper (GH-116)</li>
+  <li>Fix <code>backdrop: true</code> not firing close handler (GH-77)</li>
+  <li>Replace various configuration methods with one <code>setDefaults</code></li>
+</ul>
+
+<h3>3.3.0</h3>
+
+<ul>
+  <li>Add Polish translation (GH-93)</li>
+  <li>Add Danish translation (GH-96)</li>
+  <li>Pass event object to custom callbacks (GH-103)</li>
+  <li>Add Chinese (Taiwan / China) translations (GH-106)</li>
+  <li>Make prompt input block-level (GH-111)</li>
+  <li>Add link: true option to prevent btn class from being applied (GH-114)</li>
+  <li>Prevent child elements triggering hidden callback (GH-115)</li>
+  <li>Replace Phing with Grunt</li>
+  <li>Replace Closure compiler with UglifyJS</li>
+</ul>
+
+<h3>3.2.0</h3>
+
+<ul>
+  <li>ensure <code>onEscape</code> handlers return callback values properly (GH-91)</li>
+  <li>ensure clicking close button invokes onEscape handler if present</li>
+</ul>
+
+<h3>3.1.0</h3>
+
+<ul>
+  <li>ensure <code>confirm</code> and <code>prompt</code> methods return callback values properly (GH-90)</li>
+  <li>address various jshint warnings (GH-79)</li>
+  <li>add <code>setBtnClasses</code> method for custom standard button classes (GH-87)</li>
+</ul>
+
+<h3>3.0.0</h3>
+
+<ul>
+  <li>bump Bootstrap dependency to 2.2.2</li>
+  <li>bump jQuery dependency to 1.8.3</li>
+  <li>ensure callbacks are always invoked even if dialogs are dismissed with escape key (GH-49)</li>
+  <li>fix button positions with Bootstrap 2.2.2 (GH-58)</li>
+  <li>stop multiple dialogs crashing browsers (GH-60, GH-64)</li>
+  <li>ensure <code>shown</code> event is fired properly even when animation is disabled (GH-69)</li>
+  <li>use <code>.on</code> instead of <code>.bind</code></li>
+  <li>commentify code a bit more</li>
+</ul>
+
+<h3>2.5.1</h3>
+
+<p><strong>This was the last version of the library to support Bootstrap 2.0.x</strong></p>
+
+<ul>
+  <li>ensure bootbox object is explicitly added to window object for minfier visibility</li>
+</ul>
+
+<h3>2.5.0</h3>
+
+<ul>
+  <li>add option to specify proper href attributes for buttons instead of callbacks (@StevePotter)</li>
+  <li>add option to override per-modal classes (@ciaranj)</li>
+</ul>
+
+<h3>2.4.2</h3>
+
+<ul>
+  <li>revert <code>backdrop</code> default value to ‘static’ instead of <code>true</code> to prevent background clicks dismissing dialogs (GH-55)</li>
+</ul>
+
+<h3>2.4.1</h3>
+
+<ul>
+  <li>fix <code>backdrop</code> when supplied as an argument to <code>bootbox.dialog</code></li>
+  <li>fix incorrect README version</li>
+</ul>
+
+<h3>2.4.0</h3>
+
+<ul>
+  <li>add <code>bootbox.backdrop(bool)</code> method (@gucki)</li>
+  <li>add default parameter option to <code>bootbox.prompt</code> (@pzgz)</li>
+</ul>
+
+<h3>2.3.3</h3>
+
+<ul>
+  <li>add inline <code>overflow: hidden</code> CSS property (GH-46)</li>
+  <li>move license info to separate hosted file to reduce file size</li>
+</ul>
+
+<h3>2.3.2</h3>
+
+<ul>
+  <li>Change button href attributes to <code>javascript:;</code> (@joshnesbitt)</li>
+  <li>Explicitly <code>window.jQuery</code> through to <code>Bootbox</code> object (@nuegon)</li>
+</ul>
+
+<h3>2.3.1</h3>
+
+<ul>
+  <li>Ensure bootbox.prompt() gives focus to input, disable input autocomplete</li>
+</ul>
+
+<h3>2.3.0</h3>
+
+<ul>
+  <li>Added bootbox.prompt() to mimic native prompt() method</li>
+  <li>Added Russian locale (#27)</li>
+</ul>
+
+<h3>2.2.0</h3>
+
+<ul>
+  <li>Allowed button callbacks to explicitly return false to prevent dialog from closing (thanks @benoit-ponsero)</li>
+  <li>Added version number to header comments (#26)</li>
+</ul>
+
+<h3>2.1.2</h3>
+
+<ul>
+  <li>Added close button to re-scoped click handler (thanks @SeanMcGee and @kentbrew)</li>
+</ul>
+
+<h3>2.1.1</h3>
+
+<ul>
+  <li>Fixed incorrect button click handler selector (thanks FGRibreau)</li>
+</ul>
+
+<h3>2.1.0</h3>
+
+<ul>
+  <li>Added support for Bootstrap’s Glyphicons via the <code>icon</code> option</li>
+  <li>Added inline license information into bootbox.js and bootbox.min.js</li>
+  <li>Tidied up source a little</li>
+</ul>
+
+<h3>2.0.1</h3>
+
+<ul>
+  <li>Removed dummy Google Closure Compiler method from minified library (thanks j0k3r!)</li>
+</ul>
+
+<h3>2.0.0</h3>
+
+<ul>
+  <li>Updated Bootstrap dependency from 1.4 to 2.0</li>
+  <li>Class definitions now require <code>btn-</code> prefix as per Bootstrap 2.0</li>
+  <li>Added Brazilian locale</li>
+  <li>Added <code>animate</code> dialog option</li>
+  <li>Added <code>bootbox.animate(bool)</code> option to set default animation preference</li>
+  <li>Animated dialogs now rely on <code>bootstrap-transitions.js</code> as required by Bootstrap 2.0</li>
+</ul>
+
+<h3>1.1.2</h3>
+
+<ul>
+  <li>Added licensing information to README</li>
+</ul>
+
+<h4>1.1.1</h4>
+<ul>
+  <li>Updated german locale</li>
+</ul>
+
+<h4>1.1.0</h4>
+<ul>
+  <li>Secondary option of two-button dialog no longer has ‘danger’ class</li>
+  <li>New bootbox.modal() method for generic non-dialog popups</li>
+  <li>Allow jQuery objects to be passed as main dialog argument</li>
+</ul>

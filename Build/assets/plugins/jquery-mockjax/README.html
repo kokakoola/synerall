@@ -1,0 +1,479 @@
+<h1>jQuery Mockjax: Ajax request mocking</h1>
+<p><a href="http://github.com/appendto/jquery-mockjax/">http://github.com/appendto/jquery-mockjax/</a></p>
+
+<p>jQuery Mockjax provides request/response mocking for ajax requests with
+jQuery and provides all standard behaviors in the request/response flow.</p>
+
+<p>You may report any issues you may find <a href="in the github issue tracking">https://github.com/appendto/jquery-mockjax/issues</a>.</p>
+
+<h3>jQuery Version Support</h3>
+
+<p>The current version of Mockjax has been tested with jQuery 1.3.2 through
+1.7.0 with QUnit unit tests, residing in /test.</p>
+
+<h3>Browsers Tested</h3>
+<p>Internet Explorer 6-9, Firefox 3.6 and stable, Safari 5.x, Chrome stable, Opera 9.6-latest.</p>
+
+<h3>Release History</h3>
+<p><a href="https://github.com/appendto/jquery-mockjax/blob/master/CHANGELOG.md">CHANGELOG</a></p>
+
+<h2>License</h2>
+<p>Copyright (c) 2012 appendTo LLC.</p>
+
+<p>Dual licensed under the MIT or GPL licenses.</p>
+
+<p><a href="http://appendto.com/open-source-licenses">http://appendto.com/open-source-licenses</a></p>
+
+<h2>Documentation</h2>
+
+<p>Most backend developers are familiar with the concepts of <a href="http://en.wikipedia.org/wiki/Mock_object">mocking
+objects</a> or stubbing in
+methods for unit testing. For those not familiar with mocking, it’s the
+simulation of an interface or API for testing or integration development
+purposes. Mocking with front-end development though is still quite new.</p>
+
+<p>Much of the development that <a href="http://appendto.com">appendTo</a> does
+focuses on front-end development tied to
+<a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">RESTFUL</a>
+web services. <strong>As such we’re able to spec out the service contract and
+data format at the beginning of a project and develop the front-end
+interface against mock data while the back end team builds the
+production services.</strong></p>
+
+<p>The plugin was originally developed by appendTo back in
+March 2010 and the <a href="http://twitter.com/appendto/team">team</a> has been
+using it in all of its projects since.</p>
+
+<h3>API</h3>
+
+<p>Mockjax consists of two methods, one to set up mocks, one to remove them.
+You’ll find plenty of examples below. If you’re looking for a specific option,
+checkout this list:</p>
+
+<ul>
+  <li><code>$.mockjax(options)</code>
+    <ul>
+      <li>Sets up a mockjax handler.</li>
+      <li><code>options</code>: An object literal which defines the settings to use for the mocked request.
+        <ul>
+          <li><code>url</code>: A string or regular expression specifying the url of the request that the data should be mocked for. If the url is a string and contains any asterisks ( * ), they will be treated as a wildcard by translating to a regular expression. Any <code>*</code> will be replaced with <code>.+</code>. If you run into trouble with this shortcut, switch to using a full regular expression instead of a string and asterisk combination.</li>
+          <li><code>data</code>: In addition to the URL, match parameters.</li>
+          <li><code>type</code>: Specify what HTTP method to match, usually GET or POST. Case-insensitive, so <code>get</code> and <code>post</code> also work.</li>
+          <li><code>headers</code>: An object literal whose keys will be simulated as additional headers returned from the server for the request.</li>
+          <li><code>status</code>: An integer that specifies a valid server response code. This simulates a server response code.</li>
+          <li><code>statusText</code>: An string that specifies a valid server response code description. This simulates a server response code description.</li>
+          <li><code>responseTime</code>: An integer that specifies a simulated network and server latency (in milliseconds).</li>
+          <li><code>isTimeout</code>: A boolean value that determines whether or not the mock will force a timeout on the request.</li>
+          <li><code>contentType</code>: A string which specifies the content type for the response.</li>
+          <li><code>response</code>: <code>function(settings) {}</code>, A function that allows for the dynamic setting of responseText/responseXML upon each request.</li>
+          <li><code>responseText</code>: A string specifying the mocked text, or a mocked object literal, for the request.</li>
+          <li><code>responseXML</code>: A string specifying the mocked XML for the request.</li>
+          <li><code>proxy</code>: A string specifying a path to a file, from which the contents will be returned for the request.</li>
+          <li><code>lastModified</code>: A date string specifying the mocked last-modified time for the request. This is used by <code>$.ajax</code> to determine if the requested data is new since the last request.</li>
+          <li><code>etag</code>: A string specifying a unique identifier referencing a specific version of the requested data. This is used by <code>$.ajax</code> to determine if the requested data is new since the last request. (see <a href="http://en.wikipedia.org/wiki/HTTP_ETag">HTTP_ETag</a>)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><code>$.mockjaxClear()</code>
+    <ul>
+      <li>Removes all mockjax handlers.</li>
+    </ul>
+  </li>
+  <li><code>$.mockjaxClear(id)</code>
+    <ul>
+      <li>Remove a single mockjax handler.</li>
+      <li><code>id</code> is the string returned from <code>$.mockjax</code>.</li>
+    </ul>
+  </li>
+  <li><code>$.mockjax.mockedAjaxCalls()</code>
+    <ul>
+      <li>Returns all mocked ajax calls so you can e.g. check that expected data is sent to backend.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>Overview: Your First Mock</h3>
+
+<p>Our first example will be for a simple REST service for a fortune app
+with the REST endpoint being <code>/restful/fortune</code> which returns the
+following JSON message:</p>
+
+<pre><code>{
+    "status": "success",
+    "fortune" : "Are you a turtle?"
+}
+</code></pre>
+
+<p>To pull the fortune into our page, we’d use the following HTML &amp; jQuery
+code:</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Fortune App&lt;/title&gt;
+    &lt;script src="http://code.jquery.com/jquery-1.7.0.min.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="fortune"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+$.getJSON('/restful/fortune', function(response) {
+  if ( response.status == 'success') {
+    $('#fortune').html( 'Your fortune is: ' + response.fortune );
+  } else {
+    $('#fortune').html( 'Things do not look good, no fortune was told' );
+  }
+});
+</code></pre>
+
+<p>At this point if we were to run this code it would fail since the REST
+service has yet to be implemented. This is where the benefit of the
+Mockjax Plugin starts to pay off. The first step in using Mockjax is to
+include the plugin by just adding a regular script tag.</p>
+
+<p>Once you have that included, you can start intercepting Ajax requests
+and mocking the responses. So let’s mock out the service by including
+the following code:</p>
+
+<pre><code>$.mockjax({
+  url: '/restful/fortune',
+  responseTime: 750,
+  responseText: {
+    status: 'success',
+    fortune: 'Are you a turtle?'
+  }
+});
+</code></pre>
+
+<p><strong>Defining a JSON string inline requires a <code>JSON.stringify</code> method to be
+available. For some browsers you may need to include
+<a href="http://json.org/json2.js">json2.js</a>, which is included in the <code>lib</code> folder</strong></p>
+
+<p><strong>If you plan on mocking xml responses, you may also have to include
+<code>jquery.xmldom.js</code>, which can also be found in the <code>lib</code> folder.</strong></p>
+
+<p>What Mockjax does at this point is replace the <code>$.ajax</code> method with a
+wrapper that transparently checks the URL being requested. If the URL
+matches one defined by <code>$.mockjax()</code>, Mockjax intercepts the request
+and sets up a mock <code>XMLHttpRequest</code> object before executing the
+<code>jQuery.ajax</code> handler. Otherwise, the request is handed back to the
+native <code>$.ajax</code> method for normal execution. One benefit in this
+implementation detail is by simulating the <code>XMLHttpRequest</code> object, the
+plugin continues to make use of jQuery’s native ajax handling.</p>
+
+<p>As you write code to mock responses, there’s great value in the fact that there are no
+modifications required to production code. The mocks can be
+transparently inserted. This provides easy integration into most
+frameworks by including the plugin and mock definitions through your
+build framework. It’s also possible to include it at run time by
+listening for a flag query string flag and injecting the plugin and
+definitions.</p>
+
+<h3>Mockjax in Depth</h3>
+
+<p>Now let’s look at the various approaches to defining mocks as offered by
+the plugin. The sections below feature an extensive overview of the
+flexibility in Mockjax and creating responses.</p>
+
+<h2>Data Types Available for Mocking</h2>
+
+<p>jQuery is able to handle and parse <code>Text</code>, <code>HTML</code>, <code>JSON</code>, <code>JSONP</code>,
+<code>Script</code> and <code>XML</code> data formats and Mockjax is able to mock any of those
+formats. Two things to note, depending upon how you mock out <code>JSON</code> and
+<code>JSONP</code> you may need to include <a href="http://json.org/json2.js">json2.js</a> for
+the <code>JSON.stringify()</code> method. Additionally if you mock XML inline,
+you’ll need to include the
+<a href="http://github.com/appendto/jquery-xmldom"><code>xmlDOM</code></a> plugin that
+transforms a string of XML into a DOM object. If you use the proxy
+approach outlined below, there’s no need to include either the JSON or
+XMLDOM plugins.</p>
+
+<h2>Step 1. Define the URL</h2>
+
+<p>The first thing you need to do when mocking a request is define the URL
+end-point to intercept and mock. As with our example above this can be a
+simple string:</p>
+
+<pre><code>$.mockjax({
+  url: '/url/to/rest-service'
+});
+</code></pre>
+
+<p>or contain a <code>*</code> as a wildcard:</p>
+
+<pre><code>$.mockjax({
+  // Matches /data/quote, /data/tweet etc.
+  url: '/data/*'
+});
+</code></pre>
+
+<p>or a full regular expression:</p>
+
+<pre><code>$.mockjax({
+  // Matches /data/quote, /data/tweet but not /data/quotes
+  url: /^\/data\/(quote|tweet)$/i
+});
+</code></pre>
+
+<p>You can also match against the data option in addition to url:</p>
+
+<pre><code>$.mockjax({
+    url:  '/rest',
+    data: { action: "foo" },
+    responseText: { bar: "hello world" }
+});
+
+$.mockjax({
+    url:  '/rest',
+    data: { action: "bar" },
+    responseText: { bar: "hello world 2" }
+});
+</code></pre>
+
+<p>To capture URL parameters, use a capturing regular expression for the URL and a <code>urlParams</code> array to indicate, ordinally, the names of the paramters that will be captured.</p>
+
+<p><code>javascript
+$.mockjax({
+  // matches /author/1234/isbn/1234-5678-9012-0
+  url: /^\/author\/([\d]+)\/isbn\/([\d\-]+)$/,
+  urlParams: ['authorID', 'isbnNumber'],
+  response: function (settings) {
+    var authorID = settings.urlParams.authorID;
+    var isbnNumber = settigns.urlParams.isbnNumber;
+    //etc.
+  }
+});
+</code></p>
+
+<h3>Step 2. Define the Response</h3>
+
+<p>The second step is to define the type of response. The two main
+properties you’ll be dealing with are either <code>responseText</code> or
+<code>responseXML</code>. These properties mirror the native <code>XMLHttpRequest</code>
+object properties that are set during a live response. There are three
+different patterns for specifying the responses: Inline, Proxy, and
+Callback.</p>
+
+<h4>Inline Responses</h4>
+
+<p>A simple text response would be:</p>
+
+<pre><code>$.mockjax({
+  url: '/restful/api',
+  responseText: 'A text response from the server'
+});
+</code></pre>
+
+<p>A simple XML response would be:</p>
+
+<pre><code>$.mockjax({
+  url: '/restful/api',
+  // Need to include the xmlDOM plugin to have this translated into a DOM
+  responseXML: '&lt;document&gt;&lt;quote&gt;Hello world!&lt;/quote&gt;&lt;/document&gt;'
+});
+</code></pre>
+
+<p>As you can quickly see, if you have a significant amount of data being
+mocked this becomes unwieldy. So that brings us to the next pattern,
+proxying.</p>
+
+<h4>Proxy</h4>
+
+<p>In this example below, the Mockjax plugin will intercept requests for
+<code>/restful/api</code> and redirect them to <code>/mocks/data.json</code>.</p>
+
+<pre><code>$.mockjax({
+  url: '/restful/api',
+  proxy: '/mocks/data.json'
+});
+</code></pre>
+
+<h4>Callback</h4>
+
+<p>In the final response pattern, we can define a callback on the
+<code>response</code> property and have it set <code>responseText</code> or <code>responseXML</code> as
+needed.</p>
+
+<pre><code>$.mockjax({
+  url: '/restful/api',
+  response: function() {
+    this.responseText = 'Hello world!';
+  }
+});
+</code></pre>
+
+<h3>Advanced Mocking Techniques</h3>
+
+<p>At this point we’ve looked at a series of basic mocking techniques with
+Mockjax and will now unpack some of the additional functionality
+contained in the plugin.</p>
+
+<h4>Simulating Response Time and Latency</h4>
+
+<p>Simulating network and server latency for a mock is as simple as adding
+a <code>responseTime</code> property to your mock definition:</p>
+
+<pre><code>$.mockjax({
+  url: '/restful/api',
+  // Simulate a network latency of 750ms
+  responseTime: 750,
+  responseText: 'A text response from the server'
+});
+</code></pre>
+
+<h4>Simulating HTTP Response Statuses</h4>
+
+<p>It’s also possible to simulate response statuses other than 200 (default
+for Mockjax) by simply adding a <code>status</code> property.</p>
+
+<pre><code>$.mockjax({
+  url: '/restful/api',
+  // Server 500 error occurred
+  status: 500,
+  responseTime: 750,
+  responseText: 'A text response from the server'
+});
+</code></pre>
+
+<h4>Setting the Content-Type</h4>
+
+<p>You can set the content type to associate with the mock response, in the
+example below, we’re setting a json content type.</p>
+
+<pre><code>$.mockjax({
+  url: '/restful/api',
+  contentType: 'text/json',
+  responseText: {
+    hello: 'World!'
+  }
+});
+</code></pre>
+
+<h4>Setting Additional HTTP Response Headers</h4>
+
+<p>Additional HTTP Response Headers may be provided by setting a key in the
+headers object literal:</p>
+
+<pre><code>$.mockjax({
+  url: '/restful/api',
+  contentType: 'text/json',
+  responseText: {
+    hello: 'World!'
+  },
+  headers: {
+    etag: 'xyz123'
+  }
+});
+</code></pre>
+
+<h4>Force Simulation of Server Timeouts</h4>
+
+<p>Because of the way Mockjax was implemented, it takes advantage of
+jQuery’s internal timeout handling for requests. But if you’d like to
+force a timeout for a request you can do so by setting the <code>isTimeout</code>
+property to true:</p>
+
+<pre><code>$.mockjax({
+  url: '/restful/api',
+  isTimeout: true
+});
+</code></pre>
+
+<h4>Dynamically Generating Mock Definitions</h4>
+
+<p>In some situations, all of your REST calls are based upon a URL schema.
+Mockjax has the ability for you to specify a callback function that is
+handed the <code>$.ajax</code> request settings. The callback function may then
+either return false to allow the request to be handled natively, or
+return an object literal with relevant Mockjax parameters set. Below is
+an example that rewrites all Ajax requests to proxy to static mocks:</p>
+
+<pre><code>$.mockjax(function(settings) {
+  // settings.url == '/restful/&lt;service&gt;'
+  var service = settings.url.match(/\/restful\/(.*)$/);
+  if ( service ) {
+    return {
+      proxy: '/mocks/' + service[1] + '.json'
+    };
+  }
+  return;
+});
+</code></pre>
+
+<h4>Dynamically Generating Mock Responses</h4>
+
+<p>It’s also possible to dynamically generate the response text upon each
+request by implementing a callback function on the <code>response</code> parameter:</p>
+
+<pre><code>$.mockjax({
+  url: '/restful/webservice',
+  dataType: 'json',
+  response: function(settings) {
+    this.responseText = { say: 'random ' + Math.random() };
+  }
+});
+</code></pre>
+
+<h4>Data types</h4>
+
+<p>The example above mocks a <code>json</code> response. You can also mock <code>xml</code>:</p>
+
+<pre><code>$.mockjax({
+  url: '/some/xml',
+  dataType: 'xml',
+  responseXML: '&lt;document&gt;&lt;say&gt;Hello world XML&lt;/say&gt;&lt;/document&gt;'
+});
+</code></pre>
+
+<p>And <code>html</code>:</p>
+
+<pre><code>$.mockjax({
+  url: '/some/webservice',
+  dataType: 'html',
+  responseText: '&lt;div&gt;Hello there&lt;/div&gt;'
+});
+</code></pre>
+
+<h4>Globally Defining Mockjax Settings</h4>
+
+<p>It’s also possible to define the global defaults for all Mockjax
+requests by overwriting the <code>$.mockjaxSettings</code> object. By default the
+settings are as follows:</p>
+
+<pre><code>$.mockjaxSettings = {
+  status:        200,
+  statusText     'OK',
+  responseTime:  500,
+  isTimeout:     false,
+  contentType:   'text/plain',
+  response:      '',
+  responseText:  '',
+  responseXML:   '',
+  proxy:         '',
+  lastModified:  null,
+  etag:          ''
+};
+</code></pre>
+
+<p>To overwrite a particular settings such as the default content-type, you
+would do the following:</p>
+
+<pre><code>$.mockjaxSettings.contentType = 'text/json';
+</code></pre>
+
+<h4>Removing Mockjax Handlers</h4>
+
+<p>Remove all mockjax handlers:</p>
+
+<pre><code>$.mockjaxClear();
+</code></pre>
+
+<h4>Remove Single Mockjax Handler</h4>
+
+<pre><code>var id = $.mockjax({
+   ...
+});
+$.mockjaxClear(id);
+</code></pre>

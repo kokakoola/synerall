@@ -1,0 +1,81 @@
+<h1>Changelog</h1>
+
+<h2>1.1.1</h2>
+
+<p>Fixes a bug when setting startDate or endDate during initialization.</p>
+
+<h2>1.1.0</h2>
+
+<p>New features:
+* Date range picker.
+* Data API / noConflict.
+* <code>getDate</code> and <code>setDate</code> methods.
+* <code>format</code> method for events; this allows you to easily format the <code>date</code> associated with the event.
+* New options:
+  * <code>beforeShowDay</code> option: a dev-provided function that can enable/disable dates, add css classes, and add tooltips.
+  * <code>clearBtn</code>, a button for resetting the picker.</p>
+
+<p>Internal changes:
+* Cleaner and more reliable method for extracting options from all potential sources (defaults, locale overrides, data-attrs, and instantiation options, in that order).  This also populates <code>$.fn.datepicker.defaults</code> with the default values, and uses this hash as the actual source of defaults, meaning you can globally change the default value for a given option.</p>
+
+<p>Bugs squashed:
+* Resolved a conflict with bootstrap’s native <code>.switch</code> class.
+* Fixed a bug with components where they would be stuck with a stale value when editing the value manually.
+* The <code>date</code> attributes on events are now local dates instead of internal UTC dates.
+* Separate <code>Date</code> objects for internal selected and view date references.
+* Clicking multiple times inside inputs no longer hides the picker.</p>
+
+<p>Minor improvements:
+* Better text color for highlighted “today” date.
+* Last year in decade view now marked as “new” instead of “old”.
+* Formats now properly handle trailing separators.</p>
+
+<p>Locale changes:
+* Added Albanian, Estonian, and Macedonian
+* Added <code>weekStart</code> for Russian
+* Added <code>weekStart</code> and <code>format</code> for Finnish</p>
+
+<p>Potentially backward-incompatible changes:
+* Options revamp:
+  * This fixes bugs in the correlation of some data-attrs to their associated option names.  If you use <code>data-date-weekstart</code>, <code>data-date-startdate</code>, or <code>data-date-enddate</code>, you should update these to <code>data-date-week-start</code>, <code>data-date-start-date</code>, or <code>data-date-end-date</code>, respectively.
+  * All options for datepicker are now properties on the datepicker’s <code>o</code> property; options are no longer stored on the Datepicker instance itself.  If you have code that accesses options stored on the datepicker instance (eg, <code>datepicker.format</code>), you will need to update it to access those options via the <code>o</code> property (eg, <code>datepicker.o.format</code>).  “Raw” options are available via the <code>_o</code> property.</p>
+
+<h2>1.0.2</h2>
+
+<p>Small optimizations release</p>
+
+<ul>
+  <li>Reduced the number of times <code>update</code> is called on initialization.</li>
+  <li>Datepicker now detaches the picker dropdown when it is hidden, and appends it when shown.  This removes the picker from the DOM when it is not in use.</li>
+  <li>No longer listens to document/window events unless picker is visible.</li>
+</ul>
+
+<h2>v1.0.1</h2>
+
+<ul>
+  <li>Support for <a href="http://twitter.github.com/bower/">Bower</a></li>
+  <li>Component pickers are now aligned under the input, not the add-on element.</li>
+  <li>Japanese locale now has “today” and “format”.</li>
+  <li>“remove” method removes <code>.data().date</code> if the datepicker is on a non-input.</li>
+  <li>Events on initialized elements are no longer blocked from bubbling up the DOM (jQuery.live et al can now catch the events).</li>
+  <li>Component triggers now include <code>.btn</code> in addition to <code>.add-on</code>.</li>
+  <li>Updates to README contents.</li>
+</ul>
+
+<h2>v1.0.0</h2>
+
+<p>Initial release:</p>
+
+<ul>
+  <li>format option</li>
+  <li>weekStart option</li>
+  <li>calendarWeeks option</li>
+  <li>startDate / endDate options</li>
+  <li>daysOfWeekDisabled option</li>
+  <li>autoclose option</li>
+  <li>startView / mnViewMode options</li>
+  <li>todayBtn / todayHighlight options</li>
+  <li>keyboardNavigation option</li>
+  <li>language option</li>
+  <li>forceParse option</li>
+</ul>

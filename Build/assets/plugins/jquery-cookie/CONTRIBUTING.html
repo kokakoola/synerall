@@ -1,0 +1,66 @@
+<h2>Issues</h2>
+
+<ul>
+  <li>Report issues or feature requests on <a href="https://github.com/carhartl/jquery-cookie/issues">GitHub Issues</a>.</li>
+  <li>If reporting a bug, please add a <a href="http://sscce.org/">simplified example</a>.</li>
+</ul>
+
+<h2>Pull requests</h2>
+<ul>
+  <li>Create a new topic branch for every separate change you make.</li>
+  <li>Create a test case if you are fixing a bug or implementing an important feature.</li>
+  <li>Make sure the build runs successfully.</li>
+</ul>
+
+<h2>Development</h2>
+
+<h3>Tools</h3>
+<p>We use the following tools for development:</p>
+
+<ul>
+  <li><a href="http://qunitjs.com/">Qunit</a> for tests.</li>
+  <li><a href="http://nodejs.org/download/">NodeJS</a> required to run grunt and the test server only.</li>
+  <li><a href="http://gruntjs.com/getting-started">Grunt</a> for task management.</li>
+</ul>
+
+<h3>Getting started</h3>
+<p>Install <a href="http://nodejs.org/">NodeJS</a>.<br />
+Install globally grunt-cli using the following command:</p>
+
+<pre><code>$ npm install -g grunt-cli
+</code></pre>
+
+<p>Browse to the project root directory and install the dev dependencies:</p>
+
+<pre><code>$ npm install -d
+</code></pre>
+
+<p>To execute the build and tests run the following command in the root of the project:</p>
+
+<pre><code>$ grunt
+</code></pre>
+
+<p>You should see a green message in the console:</p>
+
+<pre><code>Done, without errors.
+</code></pre>
+
+<h3>Tests</h3>
+<p>You can also run the tests in the browser.<br />
+Start a test server from the project root:</p>
+
+<pre><code>$ node test/server.js
+</code></pre>
+
+<p>Open the following URL in a browser:</p>
+
+<pre><code>$ open http://0.0.0.0:8124/test/index.html
+</code></pre>
+
+<p><em>Note: we recommend cleaning all the browser cookies before running the tests, that can avoid false positive failures.</em></p>
+
+<h3>Automatic build</h3>
+<p>You can build automatically after a file change using the following command:</p>
+
+<pre><code>$ grunt watch
+</code></pre>

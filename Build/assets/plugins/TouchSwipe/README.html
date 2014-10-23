@@ -1,0 +1,164 @@
+<h1>TouchSwipe 1.6</h1>
+<p>A jquery plugin to be used on touch devices such as iPad, iPhone, android etc</p>
+
+<p>Detects single and multiple finger swipes, pinches and falls back to mouse ‘drags’ on the desktop. </p>
+
+<p>Time and distance thresholds can be set to destinguish between swipe gesture and slow drag.</p>
+
+<p>Allows exclusion of child elements (interactive elements) as well allowing page scrolling or page zooming depending on configuration.</p>
+
+<h3>Demos, examples and docs</h3>
+
+<p><a href="http://labs.rampinteractive.co.uk/touchSwipe">http://labs.rampinteractive.co.uk/touchSwipe</a>
+<a href="http://labs.rampinteractive.co.uk/touchSwipe/docs">http://labs.rampinteractive.co.uk/touchSwipe/docs</a></p>
+
+<h3>For port to XUI see:</h3>
+<p>https://github.com/cowgp/xui-touchSwipe</p>
+
+<h3>Version History</h3>
+
+<ul>
+  <li><strong>1.6.6</strong> <em>2014-06-04</em>
+    <ul>
+      <li>Merge of pull requests.</li>
+      <li>IE10 touch support </li>
+      <li>Only prevent default event handling on valid swipe</li>
+      <li>Separate license/changelog comment</li>
+      <li>Detect if the swipe is valid at the end of the touch event.</li>
+      <li>Pass fingerdata to event handlers. </li>
+      <li>Add ‘hold’ gesture </li>
+      <li>Be more tolerant about the tap distance</li>
+      <li>Typos and minor fixes</li>
+    </ul>
+  </li>
+  <li><strong>1.6.5</strong> <em>2013-08-24</em>
+    <ul>
+      <li>Merged a few pull requests fixing various bugs, added AMD support.</li>
+    </ul>
+  </li>
+  <li><strong>1.6.4</strong> <em>2013-04-04</em>
+    <ul>
+      <li>Fixed bug with cancelThreshold introduced in 1.6.3, where swipe status no longer fired start event, and stopped once swiping back.    </li>
+    </ul>
+  </li>
+  <li><strong>1.6.3</strong> <em>2013-04-01</em>  <br />
+    <ul>
+      <li>added doubletap, longtap events and longTapThreshold, doubleTapThreshold property</li>
+    </ul>
+  </li>
+  <li><strong>1.6.2</strong>	<em>2013-03-23</em>
+    <ul>
+      <li>Added support for events binding with on / off / bind in jQ for all callback names.</li>
+      <li>Deprecated the ‘click’ handler in favour of tap.</li>
+      <li>added cancelThreshold property</li>
+      <li>added ‘option’ method to update init options at runtime</li>
+    </ul>
+  </li>
+  <li><strong>1.6.1</strong> <em>2013-02-12</em>  <br />
+    <ul>
+      <li>Added support for ie8 touch events</li>
+    </ul>
+  </li>
+  <li><strong>1.6.0</strong> <em>2013-01-12</em>
+ 	- Fixed bugs with pinching, mainly when both pinch and swipe enabled, as well as adding time threshold for multifinger gestures, so releasing one finger beofre the other doesnt trigger as single finger gesture.
+    <ul>
+      <li>made the demo site all static local HTML pages so they can be run locally by a developer</li>
+      <li>added jsDoc comments and added documentation for the plugin	</li>
+      <li>code tidy</li>
+      <li>added triggerOnTouchLeave property that will end the event when the user swipes off the element.</li>
+    </ul>
+  </li>
+  <li><strong>1.5.1</strong> <em>2012-11-22</em>	
+    <ul>
+      <li>Fixed bug with jQuery 1.8 and trailing comma in excludedElements</li>
+      <li>Fixed bug with IE and event.preventDefault();</li>
+    </ul>
+  </li>
+  <li><strong>1.5.0</strong> <em>2012-11-10</em>
+    <ul>
+      <li>Added <code>excludedElements</code>, a jquery selector that specifies child elements that do NOT trigger swipes. By default, this is one select that removes all form, input select, button and anchor elements.</li>
+    </ul>
+  </li>
+  <li><strong>1.4.0</strong> <em>2012-04-10</em>
+    <ul>
+      <li>Added pinch support, <code>pinchIn</code>, <code>pinchOut</code> and <code>pinchStatus</code></li>
+    </ul>
+  </li>
+  <li><strong>1.3.3</strong> <em>2012-09-08</em>
+    <ul>
+      <li>Code tidy prep for minified version</li>
+    </ul>
+  </li>
+  <li><strong>1.3.2</strong> <em>2012-29-07</em>
+    <ul>
+      <li>Added <code>fallbackToMouseEvents</code> option to NOT capture mouse events on non touch devices.</li>
+      <li>Added “all” fingers value to the fingers property, so any combinatin of fingers triggers the swipe, allowing event handlers to check the finger count</li>
+    </ul>
+  </li>
+  <li><strong>1.3.1</strong> <em>2012-05-06</em>
+    <ul>
+      <li>Bug fixes  </li>
+      <li>bind() with false as last argument is no longer supported in jQuery 1.6, also, if you just click, the duration is now returned correctly.</li>
+    </ul>
+  </li>
+  <li><strong>1.3.0</strong> <em>2012-06-06</em>
+    <ul>
+      <li>Refactored whole plugin to allow for methods to be executed, as well as exposed defaults for user override. Added <code>enable</code>, <code>disable</code>, and <code>destroy</code> methods</li>
+    </ul>
+  </li>
+  <li><strong>1.2.8</strong> <em>2012-05-06</em>
+    <ul>
+      <li>Added the possibility to return a value like null or false in the trigger callback. In that way we can control when the touch start/move should take effect or not (simply by returning in some cases return null; or return false;) This effects the ontouchstart/ontouchmove event.</li>
+    </ul>
+  </li>
+  <li><strong>1.2.7</strong> <em>2012-05-06</em>
+    <ul>
+      <li>Changed time threshold to have null default for backwards compatibility. Added duration param passed back in events, and refactored how time is handled.</li>
+    </ul>
+  </li>
+  <li><strong>1.2.6</strong> <em>2012-14-05</em>
+ 	- Added timeThreshold between start and end touch, so user can ignore slow swipes (thanks to Mark Chase). Default is null, all swipes are detected</li>
+  <li><strong>1.2.5</strong> <em>2011-27-09</em>
+    <ul>
+      <li>Added support for testing swipes with mouse on desktop browser (thanks to https://github.com/joelhy)</li>
+    </ul>
+  </li>
+  <li><strong>1.2.4</strong> <em>2011-28-04</em>
+    <ul>
+      <li>Changed licence terms to be MIT or GPL inline with jQuery. Added check for support of touch events to stop non compatible browsers erroring.</li>
+    </ul>
+  </li>
+  <li><strong>1.2.2</strong> <em>2011-23-02</em>
+    <ul>
+      <li>Fixed bug where scope was not preserved in callback methods. </li>
+    </ul>
+  </li>
+  <li><strong>1.2.1</strong> <em>2011-23-02</em>
+    <ul>
+      <li>removed console log!</li>
+    </ul>
+  </li>
+  <li><strong>1.2.0</strong> <em>2011-23-02</em>
+    <ul>
+      <li>added <code>click</code> handler. This is fired if the user simply clicks and does not swipe. The event object and click target are passed to handler.</li>
+      <li>If you use the http://code.google.com/p/jquery-ui-for-ipad-and-iphone/ plugin, you can also assign jQuery mouse events to children of a touchSwipe object.</li>
+    </ul>
+  </li>
+  <li><strong>1.1.0</strong> <em>2011-21-02</em> 
+    <ul>
+      <li>added <code>allowPageScroll</code> property to allow swiping and scrolling of page</li>
+      <li>changed handler signatures so one handler can be used for multiple events</li>
+    </ul>
+  </li>
+  <li><strong>1.0.1</strong> <em>2010-12-12</em>
+    <ul>
+      <li>removed multibyte comments</li>
+    </ul>
+  </li>
+  <li><strong>1.0.0</strong> <em>2010-12-12</em>
+    <ul>
+      <li>feature complete</li>
+    </ul>
+  </li>
+</ul>
+

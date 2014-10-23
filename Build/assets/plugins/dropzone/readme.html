@@ -1,0 +1,164 @@
+<h1 align="center">
+  <img alt="Dropzone.js" src="http://www.dropzonejs.com/images/logo.png" />
+</h1>
+
+<p><em>Version 3.10.2</em></p>
+
+<p><img src="https://travis-ci.org/enyo/dropzone.png?branch=master" alt="Build status" />  </p>
+
+<p><img src="https://www.bountysource.com/badge/tracker?tracker_id=283989" alt="Bounty" /></p>
+
+<p>Dropzone.js is a light weight JavaScript library that turns an HTML element into a dropzone.
+This means that a user can drag and drop a file onto it, and the file gets uploaded to the server via AJAX.</p>
+
+<hr />
+
+<blockquote>
+  <p>If you want support, please use <a href="http://stackoverflow.com/">stackoverflow</a> with the <code>dropzone.js</code> tag and not the
+GitHub issues tracker. Only post an issue here if you think you discovered a bug or have a feature request.</p>
+</blockquote>
+
+<hr />
+
+<p><strong>Please read the <a href="CONTRIBUTING.md">contributing guidelines</a> before you start working on Dropzone!</strong></p>
+
+<div align="center">
+  <a href="https://github.com/enyo/dropzone/releases/latest"><strong>Download</strong></a>
+</div>
+
+<p>Starting with version 2.0.0 this library does no longer depend on jQuery (but
+it still works as a jQuery module).</p>
+
+<p>It is written as a <a href="https://github.com/component/component">component</a> but
+there’s a standalone version, and an <a href="https://github.com/amdjs/amdjs-api/wiki/AMD">AMD</a>
+module that’s compatible with <a href="http://requirejs.org">RequireJS</a> in the downloads
+folder.</p>
+
+<p><img src="http://i.imgur.com/zXyTjMp.png" alt="Screenshot" /></p>
+
+<h2>Main features</h2>
+
+<ul>
+  <li>Image thumbnail previews. Simply register the callback <code>thumbnail(file, data)</code> and display the image wherever you like</li>
+  <li>Retina enabled</li>
+  <li>Multiple files and synchronous uploads</li>
+  <li>Progress updates</li>
+  <li>Support for large files</li>
+  <li>Complete theming. The look and feel of Dropzone is just the default theme. You
+can define everything yourself by overwriting the default event listeners.</li>
+  <li>Well tested</li>
+</ul>
+
+<h2>Documentation</h2>
+
+<p>For the full documentation and installation please visit www.dropzonejs.com</p>
+
+<p>Please also refer to the <a href="https://github.com/enyo/dropzone/wiki/FAQ">FAQ</a>.</p>
+
+<h2>Examples</h2>
+
+<p>For examples, please see the <a href="https://github.com/enyo/dropzone/wiki">GitHub wiki</a>.</p>
+
+<h2>Usage</h2>
+
+<p>Implicit creation:</p>
+
+<p><code>html
+&lt;form id="my-awesome-dropzone" action="/target" class="dropzone"&gt;&lt;/form&gt;
+</code></p>
+
+<p>That’s it. Really!</p>
+
+<p>Dropzone will automatically attach to it, and handle file drops.</p>
+
+<p>Want more control? You can configure dropzones like this:</p>
+
+<p><code>js
+// "myAwesomeDropzone" is the camelized version of the ID of your HTML element
+Dropzone.options.myAwesomeDropzone = { maxFilesize: 1 };
+</code></p>
+
+<p>…or instantiate dropzone manually like this:</p>
+
+<p><code>js
+new Dropzone("div#my-dropzone", { /* options */ });
+</code></p>
+
+<blockquote>
+  <p>Note that dropzones don’t have to be forms. But if you choose another element you have to pass the <code>url</code> parameter in the options.</p>
+</blockquote>
+
+<p>For configuration options please look at the <a href="http://www.dropzonejs.com/#configuration">documentation on the website</a>
+or at the <a href="https://github.com/enyo/dropzone/blob/master/src/dropzone.coffee#L90">source</a>.</p>
+
+<h3>Register for events</h3>
+
+<p>I use <a href="https://github.com/component/emitter">emitter</a> to manage events. If you want to register to some event you can do so on the <code>dropzone</code> object itself:</p>
+
+<p><code>js
+Dropzone.options.myDropzone({
+  init: function() {
+    this.on("error", function(file, message) { alert(message); });
+  }
+});
+// or if you need to access a Dropzone somewhere else:
+var myDropzone = Dropzone.forElement("div#my-dropzone");
+myDropzone.on("error", function(file, message) { alert(message); });
+</code></p>
+
+<p>For a list of all events, please look at the chapter 
+<a href="http://www.dropzonejs.com/#listen_to_events">»listen to events«</a> in the documentation
+or at the <a href="src/dropzone.coffee#L43">source</a>.</p>
+
+<h2>Browser support</h2>
+
+<ul>
+  <li>Chrome 7+</li>
+  <li>Firefox 4+</li>
+  <li>IE 10+</li>
+  <li>Opera 12+ (Version 12 for MacOS is disabled because their API is buggy)</li>
+  <li>Safari 6+</li>
+</ul>
+
+<p>For all the other browsers, dropzone provides an oldschool file input fallback.</p>
+
+<h2>Why another library?</h2>
+
+<p>I realize that there <a href="http://valums.com/ajax-upload/">are</a> <a href="http://tutorialzine.com/2011/09/html5-file-upload-jquery-php/">already</a> <a href="http://code.google.com/p/html5uploader/">other</a> <a href="http://blueimp.github.com/jQuery-File-Upload/">libraries</a> out there but the reason I decided to write my own are the following:</p>
+
+<ul>
+  <li>I didn’t want it to be too big, and to cumbersome to dive into.</li>
+  <li>I want to design my own elements. I only want to register callbacks so I can update my elements accordingly.</li>
+  <li>Big files should get uploaded without a problem.</li>
+  <li>I wanted a callback for image previews, that don’t kill the browser if too many too big images are viewed.</li>
+  <li>I want to use the latest API of browsers. I don’t care if it falls back to the normal upload form if the browser is too old.</li>
+  <li>I don’t think that it’s necessary anymore to depend on libraries such as jQuery (especially when providing functionality that isn’t available in old browsers anyway).</li>
+</ul>
+
+<h2>Other projects</h2>
+
+<p>You might also be interested in my <a href="http://www.opentip.org/">open source tooltip library Opentip</a>.
+<img src="http://i.imgur.com/Zubpo.png" alt="Opentip" /></p>
+
+<h2>License</h2>
+<p>(The MIT License)</p>
+
+<p>Copyright (c) 2012 Matias Meno &lt;m@tias.me&gt;<br /></p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the “Software”), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>

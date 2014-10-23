@@ -1,0 +1,34 @@
+<h1>Google FastButton</h1>
+
+<p>An implementation of <a href="http://code.google.com/mobile/articles/fast_buttons.html">Google’s FastButton javascript</a>, to avoid the 300ms touch delay on Android and iOS devices.  Code forked from: http://stackoverflow.com/questions/6300136/trying-to-implement-googles-fast-button</p>
+
+<ul>
+  <li>Doesn’t break in IE6-8, Chrome 17, Firefox 11, or Windows Phone 7.5</li>
+  <li>Touch support tested in Android 2.3 (Nexus S) and IOS 5 (iPad 2)</li>
+  <li>google.fastbutton.js The javascript, no dependencies</li>
+  <li>xui.google.fastbutton.js Provides a nice event handler using <a href="http://xuijs.com/">XUI</a></li>
+  <li>jquery.google.fastbutton.js Provides a nice event handler using <a href="http://jquery.com/">jQuery</a></li>
+  <li>Added a method destroy() to cleanup event handlers etc</li>
+</ul>
+
+<h2>Usage</h2>
+<p><code>js
+new FastButton(document.getElementById('your-button'), function() {
+  alert('click');
+});
+</code>`
+## jQuery Usage</p>
+
+<p><code>js
+$('#your-button').fastClick(function(e) {
+  alert('fast clicked!');
+});
+</code></p>
+
+<h2>XUI Usage</h2>
+
+<p><code>js
+x$('#your-button').fastClick(function(e) {
+  alert('fast clicked!');
+});
+</code></p>
