@@ -219,6 +219,10 @@
 	margin-top: 2px;
 }
 
+.margin-top-8 {
+	margin-top: 8px;
+}
+
 .text-field-label {
 	left: -15px;
 	padding-bottom: 5px;
@@ -585,7 +589,7 @@ body.index-body {
 	background-color:#494c54; 
 	float: right; 
 	padding:0 20px; 
-	margin-left:60px;
+	margin-left:15px;
 }
 
 .nav-wizard-w-alert-tip-pink {
@@ -612,4 +616,8 @@ body.index-body {
 .process-alert a:link {
 	color: black;
 	text-decoration: underline;
+}
+
+.border-left-pink {
+	border-left: #e97f7f 6px solid;
 }
