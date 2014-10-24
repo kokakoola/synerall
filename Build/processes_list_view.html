@@ -22,7 +22,7 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
   <link rel='stylesheet' href='assets/scss/synerall-main.css'>
   <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="assets/plugins/iCheck/skins/all.css">
+<link rel="stylesheet" href="assets/plugins/iCheck/skins/flat/orange.css">
 <link rel="stylesheet" href="assets/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
 <link rel="stylesheet" href="assets/plugins/animate.css/animate.min.css">
 <!-- end: MAIN CSS -->
@@ -37,7 +37,7 @@
 <link rel="stylesheet" href="assets/plugins/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css">
 <link rel="stylesheet" href="assets/plugins/DataTables/media/css/DT_bootstrap.css">
 <link rel="stylesheet" href="assets/plugins/bootstrap-fileupload/bootstrap-fileupload.min.css">
-<link rel="stylesheet" href="assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css">
+<link rel="stylesheet" href="assets/plugins/datepicker/css/datepicker.css">
 <!-- end: CSS REQUIRED FOR THIS SUBVIEW CONTENTS-->
 <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
 
@@ -133,34 +133,42 @@
         <!-- start: TOP NAVIGATION MENU -->
         <div class="col-xs-3">
         	<form class="" id="searchform" action="#">
-				<div class="input-group input-icon input-icon-right">
-					<input type="text" placeholder="Search" id="form-field-17" class="form-control">
-					<i class="fa fa-search"></i>
-				</div>
-			</form>
-        </div>
-        <ul class="nav navbar-right">
-          <!-- start: USER DROPDOWN -->
-          <li class="dropdown current-user margin-top-8">
-          	<a href="notification_view.html"><span class="notifications-count badge badge-default animated bounceIn"> 3</span>
-          	<i class="fa fa-envelope padding-right-20"></i></a>
-          </li>
-          <li class="dropdown current-user">	
-            <span>Welcome,</span>
-            <a class="dropdown-toggle" href="#">
-              <span class="username hidden-xs black-link">Peter Clark</span>
-            </a>
-            <i class="fa fa-cog"></i>
-            <span class="padding-left-20"><a href="#">Log out</a></span>
-            <i class="fa fa-power-off padding-left-5"></i>
-          </li>
-          <!-- end: USER DROPDOWN -->
-        </ul>
-        <!-- end: TOP NAVIGATION MENU -->
-      </div>
+            <div class="input-group input-icon input-icon-right">
+             <input type="text" placeholder="Search" id="form-field-17" class="form-control">
+             <i class="fa fa-search"></i>
+           </div>
+         </form>
+       </div>
+       <ul class="nav navbar-right">
+        <!-- start: USER DROPDOWN -->
+        <li class="dropdown current-user margin-top-8">
+         <a href="notification_view.html"><span class="notifications-count badge badge-default animated bounceIn"> 3</span>
+           <i class="fa fa-envelope padding-right-20"></i></a>
+         </li>
+         <li class="dropdown current-user">	
+          <span>Welcome,</span>
+          <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+            <span class="username hidden-xs black-link">Peter Clark</span>
+          </a>
+          <ul class="dropdown-menu dropdown-light dropdown-subview">
+            <li class="dropdown-header">
+              Notes
+            </li>
+            <li>
+              <a href="#newNote" class="new-note"><span class="fa-stack"> <i class="fa fa-file-text-o fa-stack-1x fa-lg"></i> <i class="fa fa-plus fa-stack-1x stack-right-bottom text-danger"></i> </span> Add new note</a>
+            </li>
+          </ul>
+          <i class="fa fa-cog"></i>
+          <span class="padding-left-20"><a href="#">Log out</a></span>
+          <i class="fa fa-power-off padding-left-5"></i>
+        </li>
+        <!-- end: USER DROPDOWN -->
+      </ul>
+      <!-- end: TOP NAVIGATION MENU -->
     </div>
-    <!-- end: TOPBAR CONTAINER -->
-  </header>
+  </div>
+  <!-- end: TOPBAR CONTAINER -->
+</header>
   <!-- end: TOPBAR -->
       <!-- start: PAGE -->
       <div class="main-content">
@@ -704,18 +712,20 @@
         <!-- start: MAIN JAVASCRIPTS -->
 <script src="assets/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
 <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
 <script src="assets/plugins/blockUI/jquery.blockUI.js"></script>
 <script src="assets/plugins/iCheck/jquery.icheck.min.js"></script>
 <script src="assets/plugins/moment/min/moment.min.js"></script>
 <script src="assets/plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
 <script src="assets/plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
-<script src="assets/plugins/bootbox/bootbox.min.js"></script>
+<script src="assets/plugins/bootbox/bootbox.js"></script>
 <script src="assets/plugins/jquery.scrollTo/jquery.scrollTo.min.js"></script>
 <script src="assets/plugins/ScrollToFixed/jquery-scrolltofixed-min.js"></script>
 <script src="assets/plugins/jquery.appear/jquery.appear.js"></script>
 <script src="assets/plugins/jquery-cookie/jquery.cookie.js"></script>
 <script src="assets/plugins/velocity/jquery.velocity.min.js"></script>
 <script src="assets/plugins/TouchSwipe/jquery.touchSwipe.min.js"></script>
+<script src="assets/js/js-rapido/form-elements.js"></script>
 <!-- end: MAIN JAVASCRIPTS -->
         <!-- start: JAVASCRIPTS REQUIRED FOR SUBVIEW CONTENTS -->
 <script src="assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
@@ -744,7 +754,24 @@
           jQuery(document).ready(function() {
             Main.init();
             SVExamples.init();
-            Index.init();
+            // Index.init();
+            // FormElements.init();
+            $('.date-picker').datepicker({
+                autoclose: true
+            });
+            $('input[type="radio"]').iCheck({
+                checkboxClass: 'icheckbox_flat-orange',
+                radioClass: 'iradio_flat-orange'
+            });
+
+            $('.checkbox-inline').click(function () {
+                var $this = $(this);
+                if($this.find('input[name=radio-1]').val() == 2) {
+                    $('#show-select').show();
+                } else {
+                    $('#show-select').hide();
+                }
+            });
           });
         </script>
 

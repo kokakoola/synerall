@@ -22,7 +22,7 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
   <link rel='stylesheet' href='assets/scss/synerall-main.css'>
   <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="assets/plugins/iCheck/skins/all.css">
+<link rel="stylesheet" href="assets/plugins/iCheck/skins/flat/orange.css">
 <link rel="stylesheet" href="assets/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
 <link rel="stylesheet" href="assets/plugins/animate.css/animate.min.css">
 <!-- end: MAIN CSS -->
@@ -37,7 +37,7 @@
 <link rel="stylesheet" href="assets/plugins/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css">
 <link rel="stylesheet" href="assets/plugins/DataTables/media/css/DT_bootstrap.css">
 <link rel="stylesheet" href="assets/plugins/bootstrap-fileupload/bootstrap-fileupload.min.css">
-<link rel="stylesheet" href="assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css">
+<link rel="stylesheet" href="assets/plugins/datepicker/css/datepicker.css">
 <!-- end: CSS REQUIRED FOR THIS SUBVIEW CONTENTS-->
 <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
 
@@ -135,34 +135,42 @@
         <!-- start: TOP NAVIGATION MENU -->
         <div class="col-xs-3">
         	<form class="" id="searchform" action="#">
-				<div class="input-group input-icon input-icon-right">
-					<input type="text" placeholder="Search" id="form-field-17" class="form-control">
-					<i class="fa fa-search"></i>
-				</div>
-			</form>
-        </div>
-        <ul class="nav navbar-right">
-          <!-- start: USER DROPDOWN -->
-          <li class="dropdown current-user margin-top-8">
-          	<a href="notification_view.html"><span class="notifications-count badge badge-default animated bounceIn"> 3</span>
-          	<i class="fa fa-envelope padding-right-20"></i></a>
-          </li>
-          <li class="dropdown current-user">	
-            <span>Welcome,</span>
-            <a class="dropdown-toggle" href="#">
-              <span class="username hidden-xs black-link">Peter Clark</span>
-            </a>
-            <i class="fa fa-cog"></i>
-            <span class="padding-left-20"><a href="#">Log out</a></span>
-            <i class="fa fa-power-off padding-left-5"></i>
-          </li>
-          <!-- end: USER DROPDOWN -->
-        </ul>
-        <!-- end: TOP NAVIGATION MENU -->
-      </div>
+            <div class="input-group input-icon input-icon-right">
+             <input type="text" placeholder="Search" id="form-field-17" class="form-control">
+             <i class="fa fa-search"></i>
+           </div>
+         </form>
+       </div>
+       <ul class="nav navbar-right">
+        <!-- start: USER DROPDOWN -->
+        <li class="dropdown current-user margin-top-8">
+         <a href="notification_view.html"><span class="notifications-count badge badge-default animated bounceIn"> 3</span>
+           <i class="fa fa-envelope padding-right-20"></i></a>
+         </li>
+         <li class="dropdown current-user">	
+          <span>Welcome,</span>
+          <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+            <span class="username hidden-xs black-link">Peter Clark</span>
+          </a>
+          <ul class="dropdown-menu dropdown-light dropdown-subview">
+            <li class="dropdown-header">
+              Notes
+            </li>
+            <li>
+              <a href="#newNote" class="new-note"><span class="fa-stack"> <i class="fa fa-file-text-o fa-stack-1x fa-lg"></i> <i class="fa fa-plus fa-stack-1x stack-right-bottom text-danger"></i> </span> Add new note</a>
+            </li>
+          </ul>
+          <i class="fa fa-cog"></i>
+          <span class="padding-left-20"><a href="#">Log out</a></span>
+          <i class="fa fa-power-off padding-left-5"></i>
+        </li>
+        <!-- end: USER DROPDOWN -->
+      </ul>
+      <!-- end: TOP NAVIGATION MENU -->
     </div>
-    <!-- end: TOPBAR CONTAINER -->
-  </header>
+  </div>
+  <!-- end: TOPBAR CONTAINER -->
+</header>
   <!-- end: TOPBAR -->
       <!-- start: PAGE -->
       <div class="main-content">
@@ -200,7 +208,7 @@
     <!-- dont close! ends in footer! -->
 
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-6">
     <!-- start: BREADCRUMB -->
 <div class="row">
   <div class="col-md-10">
@@ -218,9 +226,174 @@
 </div>
 <!-- end: BREADCRUMB -->
   </div>
-  <div class="col-md-4 text-right margin-top-10">
-    <span><button onclick="window.location.href='new-notification.html'" type="button" class="btn btn-red">Start new notification</button></span>
-<span class="padding-left-5"><button onclick="window.location.href='new-process.html'" type="button" class="btn btn-green">Start new process</button></span>
+  <div class="col-md-6 text-right margin-top-10">
+    <span>
+	<button data-toggle="modal" data-target="#new-notification-modal" type="button" class="btn btn-red">Start new notification</button>
+</span>
+<span class="padding-left-5">
+	<button data-toggle="modal" data-target="#new-process-modal" type="button" class="btn btn-green">Start new process</button>
+</span>
+
+<div class="modal fade" id="new-notification-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="myModalLabel">New process</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="panel panel-white">
+							<div class="panel-body">
+								<form role="form" class="form-horizontal col-sm-9">
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Name
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="form-field-1" class="form-control">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Description
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<textarea id="form-field-22" class="form-control"></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Customer
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="form-field-1" class="form-control">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Arranged to
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<select name="" id="" class="form-control">
+												<option value="1">Peter Smith</option>
+												<option value="2">Ali Adam</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-sm-9 text-field-label padding-right-130">
+										<p>Due date</p>
+										<div class="input-group">
+											<input type="text" data-date-format="dd-mm-yyyy" class="form-control date-picker">
+											<span class="input-group-addon"> <i class="fa fa-calendar"></i> </span>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-green">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="new-process-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="myModalLabel">New process</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="panel panel-white">
+							<div class="panel-body">
+								<form role="form" class="form-horizontal col-sm-9">
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Name
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="form-field-1" class="form-control">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Description
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<textarea id="form-field-22" class="form-control"></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Customer
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="form-field-1" class="form-control" placeholder="Priit Kongo">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Arranged to
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="form-field-1" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-9">
+										<label class="checkbox-inline">
+											<input type="radio" class="" name="radio-1" value="1">
+											Generic
+										</label>
+									</div>
+									<div class="col-sm-12">
+										<label class="checkbox-inline">
+											<input type="radio" class="" name="radio-1" value="2">
+											Process related
+										</label>
+										<select name="" id="show-select" class="form-control inline-block" style="display:none;">
+											<option value="1">Signing contract</option>
+											<option value="2">Waiting for Confirmation</option>
+											<option value="3">Receiving initial reading</option>
+										</select>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-green">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
   </div>
 </div>
 
@@ -433,7 +606,15 @@
     <table class="table table-hover" id="sample-table-1">
   <thead>
     <tr>
-      <th>Show all</th>
+      <th>
+        <div class="dropdown">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle">Show all</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Üks väärtus</a></li>
+            <li><a href="#">Üks väärtus</a></li>
+          </ul>
+        </div>
+      </th>
       <th class="hidden-xs">Client</th>
       <th></th>
     </tr>
@@ -1064,18 +1245,20 @@
         <!-- start: MAIN JAVASCRIPTS -->
 <script src="assets/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
 <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
 <script src="assets/plugins/blockUI/jquery.blockUI.js"></script>
 <script src="assets/plugins/iCheck/jquery.icheck.min.js"></script>
 <script src="assets/plugins/moment/min/moment.min.js"></script>
 <script src="assets/plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
 <script src="assets/plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
-<script src="assets/plugins/bootbox/bootbox.min.js"></script>
+<script src="assets/plugins/bootbox/bootbox.js"></script>
 <script src="assets/plugins/jquery.scrollTo/jquery.scrollTo.min.js"></script>
 <script src="assets/plugins/ScrollToFixed/jquery-scrolltofixed-min.js"></script>
 <script src="assets/plugins/jquery.appear/jquery.appear.js"></script>
 <script src="assets/plugins/jquery-cookie/jquery.cookie.js"></script>
 <script src="assets/plugins/velocity/jquery.velocity.min.js"></script>
 <script src="assets/plugins/TouchSwipe/jquery.touchSwipe.min.js"></script>
+<script src="assets/js/js-rapido/form-elements.js"></script>
 <!-- end: MAIN JAVASCRIPTS -->
         <!-- start: JAVASCRIPTS REQUIRED FOR SUBVIEW CONTENTS -->
 <script src="assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
@@ -1117,7 +1300,24 @@
           jQuery(document).ready(function() {
             Main.init();
             SVExamples.init();
-            Index.init();
+            // Index.init();
+            // FormElements.init();
+            $('.date-picker').datepicker({
+                autoclose: true
+            });
+            $('input[type="radio"]').iCheck({
+                checkboxClass: 'icheckbox_flat-orange',
+                radioClass: 'iradio_flat-orange'
+            });
+
+            $('.checkbox-inline').click(function () {
+                var $this = $(this);
+                if($this.find('input[name=radio-1]').val() == 2) {
+                    $('#show-select').show();
+                } else {
+                    $('#show-select').hide();
+                }
+            });
           });
         </script>
 
