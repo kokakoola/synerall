@@ -102,13 +102,13 @@
         <!-- start: MAIN NAVIGATION MENU -->
         <ul class="main-navigation-menu">
           <li>
-            <a href="dashboard.html"><i class="fa fa-home"></i> <span class="title">My Desk</span> </a>
+            <a href="dashboard.html"><i class="fa fa-home left-sidebar-icon"></i> <span class="title">My Desk</span> </a>
           </li>
           <li>
-            <a href="customer_view.html"><i class="fa fa-user"></i> <span class="title">Customer view</span><i class="icon-arrow"></i> </a>
+            <a href="customer_list.html"><i class="fa fa-user left-sidebar-icon"></i> <span class="title">Customer view</span><i class="icon-arrow"></i> </a>
           </li>
           <li>
-            <a href="processes.html"><i class="fa fa-cubes"></i> <span class="title">Processes</span><i class="icon-arrow"></i> </a>
+            <a href="processes_list_view.html"><i class="fa fa-cubes left-sidebar-icon"></i> <span class="title">Processes</span><i class="icon-arrow"></i> </a>
           </li>
         </ul>
         <!-- end: MAIN NAVIGATION MENU -->
@@ -142,7 +142,7 @@
        <ul class="nav navbar-right">
         <!-- start: USER DROPDOWN -->
         <li class="dropdown current-user margin-top-8">
-         <a href="notification_view.html"><span class="notifications-count badge badge-default animated bounceIn"> 3</span>
+         	<a href="notification_view.html"><span class="notifications-count badge badge-default animated bounceIn"> 3</span>
            <i class="fa fa-envelope padding-right-20"></i></a>
          </li>
          <li class="dropdown current-user">	
@@ -159,7 +159,7 @@
             </li>
           </ul>
           <i class="fa fa-cog"></i>
-          <span class="padding-left-20"><a href="#">Log out</a></span>
+          <span class="padding-left-20"><a href="index.html">Log out</a></span>
           <i class="fa fa-power-off padding-left-5"></i>
         </li>
         <!-- end: USER DROPDOWN -->
@@ -837,7 +837,7 @@
           jQuery(document).ready(function() {
             Main.init();
             SVExamples.init();
-            // Index.init();
+            Index.init();
             // FormElements.init();
             $('.date-picker').datepicker({
                 autoclose: true

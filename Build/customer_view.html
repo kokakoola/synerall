@@ -102,13 +102,13 @@
         <!-- start: MAIN NAVIGATION MENU -->
         <ul class="main-navigation-menu">
           <li>
-            <a href="dashboard.html"><i class="fa fa-home"></i> <span class="title">My Desk</span> </a>
-          </li>
-          <li class='current'>
-            <a class='current' href="customer_view.html"><i class="fa fa-user"></i> <span class="title">Customer view</span><i class="icon-arrow"></i> </a>
+            <a href="dashboard.html"><i class="fa fa-home left-sidebar-icon"></i> <span class="title">My Desk</span> </a>
           </li>
           <li>
-            <a href="processes.html"><i class="fa fa-cubes"></i> <span class="title">Processes</span><i class="icon-arrow"></i> </a>
+            <a href="customer_list.html"><i class="fa fa-user left-sidebar-icon"></i> <span class="title">Customer view</span><i class="icon-arrow"></i> </a>
+          </li>
+          <li>
+            <a href="processes_list_view.html"><i class="fa fa-cubes left-sidebar-icon"></i> <span class="title">Processes</span><i class="icon-arrow"></i> </a>
           </li>
         </ul>
         <!-- end: MAIN NAVIGATION MENU -->
@@ -142,7 +142,7 @@
        <ul class="nav navbar-right">
         <!-- start: USER DROPDOWN -->
         <li class="dropdown current-user margin-top-8">
-         <a href="notification_view.html"><span class="notifications-count badge badge-default animated bounceIn"> 3</span>
+         	<a href="notification_view.html"><span class="notifications-count badge badge-default animated bounceIn"> 3</span>
            <i class="fa fa-envelope padding-right-20"></i></a>
          </li>
          <li class="dropdown current-user">	
@@ -159,7 +159,7 @@
             </li>
           </ul>
           <i class="fa fa-cog"></i>
-          <span class="padding-left-20"><a href="#">Log out</a></span>
+          <span class="padding-left-20"><a href="index.html">Log out</a></span>
           <i class="fa fa-power-off padding-left-5"></i>
         </li>
         <!-- end: USER DROPDOWN -->
@@ -208,42 +208,43 @@
 <div class="row">
   <div class="col-md-6">
     <!-- start: BREADCRUMB -->
-<div class="row">
-  <div class="col-md-10">
-    <ol class="breadcrumb">
-      <li>
-        <a href="#">
-          Customer view
-        </a>
-      </li>
-      <li class="active">
-        Customer view
-      </li>
-    </ol>
-  </div>
-</div>
-<!-- end: BREADCRUMB -->
+	<div class="row">
+	  <div class="col-md-10">
+	    <ol class="breadcrumb">
+	      <li>
+	        <a href="#">
+	          Synerall
+	        </a>
+	      </li>
+	      <li>
+	        <a href="#">
+	          Customer view
+	        </a>
+	      </li>
+	      <li class="active">
+	        Priit Kongo
+	      </li>
+	    </ol>
+	  </div>
+	</div>
+	<!-- end: BREADCRUMB -->
   </div>
   <div class="col-md-6 text-right margin-top-10">
-    <span>
-	<button data-toggle="modal" data-target="#new-notification-modal" type="button" class="btn btn-red">Start new notification</button>
+    <span class="padding-left-5">
+	<button data-toggle="modal" data-target="#new-process-modal" type="button" class="btn btn-red">Start new process</button>
 </span>
-<span class="padding-left-5">
-	<button data-toggle="modal" data-target="#new-process-modal" type="button" class="btn btn-green">Start new process</button>
+<span>
+	<button data-toggle="modal" data-target="#new-notification-modal" type="button" class="btn btn-green">Start new notification</button>
 </span>
-
 <div class="modal fade" id="new-notification-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				<h4 class="modal-title" id="myModalLabel">New process</h4>
+				<h4 class="modal-title" id="myModalLabel">New Process</h4>
 			</div>
 			<div class="modal-body">
 				<div class="row">
-					<div class="col-sm-12">
-						<div class="panel panel-white">
-							<div class="panel-body">
 								<form role="form" class="form-horizontal col-sm-9">
 									<div class="form-group">
 										<div class="col-sm-9">
@@ -278,7 +279,7 @@
 									<div class="form-group">
 										<div class="col-sm-9">
 											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
-												Arranged to
+												Assigned to
 											</label>
 										</div>
 										<div class="col-sm-9">
@@ -288,22 +289,9 @@
 											</select>
 										</div>
 									</div>
-									<div class="col-sm-9 text-field-label padding-right-130">
-										<p>Due date</p>
-										<div class="input-group">
-											<input type="text" data-date-format="dd-mm-yyyy" class="form-control date-picker">
-											<span class="input-group-addon"> <i class="fa fa-calendar"></i> </span>
-										</div>
-									</div>
+									<a class="white" href="dashboard.html"><button type="button" class="btn btn-green margin-top-8">Submit</button></a>
 								</form>
-							</div>
-						</div>
-					</div>
 				</div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-green">Save changes</button>
 			</div>
 		</div>
 	</div>
@@ -314,15 +302,29 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				<h4 class="modal-title" id="myModalLabel">New process</h4>
+				<h4 class="modal-title" id="myModalLabel">New Notification</h4>
 			</div>
 			<div class="modal-body">
 				<div class="row">
-					<div class="col-sm-12">
-						<div class="panel panel-white">
-							<div class="panel-body">
 								<form role="form" class="form-horizontal col-sm-9">
 									<div class="form-group">
+									<div class="col-sm-9">
+										<label class="checkbox-inline">
+											<input type="radio" class="" name="radio-1" value="1">
+											Generic
+										</label>
+									</div>
+									<div class="col-sm-9">
+										<label class="checkbox-inline">
+											<input type="radio" class="" name="radio-1" value="2">
+											Process related
+										</label>
+										<select name="" id="show-select" class="form-control inline-block margin-top-bottom-10-20" style="display:none;">
+											<option value="1">Signing contract</option>
+											<option value="2">Waiting for Confirmation</option>
+											<option value="3">Receiving initial reading</option>
+										</select>
+									</div>
 										<div class="col-sm-9">
 											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
 												Name
@@ -355,39 +357,16 @@
 									<div class="form-group">
 										<div class="col-sm-9">
 											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
-												Arranged to
+												Assigned to
 											</label>
 										</div>
 										<div class="col-sm-9">
 											<input type="text" id="form-field-1" class="form-control">
 										</div>
 									</div>
-									<div class="col-sm-9">
-										<label class="checkbox-inline">
-											<input type="radio" class="" name="radio-1" value="1">
-											Generic
-										</label>
-									</div>
-									<div class="col-sm-12">
-										<label class="checkbox-inline">
-											<input type="radio" class="" name="radio-1" value="2">
-											Process related
-										</label>
-										<select name="" id="show-select" class="form-control inline-block" style="display:none;">
-											<option value="1">Signing contract</option>
-											<option value="2">Waiting for Confirmation</option>
-											<option value="3">Receiving initial reading</option>
-										</select>
-									</div>
+									<button type="button" class="btn btn-green">Save</button>
 								</form>
-							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-green">Save changes</button>
 			</div>
 		</div>
 	</div>
@@ -404,42 +383,42 @@
     <table class="table table-hover" id="sample-table-1">
   <thead>
     <tr>
-      <th class="hidden-xs">Leping</th>
-      <th>Lepingu tüüp</th>
-      <th class="hidden-xs">Kehtivus</th>
-      <th>Arveldussagedus</th>
-      <th class="hidden-xs">Saaja</th>
-      <th class="center">Pooleliolevad lepingusõlmimised</th>
+      <th class="hidden-xs">Contract</th>
+      <th>Type</th>
+      <th class="hidden-xs">Validity</th>
+      <th>Billing Frequency</th>
+      <th class="hidden-xs">Recipient</th>
+      <th class="center">Pending Agreements</th>
       <th class="hidden-xs"></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="hidden-xs">Leping EE123456</td>
-      <td class="hidden-xs">Lepingu tüüp</td>
+      <td class="hidden-xs">Contract 675078</td>
+      <td class="hidden-xs">Grid contract</td>
       <td>28.08.2014 - 28.08.2015</td>
-      <td class="hidden-xs">1 kord kuus</td>
+      <td class="hidden-xs">Monthly</td>
       <td class="hidden-xs"><a href="#" rel="nofollow" target="_blank">priit@email.ee</a></td>
       <td class="center">6</td>
-      <td><a href="#" rel="nofollow" target="_blank">Vaata</a></td>
+      <td><a href="#" rel="nofollow" target="_blank">View</a></td>
      </tr>
      <tr>
-      <td class="hidden-xs">Leping EE123456</td>
-      <td class="hidden-xs">Lepingu tüüp</td>
+      <td class="hidden-xs">Contract 800789</td>
+      <td class="hidden-xs">Connection contract</td>
       <td>28.08.2014 - 28.08.2015</td>
-      <td class="hidden-xs">1 kord kuus</td>
+      <td class="hidden-xs">Monthly</td>
       <td class="hidden-xs"><a href="#" rel="nofollow" target="_blank">priit@email.ee</a></td>
       <td class="center">6</td>
-      <td><a href="#" rel="nofollow" target="_blank">Vaata</a></td>
+      <td><a href="#" rel="nofollow" target="_blank">View</a></td>
      </tr>
      <tr>
-      <td class="hidden-xs">Leping EE123456</td>
-      <td class="hidden-xs">Lepingu tüüp</td>
+      <td class="hidden-xs">Contract 343443</td>
+      <td class="hidden-xs">Sales contract</td>
       <td>28.08.2014 - 28.08.2015</td>
-      <td class="hidden-xs">1 kord kuus</td>
+      <td class="hidden-xs">Monthly</td>
       <td class="hidden-xs"><a href="#" rel="nofollow" target="_blank">priit@email.ee</a></td>
       <td class="center">6</td>
-      <td><a href="#" rel="nofollow" target="_blank">Vaata</a></td>
+      <td><a href="#" rel="nofollow" target="_blank">View</a></td>
      </tr>
    </tbody>
 </table>
@@ -457,31 +436,28 @@
       ×
     </button>
     <div class="alert-danger-message">
-    	<strong>Oh snap!</strong>
-		<a class="alert-link" href="#">
-			Change a few things up</a>
-			and try submitting again.
+    	<strong>Customer lifetime value decreases.</strong>
+		<a class="alert-link" href="#">View </a> and try to fix it!
 	</div>
   </div>
   <div class="panel-heading line-height-175">
-  <i class="fa fa-pencil float-right"></i>
+  <a href="404.html"><i class="fa fa-pencil float-right black"></i></a>
       Priit Kongo<br/>
 	  37507152764<br/>
 	  Pärnu mnt 139C, Tallinn, Eesti<br/>
-	  Muud koodid? (Asterix, EIC,…)<br/>
+	  EIC 10X1001A1001A39W<br/>
   </div>
   <div class="panel-body">
     <dl class="dl-horizontal">
-      <dt>Kliendikood</dt>
+      <dt>Customer code</dt>
       <dd>10189089</dd>
-      <dt>Klienditüüp</dt>
-      <dd>Tavaline</dd>
-      <dt>Kliendistaaž</dt>
-      <dd>1 aasta</dd>
-      <dt>Kliendistaatus</dt>
+      <dt>Type</dt>
+      <dd>Private</dd>
+      <dt>Customer age</dt>
+      <dd>1 year</dd>
+      <dt>Status</dt>
       <dd>Last 12 months info</dd>
     </dl>
-    
   </div>
 </div>
   </div>
@@ -1146,7 +1122,7 @@
           jQuery(document).ready(function() {
             Main.init();
             SVExamples.init();
-            // Index.init();
+            Index.init();
             // FormElements.init();
             $('.date-picker').datepicker({
                 autoclose: true

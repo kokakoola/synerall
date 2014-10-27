@@ -1,22 +1,18 @@
-<span>
-	<button data-toggle="modal" data-target="#new-notification-modal" type="button" class="btn btn-red">Start new notification</button>
-</span>
 <span class="padding-left-5">
-	<button data-toggle="modal" data-target="#new-process-modal" type="button" class="btn btn-green">Start new process</button>
+	<button data-toggle="modal" data-target="#new-process-modal" type="button" class="btn btn-red">Start new process</button>
 </span>
-
+<span>
+	<button data-toggle="modal" data-target="#new-notification-modal" type="button" class="btn btn-green">Start new notification</button>
+</span>
 <div class="modal fade" id="new-notification-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				<h4 class="modal-title" id="myModalLabel">New process</h4>
+				<h4 class="modal-title" id="myModalLabel">New Process</h4>
 			</div>
 			<div class="modal-body">
 				<div class="row">
-					<div class="col-sm-12">
-						<div class="panel panel-white">
-							<div class="panel-body">
 								<form role="form" class="form-horizontal col-sm-9">
 									<div class="form-group">
 										<div class="col-sm-9">
@@ -51,7 +47,7 @@
 									<div class="form-group">
 										<div class="col-sm-9">
 											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
-												Arranged to
+												Assigned to
 											</label>
 										</div>
 										<div class="col-sm-9">
@@ -61,22 +57,9 @@
 											</select>
 										</div>
 									</div>
-									<div class="col-sm-9 text-field-label padding-right-130">
-										<p>Due date</p>
-										<div class="input-group">
-											<input type="text" data-date-format="dd-mm-yyyy" class="form-control date-picker">
-											<span class="input-group-addon"> <i class="fa fa-calendar"></i> </span>
-										</div>
-									</div>
+									<a class="white" href="dashboard.html"><button type="button" class="btn btn-green margin-top-8">Submit</button></a>
 								</form>
-							</div>
-						</div>
-					</div>
 				</div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-green">Save changes</button>
 			</div>
 		</div>
 	</div>
@@ -87,15 +70,29 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				<h4 class="modal-title" id="myModalLabel">New process</h4>
+				<h4 class="modal-title" id="myModalLabel">New Notification</h4>
 			</div>
 			<div class="modal-body">
 				<div class="row">
-					<div class="col-sm-12">
-						<div class="panel panel-white">
-							<div class="panel-body">
 								<form role="form" class="form-horizontal col-sm-9">
 									<div class="form-group">
+									<div class="col-sm-9">
+										<label class="checkbox-inline">
+											<input type="radio" class="" name="radio-1" value="1">
+											Generic
+										</label>
+									</div>
+									<div class="col-sm-9">
+										<label class="checkbox-inline">
+											<input type="radio" class="" name="radio-1" value="2">
+											Process related
+										</label>
+										<select name="" id="show-select" class="form-control inline-block margin-top-bottom-10-20" style="display:none;">
+											<option value="1">Signing contract</option>
+											<option value="2">Waiting for Confirmation</option>
+											<option value="3">Receiving initial reading</option>
+										</select>
+									</div>
 										<div class="col-sm-9">
 											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
 												Name
@@ -128,39 +125,16 @@
 									<div class="form-group">
 										<div class="col-sm-9">
 											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
-												Arranged to
+												Assigned to
 											</label>
 										</div>
 										<div class="col-sm-9">
 											<input type="text" id="form-field-1" class="form-control">
 										</div>
 									</div>
-									<div class="col-sm-9">
-										<label class="checkbox-inline">
-											<input type="radio" class="" name="radio-1" value="1">
-											Generic
-										</label>
-									</div>
-									<div class="col-sm-12">
-										<label class="checkbox-inline">
-											<input type="radio" class="" name="radio-1" value="2">
-											Process related
-										</label>
-										<select name="" id="show-select" class="form-control inline-block" style="display:none;">
-											<option value="1">Signing contract</option>
-											<option value="2">Waiting for Confirmation</option>
-											<option value="3">Receiving initial reading</option>
-										</select>
-									</div>
+									<button type="button" class="btn btn-green">Save</button>
 								</form>
-							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-green">Save changes</button>
 			</div>
 		</div>
 	</div>

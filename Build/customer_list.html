@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Send new message</title>
+  <title>Customer view</title>
   <meta name="description" content="">
   <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
@@ -41,7 +41,9 @@
 <!-- end: CSS REQUIRED FOR THIS SUBVIEW CONTENTS-->
 <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
 
-
+    <link rel="stylesheet" href="assets/plugins/weather-icons/css/weather-icons.min.css">
+    <link rel="stylesheet" href="assets/plugins/nvd3/nv.d3.min.css">
+    <link rel="stylesheet" href="assets/plugins/select2/select2.css"> 
 
 <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 <!-- start: CORE CSS -->
@@ -81,7 +83,7 @@
         <!-- /Hammer reload -->
       
 </head>
-<body class="customer" role="document">
+<body class="dashboard" role="document">
 
   <!--[if lt IE 8]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
@@ -104,8 +106,8 @@
           <li>
             <a href="dashboard.html"><i class="fa fa-home left-sidebar-icon"></i> <span class="title">My Desk</span> </a>
           </li>
-          <li>
-            <a href="customer_list.html"><i class="fa fa-user left-sidebar-icon"></i> <span class="title">Customer view</span><i class="icon-arrow"></i> </a>
+          <li class='current'>
+            <a class='current' href="customer_list.html"><i class="fa fa-user left-sidebar-icon"></i> <span class="title">Customer view</span><i class="icon-arrow"></i> </a>
           </li>
           <li>
             <a href="processes_list_view.html"><i class="fa fa-cubes left-sidebar-icon"></i> <span class="title">Processes</span><i class="icon-arrow"></i> </a>
@@ -206,48 +208,215 @@
     <!-- dont close! ends in footer! -->
 
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-6">
     <!-- start: BREADCRUMB -->
 <div class="row">
   <div class="col-md-10">
     <ol class="breadcrumb">
       <li>
         <a href="#">
-          CRM
+          Synerall
         </a>
       </li>
       <li class="active">
-        Send new message
+        Customer view
       </li>
     </ol>
   </div>
 </div>
 <!-- end: BREADCRUMB -->
   </div>
-  <div class="col-md-4 text-right margin-top-10">
-    <span><button type="button" class="btn btn-red">Start new notification</button></span>
-    <span class="padding-left-5"><button type="button" class="btn btn-green">Start new process</button></span>
+  <div class="col-md-6 text-right margin-top-10">
+   <span class="padding-left-5">
+	<button data-toggle="modal" data-target="#new-process-modal" type="button" class="btn btn-red">Start new process</button>
+</span>
+<span>
+	<button data-toggle="modal" data-target="#new-notification-modal" type="button" class="btn btn-green">Start new notification</button>
+</span>
+<div class="modal fade" id="new-notification-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="myModalLabel">New Process</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+								<form role="form" class="form-horizontal col-sm-9">
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Name
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="form-field-1" class="form-control">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Description
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<textarea id="form-field-22" class="form-control"></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Customer
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="form-field-1" class="form-control">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Assigned to
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<select name="" id="" class="form-control">
+												<option value="1">Peter Smith</option>
+												<option value="2">Ali Adam</option>
+											</select>
+										</div>
+									</div>
+									<a class="white" href="dashboard.html"><button type="button" class="btn btn-green margin-top-8">Submit</button></a>
+								</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="new-process-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="myModalLabel">New Notification</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+								<form role="form" class="form-horizontal col-sm-9">
+									<div class="form-group">
+									<div class="col-sm-9">
+										<label class="checkbox-inline">
+											<input type="radio" class="" name="radio-1" value="1">
+											Generic
+										</label>
+									</div>
+									<div class="col-sm-9">
+										<label class="checkbox-inline">
+											<input type="radio" class="" name="radio-1" value="2">
+											Process related
+										</label>
+										<select name="" id="show-select" class="form-control inline-block margin-top-bottom-10-20" style="display:none;">
+											<option value="1">Signing contract</option>
+											<option value="2">Waiting for Confirmation</option>
+											<option value="3">Receiving initial reading</option>
+										</select>
+									</div>
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Name
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="form-field-1" class="form-control">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Description
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<textarea id="form-field-22" class="form-control"></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Customer
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="form-field-1" class="form-control" placeholder="Priit Kongo">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Assigned to
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="form-field-1" class="form-control">
+										</div>
+									</div>
+									<button type="button" class="btn btn-green">Save</button>
+								</form>
+						</div>
+			</div>
+		</div>
+	</div>
+</div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-sm-12">
-    <h1 class="margin-top-0">Send new message</h1>
     <div class="panel panel-white">
     	<div class="panel-body">
-			<form role="form" class="form-horizontal">
-				<div class="form-group">
-					<div class="col-sm-9">
-						<input type="text" placeholder="Subject" id="form-field-1" class="form-control">
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-sm-9">
-						<textarea placeholder="Hello! How are you?" id="form-field-22" class="form-control"></textarea>
-					</div>
-				</div>
-				<button type="button" class="btn btn-green">Send</button>
-			</form>
+    	<table class="table table-hover" id="sample-table-1">
+			  <thead>
+			    <tr>
+			      <th class="hidden-xs">Customers</th>
+			      <th></th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <td>Priit Kongo</td>
+			      <td><a href="customer_view.html">View</a></td>
+			    </tr>
+			    <tr>
+			      <td>Heli Siponen</td>
+			      <td><a href="#">View</a></td>
+			    </tr>
+			    <tr>
+			      <td>Sven Peekmann</td>
+			      <td><a href="#">View</a></td>
+			    </tr>
+			    <tr>
+			      <td>Kert Rungi</td>
+			      <td><a href="#">View</a></td>
+			    </tr>
+			    <tr>
+			      <td>James Bond</td>
+			      <td><a href="#">View</a></td>
+			    </tr>
+			    <tr>
+			      <td>Bo Kruse</td>
+			      <td><a href="#">View</a></td>
+			    </tr>
+			    <tr>
+			      <td>Dag Hammer</td>
+			      <td><a href="#">View</a></td>
+			    </tr>
+			    <tr>
+			      <td>Robin Hood</td>
+			      <td><a href="#">View</a></td>
+			    </tr>
+			  </tbody>
+			</table>
 		</div>
     </div>
   </div>
@@ -740,7 +909,20 @@
 <script src="assets/js/js-rapido/subview.js"></script>
 <script src="assets/js/js-rapido/subview-examples.js"></script>
 <!-- end: JAVASCRIPTS REQUIRED FOR SUBVIEW CONTENTS -->
-         
+            <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+    <script src="assets/plugins/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <script src="assets/plugins/nvd3/lib/d3.v3.js"></script>
+    <script src="assets/plugins/nvd3/nv.d3.min.js"></script>
+    <script src="assets/plugins/nvd3/src/models/historicalBar.js"></script>
+    <script src="assets/plugins/nvd3/src/models/historicalBarChart.js"></script>
+    <script src="assets/plugins/nvd3/src/models/stackedArea.js"></script>
+    <script src="assets/plugins/nvd3/src/models/stackedAreaChart.js"></script>
+    <script src="assets/plugins/jquery.sparkline/jquery.sparkline.js"></script>
+    <script src="assets/plugins/easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+    <script src="assets/js/js-rapido/index.js"></script>
+    <script src="assets/plugins/select2/select2.min.js"></script>
+    <script src="assets/js/js-rapido/form-elements.js"></script>
+    <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY --> 
 
         <!-- start: CORE JAVASCRIPTS  -->
         <script src="assets/js/js-rapido/main.js"></script>

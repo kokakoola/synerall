@@ -104,13 +104,13 @@
         <!-- start: MAIN NAVIGATION MENU -->
         <ul class="main-navigation-menu">
           <li class='current'>
-            <a class='current' href="dashboard.html"><i class="fa fa-home"></i> <span class="title">My Desk</span> </a>
+            <a class='current' href="dashboard.html"><i class="fa fa-home left-sidebar-icon"></i> <span class="title">My Desk</span> </a>
           </li>
           <li>
-            <a href="customer_view.html"><i class="fa fa-user"></i> <span class="title">Customer view</span><i class="icon-arrow"></i> </a>
+            <a href="customer_list.html"><i class="fa fa-user left-sidebar-icon"></i> <span class="title">Customer view</span><i class="icon-arrow"></i> </a>
           </li>
           <li>
-            <a href="processes.html"><i class="fa fa-cubes"></i> <span class="title">Processes</span><i class="icon-arrow"></i> </a>
+            <a href="processes_list_view.html"><i class="fa fa-cubes left-sidebar-icon"></i> <span class="title">Processes</span><i class="icon-arrow"></i> </a>
           </li>
         </ul>
         <!-- end: MAIN NAVIGATION MENU -->
@@ -144,7 +144,7 @@
        <ul class="nav navbar-right">
         <!-- start: USER DROPDOWN -->
         <li class="dropdown current-user margin-top-8">
-         <a href="notification_view.html"><span class="notifications-count badge badge-default animated bounceIn"> 3</span>
+         	<a href="notification_view.html"><span class="notifications-count badge badge-default animated bounceIn"> 3</span>
            <i class="fa fa-envelope padding-right-20"></i></a>
          </li>
          <li class="dropdown current-user">	
@@ -161,7 +161,7 @@
             </li>
           </ul>
           <i class="fa fa-cog"></i>
-          <span class="padding-left-20"><a href="#">Log out</a></span>
+          <span class="padding-left-20"><a href="index.html">Log out</a></span>
           <i class="fa fa-power-off padding-left-5"></i>
         </li>
         <!-- end: USER DROPDOWN -->
@@ -215,7 +215,7 @@
     <ol class="breadcrumb">
       <li>
         <a href="#">
-          My Desk
+          Synerall
         </a>
       </li>
       <li class="active">
@@ -227,25 +227,21 @@
 <!-- end: BREADCRUMB -->
   </div>
   <div class="col-md-6 text-right margin-top-10">
-    <span>
-	<button data-toggle="modal" data-target="#new-notification-modal" type="button" class="btn btn-red">Start new notification</button>
+    <span class="padding-left-5">
+	<button data-toggle="modal" data-target="#new-process-modal" type="button" class="btn btn-red">Start new process</button>
 </span>
-<span class="padding-left-5">
-	<button data-toggle="modal" data-target="#new-process-modal" type="button" class="btn btn-green">Start new process</button>
+<span>
+	<button data-toggle="modal" data-target="#new-notification-modal" type="button" class="btn btn-green">Start new notification</button>
 </span>
-
 <div class="modal fade" id="new-notification-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				<h4 class="modal-title" id="myModalLabel">New process</h4>
+				<h4 class="modal-title" id="myModalLabel">New Process</h4>
 			</div>
 			<div class="modal-body">
 				<div class="row">
-					<div class="col-sm-12">
-						<div class="panel panel-white">
-							<div class="panel-body">
 								<form role="form" class="form-horizontal col-sm-9">
 									<div class="form-group">
 										<div class="col-sm-9">
@@ -280,7 +276,7 @@
 									<div class="form-group">
 										<div class="col-sm-9">
 											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
-												Arranged to
+												Assigned to
 											</label>
 										</div>
 										<div class="col-sm-9">
@@ -290,22 +286,9 @@
 											</select>
 										</div>
 									</div>
-									<div class="col-sm-9 text-field-label padding-right-130">
-										<p>Due date</p>
-										<div class="input-group">
-											<input type="text" data-date-format="dd-mm-yyyy" class="form-control date-picker">
-											<span class="input-group-addon"> <i class="fa fa-calendar"></i> </span>
-										</div>
-									</div>
+									<a class="current white" href="dashboard.html"><button type="button" class="btn btn-green margin-top-8">Submit</button></a>
 								</form>
-							</div>
-						</div>
-					</div>
 				</div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-green">Save changes</button>
 			</div>
 		</div>
 	</div>
@@ -316,15 +299,29 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				<h4 class="modal-title" id="myModalLabel">New process</h4>
+				<h4 class="modal-title" id="myModalLabel">New Notification</h4>
 			</div>
 			<div class="modal-body">
 				<div class="row">
-					<div class="col-sm-12">
-						<div class="panel panel-white">
-							<div class="panel-body">
 								<form role="form" class="form-horizontal col-sm-9">
 									<div class="form-group">
+									<div class="col-sm-9">
+										<label class="checkbox-inline">
+											<input type="radio" class="" name="radio-1" value="1">
+											Generic
+										</label>
+									</div>
+									<div class="col-sm-9">
+										<label class="checkbox-inline">
+											<input type="radio" class="" name="radio-1" value="2">
+											Process related
+										</label>
+										<select name="" id="show-select" class="form-control inline-block margin-top-bottom-10-20" style="display:none;">
+											<option value="1">Signing contract</option>
+											<option value="2">Waiting for Confirmation</option>
+											<option value="3">Receiving initial reading</option>
+										</select>
+									</div>
 										<div class="col-sm-9">
 											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
 												Name
@@ -357,39 +354,16 @@
 									<div class="form-group">
 										<div class="col-sm-9">
 											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
-												Arranged to
+												Assigned to
 											</label>
 										</div>
 										<div class="col-sm-9">
 											<input type="text" id="form-field-1" class="form-control">
 										</div>
 									</div>
-									<div class="col-sm-9">
-										<label class="checkbox-inline">
-											<input type="radio" class="" name="radio-1" value="1">
-											Generic
-										</label>
-									</div>
-									<div class="col-sm-12">
-										<label class="checkbox-inline">
-											<input type="radio" class="" name="radio-1" value="2">
-											Process related
-										</label>
-										<select name="" id="show-select" class="form-control inline-block" style="display:none;">
-											<option value="1">Signing contract</option>
-											<option value="2">Waiting for Confirmation</option>
-											<option value="3">Receiving initial reading</option>
-										</select>
-									</div>
+									<button type="button" class="btn btn-green">Save</button>
 								</form>
-							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-green">Save changes</button>
 			</div>
 		</div>
 	</div>
@@ -401,30 +375,8 @@
   <div>
     <div class="panel panel-green">
   <div class="panel-heading">
-    <h4 class="panel-title">Panel <span class="text-bold">Green</span></h4>
+    <h4 class="panel-title line-height-125 bold">Planned Electricity Outage</h4>
     <div class="panel-tools">
-      <div class="dropdown">
-        <ul class="dropdown-menu dropdown-light pull-right" role="menu">
-          <li>
-            <a class="panel-collapse collapses" href="#"><i class="fa fa-angle-up"></i> <span>Collapse</span> </a>
-          </li>
-          <li>
-            <a class="panel-refresh" href="#">
-              <i class="fa fa-refresh"></i> <span>Refresh</span>
-            </a>
-          </li>
-          <li>
-            <a class="panel-config" href="#panel-config" data-toggle="modal">
-              <i class="fa fa-wrench"></i> <span>Configurations</span>
-            </a>
-          </li>
-          <li>
-            <a class="panel-expand" href="#">
-              <i class="fa fa-expand"></i> <span>Fullscreen</span>
-            </a>
-          </li>
-        </ul>
-      </div>
       <a class="btn btn-xs btn-link panel-close" href="#">
         <i class="fa fa-times"></i>
       </a>
@@ -434,7 +386,8 @@
     <div class="col-md-12 partition-green no-padding">
       <div class="padding-15">
         <p>
-          Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+          Today, there is an planned electricity outage in the area of High Park from 09:30 – 11:00. Responsible foreman: Mr. Jackson Green, gsm: +1 450 88 500.<br/><br/>
+          <a href="#" style="color: white;">See more</a>
         </p>
       </div>
       <div class="green-panel-time">
@@ -445,30 +398,8 @@
 </div>
     <div class="panel panel-green">
   <div class="panel-heading">
-    <h4 class="panel-title">Panel <span class="text-bold">Green</span></h4>
+    <h4 class="panel-title line-height-125 bold">Marketing Campaign for<br/> Green Electricity Buyers</h4>
     <div class="panel-tools">
-      <div class="dropdown">
-        <ul class="dropdown-menu dropdown-light pull-right" role="menu">
-          <li>
-            <a class="panel-collapse collapses" href="#"><i class="fa fa-angle-up"></i> <span>Collapse</span> </a>
-          </li>
-          <li>
-            <a class="panel-refresh" href="#">
-              <i class="fa fa-refresh"></i> <span>Refresh</span>
-            </a>
-          </li>
-          <li>
-            <a class="panel-config" href="#panel-config" data-toggle="modal">
-              <i class="fa fa-wrench"></i> <span>Configurations</span>
-            </a>
-          </li>
-          <li>
-            <a class="panel-expand" href="#">
-              <i class="fa fa-expand"></i> <span>Fullscreen</span>
-            </a>
-          </li>
-        </ul>
-      </div>
       <a class="btn btn-xs btn-link panel-close" href="#">
         <i class="fa fa-times"></i>
       </a>
@@ -478,11 +409,12 @@
     <div class="col-md-12 partition-green no-padding">
       <div class="padding-15">
         <p>
-          Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+          From 01.01.2016 onwards the new sales campaign for new contractors is activated. All new contracts will be provided zero margin over first 3 month.<br/><br/>
+          <a href="#" style="color: white;">See more</a>
         </p>
       </div>
       <div class="green-panel-time">
-      	<i class="fa fa-clock-o padding-right-5"></i> 56 min ago
+      	<i class="fa fa-clock-o padding-right-5"></i> 1 h 22 min ago
       </div>
     </div>
   </div>
@@ -581,27 +513,6 @@
 <div class="row">
   <div class="col-lg-8 col-md-7">
     <div class="panel panel-white">
-  <div class="panel-heading">
-    <div class="form-group">
-  		<select id="form-field-select-3" class="form-control search-select">
-  			<option value="AL">Alabama</option>
-  			<option value="AK">Alaska</option>
-  			<option value="AZ">Arizona</option>
-  			<option value="AR">Arkansas</option>
-  			<option value="CA">California</option>
-  			<option value="CO">Colorado</option>
-  			<option value="CT">Connecticut</option>
-  			<option value="DE">Delaware</option>
-  			<option value="FL">Florida</option>
-  			<option value="GA">Georgia</option>
-  			<option value="HI">Hawaii</option>
-  			<option value="ID">Idaho</option>
-  			<option value="IL">Illinois</option>
-  			<option value="IN">Indiana</option>
-  			<option value="IA">Iowa</option>
-  		</select>
-  	</div>
-  </div>
   <div class="panel-body">
     <table class="table table-hover" id="sample-table-1">
   <thead>
@@ -610,8 +521,11 @@
         <div class="dropdown">
           <a href="#" data-toggle="dropdown" class="dropdown-toggle">Show all</a>
           <ul class="dropdown-menu">
-            <li><a href="#">Üks väärtus</a></li>
-            <li><a href="#">Üks väärtus</a></li>
+            <li><a href="#">Show all</a></li>
+            <li><a href="#">Concluding Electricity Sale Contract</a></li>
+            <li><a href="#">Moving</a></li>
+            <li><a href="#">Changing the AMR</a></li>
+            <li><a href="#">Generic</a></li>
           </ul>
         </div>
       </th>
@@ -621,43 +535,43 @@
   </thead>
   <tbody>
     <tr class="border-left-pink">
-      <td class="hidden-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-      <td>Peter Clark</td>
+      <td class="hidden-xs pink bold">Concluding Electricity Sale Contract; Problem: Z3</td>
+      <td>Heli Siponen</td>
       <td><a href="#" rel="nofollow" target="_blank">View</a></td>
     </tr>
     <tr class="border-left-pink">
-      <td class="hidden-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+      <td class="hidden-xs pink bold">Concluding Electricity Sale Contract; Problem: Z3</td>
+      <td>Sven Peekmann</td>
+      <td><a href="#" rel="nofollow" target="_blank">View</a></td>
+    </tr>
+    <tr class="border-left-pink">
+      <td class="hidden-xs pink bold">Concluding Electricity Sale Contract; Problem: Z3</td>
+      <td>Priit Kongo</td>
+      <td><a href="#" rel="nofollow" target="_blank">View</a></td>
+    </tr>
+    <tr class="border-left-pink">
+      <td class="hidden-xs pink bold">Concluding Electricity Sale Contract; Problem: Z4</td>
+      <td>Siion Salmon</td>
+      <td><a href="#" rel="nofollow" target="_blank">View</a></td>
+    </tr>
+    <tr class="border-left-pink">
+      <td class="hidden-xs pink bold">Concluding Electricity Sale Contract; Problem: Z4</td>
+      <td>North Ridge</td>
+      <td><a href="#" rel="nofollow" target="_blank">View</a></td>
+    </tr>
+    <tr class="border-left-pink">
+      <td class="hidden-xs pink bold">Concluding Electricity Sale Contract; Problem: Z3</td>
+      <td>Selma Kalavainen</td>
+      <td><a href="#" rel="nofollow" target="_blank">View</a></td>
+    </tr>
+    <tr>
+      <td class="hidden-xs">Generic; Update customer´s payment schedule</td>
       <td>Peter Clark</td>
       <td><a href="#" rel="nofollow" target="_blank">View</a></td>
     </tr>
     <tr>
-      <td class="hidden-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-      <td>Peter Clark</td>
-      <td><a href="#" rel="nofollow" target="_blank">View</a></td>
-    </tr>
-    <tr>
-      <td class="hidden-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-      <td>Peter Clark</td>
-      <td><a href="#" rel="nofollow" target="_blank">View</a></td>
-    </tr>
-    <tr>
-      <td class="hidden-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-      <td>Peter Clark</td>
-      <td><a href="#" rel="nofollow" target="_blank">View</a></td>
-    </tr>
-    <tr>
-      <td class="hidden-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-      <td>Peter Clark</td>
-      <td><a href="#" rel="nofollow" target="_blank">View</a></td>
-    </tr>
-    <tr>
-      <td class="hidden-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-      <td>Peter Clark</td>
-      <td><a href="#" rel="nofollow" target="_blank">View</a></td>
-    </tr>
-    <tr>
-      <td class="hidden-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-      <td>Peter Clark</td>
+      <td class="hidden-xs">Generic; Special offer for Large Account</td>
+      <td>Simon Badwell</td>
       <td><a href="#" rel="nofollow" target="_blank">View</a></td>
     </tr>
   </tbody>
@@ -1300,7 +1214,7 @@
           jQuery(document).ready(function() {
             Main.init();
             SVExamples.init();
-            // Index.init();
+            Index.init();
             // FormElements.init();
             $('.date-picker').datepicker({
                 autoclose: true

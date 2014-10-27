@@ -102,13 +102,13 @@
         <!-- start: MAIN NAVIGATION MENU -->
         <ul class="main-navigation-menu">
           <li>
-            <a href="dashboard.html"><i class="fa fa-home"></i> <span class="title">My Desk</span> </a>
+            <a href="dashboard.html"><i class="fa fa-home left-sidebar-icon"></i> <span class="title">My Desk</span> </a>
           </li>
           <li>
-            <a href="customer_view.html"><i class="fa fa-user"></i> <span class="title">Customer view</span><i class="icon-arrow"></i> </a>
+            <a href="customer_list.html"><i class="fa fa-user left-sidebar-icon"></i> <span class="title">Customer view</span><i class="icon-arrow"></i> </a>
           </li>
           <li>
-            <a href="processes.html"><i class="fa fa-cubes"></i> <span class="title">Processes</span><i class="icon-arrow"></i> </a>
+            <a href="processes_list_view.html"><i class="fa fa-cubes left-sidebar-icon"></i> <span class="title">Processes</span><i class="icon-arrow"></i> </a>
           </li>
         </ul>
         <!-- end: MAIN NAVIGATION MENU -->
@@ -142,7 +142,7 @@
        <ul class="nav navbar-right">
         <!-- start: USER DROPDOWN -->
         <li class="current dropdown current-user margin-top-8">
-         <a class='current' href="notification_view.html"><span class="notifications-count badge badge-default animated bounceIn"> 3</span>
+         	<a class='current' href="notification_view.html"><span class="notifications-count badge badge-default animated bounceIn"> 3</span>
            <i class="fa fa-envelope padding-right-20"></i></a>
          </li>
          <li class="dropdown current-user">	
@@ -159,7 +159,7 @@
             </li>
           </ul>
           <i class="fa fa-cog"></i>
-          <span class="padding-left-20"><a href="#">Log out</a></span>
+          <span class="padding-left-20"><a href="index.html">Log out</a></span>
           <i class="fa fa-power-off padding-left-5"></i>
         </li>
         <!-- end: USER DROPDOWN -->
@@ -238,22 +238,30 @@
     <table class="table table-hover" id="sample-table-1">
   <thead>
     <tr>
+      <th class="hidden-xs"></th>
+      <th class="hidden-xs">Kuupäev</th>
       <th>Pealkiri</th>
-      <th></th>
+      <th class="hidden-xs"></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="hidden-xs"><strong>Concluding Electricity Sale Contract (25)</strong></td>
-      <td><a href="#" rel="nofollow" target="_blank">Vaata</a></td>
+      <td class="border-left-green hidden-xs"></td>
+      <td class="hidden-xs">12.12.2014 </td>
+      <td class="hidden-xs"><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit.</strong></td>
+      <td><i class="fa fa-trash-o"></i></td>
      </tr>
      <tr>
-      <td class="hidden-xs"><strong>Moveing (22)</strong></td>
-      <td><a href="#" rel="nofollow" target="_blank">Vaata</a></td>
+     <td class="border-left-green hidden-xs"></td>
+      <td class="hidden-xs">12.12.2014 </td>
+      <td class="hidden-xs"><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit.</strong></td>
+      <td><i class="fa fa-trash-o"></i></td>
      </tr>
      <tr>
-      <td class="hidden-xs"><strong>Changing the AMR (19)</strong></td>
-      <td><a href="#" rel="nofollow" target="_blank">Vaata</a></td>
+     <td class="hidden-xs"></td>
+      <td class="hidden-xs color-gray padding-left-6">12.12.2014 </td>
+      <td class="hidden-xs color-gray">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+      <td><i class="fa fa-trash-o"></i></td>
      </tr>
    </tbody>
 </table>
@@ -758,7 +766,7 @@
           jQuery(document).ready(function() {
             Main.init();
             SVExamples.init();
-            // Index.init();
+            Index.init();
             // FormElements.init();
             $('.date-picker').datepicker({
                 autoclose: true

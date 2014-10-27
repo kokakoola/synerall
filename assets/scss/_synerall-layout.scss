@@ -260,7 +260,7 @@
 .green-panel-time {
 	text-align: right;
 	padding-right: 20px;
-	margin-top: -20px;
+	margin-top: -40px;
 	margin-bottom: 10px;
 }
 
@@ -291,6 +291,10 @@
 
 .line-height-175 {
 	line-height: 200%;
+}
+
+.line-height-125 {
+	line-height: 125%;
 }
 
 .dl-horizontal dt {
@@ -325,8 +329,20 @@ h1 {
 	padding-right:130px;
 }
 
+.padding-right-90 {
+	padding-right:90px;
+}
+
+.padding-bottom-20 {
+	padding-bottom:20px;
+}
+
 .padding-top-70 {
 	padding-top: 70px;
+}
+
+.margin-top-bottom-10-20 {
+	margin: 10px 0 20px 0;
 }
 
 body.index-body {
@@ -390,10 +406,26 @@ body.index-body {
 	color: #e19295;
 }
 
+.bold {
+	font-weight: bold;
+}
+
 .processes-columns {
 	font-size: 16px;
 	float: left;
 	margin-top: -20px;
+}
+
+.processes-columns a:link {
+	color: #e19295;
+}
+
+.processes-columns a:hover {
+	color: #e19295;
+}
+
+.processes-columns a:visited {
+	color: #e19295;
 }
 
 .processes-columns ul li {
@@ -613,15 +645,38 @@ body.index-body {
 	padding-left: 0;	
 }
 
-.process-alert a:link {
-	color: black;
-	text-decoration: underline;
-}
-
 .border-left-pink {
 	border-left: #e97f7f 6px solid;
 }
 
 .datepicker {
 	z-index: 1070;
+}
+
+.cursor-style-pointer {
+	cursor:pointer;
+}
+
+.modal-header {
+	padding: 20px 20px  20px 40px;
+}
+
+.modal-body {
+	padding: 20px 20px  20px 40px;
+}
+
+.left-sidebar-icon {
+	width:20px;
+}
+
+.black {
+	color:black;
+}
+
+.white {
+	color:white;
+}
+
+.font-size-16 {
+	font-size: 16px;
 }

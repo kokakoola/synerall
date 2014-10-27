@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Concluding Electricity sale contrast</title>
+  <title>Concluding Electricity Sale Contract</title>
   <meta name="description" content="">
   <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
@@ -104,13 +104,13 @@
         <!-- start: MAIN NAVIGATION MENU -->
         <ul class="main-navigation-menu">
           <li>
-            <a href="dashboard.html"><i class="fa fa-home"></i> <span class="title">My Desk</span> </a>
+            <a href="dashboard.html"><i class="fa fa-home left-sidebar-icon"></i> <span class="title">My Desk</span> </a>
           </li>
           <li>
-            <a href="customer_view.html"><i class="fa fa-user"></i> <span class="title">Customer view</span><i class="icon-arrow"></i> </a>
+            <a href="customer_list.html"><i class="fa fa-user left-sidebar-icon"></i> <span class="title">Customer view</span><i class="icon-arrow"></i> </a>
           </li>
           <li>
-            <a href="processes.html"><i class="fa fa-cubes"></i> <span class="title">Processes</span><i class="icon-arrow"></i> </a>
+            <a href="processes_list_view.html"><i class="fa fa-cubes left-sidebar-icon"></i> <span class="title">Processes</span><i class="icon-arrow"></i> </a>
           </li>
         </ul>
         <!-- end: MAIN NAVIGATION MENU -->
@@ -144,7 +144,7 @@
        <ul class="nav navbar-right">
         <!-- start: USER DROPDOWN -->
         <li class="dropdown current-user margin-top-8">
-         <a href="notification_view.html"><span class="notifications-count badge badge-default animated bounceIn"> 3</span>
+         	<a href="notification_view.html"><span class="notifications-count badge badge-default animated bounceIn"> 3</span>
            <i class="fa fa-envelope padding-right-20"></i></a>
          </li>
          <li class="dropdown current-user">	
@@ -161,7 +161,7 @@
             </li>
           </ul>
           <i class="fa fa-cog"></i>
-          <span class="padding-left-20"><a href="#">Log out</a></span>
+          <span class="padding-left-20"><a href="index.html">Log out</a></span>
           <i class="fa fa-power-off padding-left-5"></i>
         </li>
         <!-- end: USER DROPDOWN -->
@@ -232,8 +232,147 @@
 <!-- end: BREADCRUMB -->
   </div>
   <div class="text-right margin-top-10 float-right padding-right-20">
-    <span><button onclick="window.location.href='new-notification.html'" type="button" class="btn btn-red">Start new notification</button></span>
-<span class="padding-left-5"><button onclick="window.location.href='new-process.html'" type="button" class="btn btn-green">Start new process</button></span>
+    <span class="padding-left-5">
+	<button data-toggle="modal" data-target="#new-process-modal" type="button" class="btn btn-red">Start new process</button>
+</span>
+<span>
+	<button data-toggle="modal" data-target="#new-notification-modal" type="button" class="btn btn-green">Start new notification</button>
+</span>
+<div class="modal fade" id="new-notification-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="myModalLabel">New Process</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+								<form role="form" class="form-horizontal col-sm-9">
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Name
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="form-field-1" class="form-control">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Description
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<textarea id="form-field-22" class="form-control"></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Customer
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="form-field-1" class="form-control">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Assigned to
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<select name="" id="" class="form-control">
+												<option value="1">Peter Smith</option>
+												<option value="2">Ali Adam</option>
+											</select>
+										</div>
+									</div>
+									<a class="white" href="dashboard.html"><button type="button" class="btn btn-green margin-top-8">Submit</button></a>
+								</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="new-process-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="myModalLabel">New Notification</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+								<form role="form" class="form-horizontal col-sm-9">
+									<div class="form-group">
+									<div class="col-sm-9">
+										<label class="checkbox-inline">
+											<input type="radio" class="" name="radio-1" value="1">
+											Generic
+										</label>
+									</div>
+									<div class="col-sm-9">
+										<label class="checkbox-inline">
+											<input type="radio" class="" name="radio-1" value="2">
+											Process related
+										</label>
+										<select name="" id="show-select" class="form-control inline-block margin-top-bottom-10-20" style="display:none;">
+											<option value="1">Signing contract</option>
+											<option value="2">Waiting for Confirmation</option>
+											<option value="3">Receiving initial reading</option>
+										</select>
+									</div>
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Name
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="form-field-1" class="form-control">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Description
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<textarea id="form-field-22" class="form-control"></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Customer
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="form-field-1" class="form-control" placeholder="Priit Kongo">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Assigned to
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="form-field-1" class="form-control">
+										</div>
+									</div>
+									<button type="button" class="btn btn-green">Save</button>
+								</form>
+						</div>
+			</div>
+		</div>
+	</div>
+</div>
   </div>
 </div>
 
@@ -241,9 +380,9 @@
   <div class="col-sm-12">
 		<div id="nav-wizard-w-alert">
 			<ul class="nav-wizard-w-alert">
-		   	<li class="completed"><a href="#step1" data-toggle="tab">Signing contract<span class="nav-wizard-w-alert-tip-pink">Z3</span></a></li>
+		   	<li class="completed"><a href="#step1" data-toggle="tab">Signing Contract<span class="nav-wizard-w-alert-tip-pink">Z3</span></a></li>
 		   	<li class="completed"><a href="#step2" data-toggle="tab">Confirmation<span class="nav-wizard-w-alert-tip">Z4</span></a></li>
-		   	<li class="completed"><a>Receiving initial reading<span class="nav-wizard-w-alert-tip">Z11</span></a></li>
+		   	<li class="completed"><a>Receiving Initial Reading<span class="nav-wizard-w-alert-tip">Z11</span></a></li>
 		   	<li class="last"><a>Finalization<span class="nav-wizard-w-alert-tip">NONE</span></a></li>
 			</ul>
 		</div>
@@ -253,7 +392,7 @@
 <div class="row">
   <div class="process-alert">
 	<div class="padding-left-30 float-left">Ediel message stucked</div>
-	<div class="float-right"><a href="#" class="padding-right-10">Take a closer look</a><i class="fa fa-pencil float-right margin-top-2"></i></div>
+	<div class="float-right"><a href="404.html" class="padding-right-10 black">Take a closer look</a><i class="fa fa-pencil float-right margin-top-2"></i></div>
   </div>
 </div>
 
@@ -262,7 +401,7 @@
     <div class="panel panel-white">
     		<div class="panel panel-white">
   <div class="panel-body">
-    <table class="table table-hover" id="sample-table-1">
+    <table class="table table-hover font-size-16" id="sample-table-1">
   <thead>
     <tr>
       <th class="hidden-xs">Customer</th>
@@ -797,7 +936,7 @@
           jQuery(document).ready(function() {
             Main.init();
             SVExamples.init();
-            // Index.init();
+            Index.init();
             // FormElements.init();
             $('.date-picker').datepicker({
                 autoclose: true
