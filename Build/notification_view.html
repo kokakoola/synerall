@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Notification view</title>
+  <title>Notification</title>
   <meta name="description" content="">
   <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
@@ -105,7 +105,7 @@
             <a href="dashboard.html"><i class="fa fa-home left-sidebar-icon"></i> <span class="title">My Desk</span> </a>
           </li>
           <li>
-            <a href="customer_list.html"><i class="fa fa-user left-sidebar-icon"></i> <span class="title">Customer view</span><i class="icon-arrow"></i> </a>
+            <a href="customer_list.html"><i class="fa fa-user left-sidebar-icon"></i> <span class="title">Customer View</span><i class="icon-arrow"></i> </a>
           </li>
           <li>
             <a href="processes_list_view.html"><i class="fa fa-cubes left-sidebar-icon"></i> <span class="title">Processes</span><i class="icon-arrow"></i> </a>
@@ -206,27 +206,166 @@
     <!-- dont close! ends in footer! -->
 
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-6">
     <!-- start: BREADCRUMB -->
 <div class="row">
   <div class="col-md-10">
     <ol class="breadcrumb">
       <li>
         <a href="#">
-          Notification view
+          Synerall
         </a>
       </li>
       <li class="active">
-        Notification view
+        Notification
       </li>
     </ol>
   </div>
 </div>
 <!-- end: BREADCRUMB -->
   </div>
-  <div class="col-md-4 text-right margin-top-10">
-    <span><button type="button" class="btn btn-red">Start new notification</button></span>
-    <span class="padding-left-5"><button type="button" class="btn btn-green">Start new process</button></span>
+  <div class="col-md-6 text-right margin-top-10">
+   <span class="padding-left-5">
+	<button data-toggle="modal" data-target="#new-process-modal" type="button" class="btn btn-red">Start new process</button>
+</span>
+<span>
+	<button data-toggle="modal" data-target="#new-notification-modal" type="button" class="btn btn-green">Start new notification</button>
+</span>
+<div class="modal fade" id="new-notification-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="myModalLabel">New Notification</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+								<form role="form" class="form-horizontal col-sm-9">
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Name
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="form-field-1" class="form-control">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Description
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<textarea id="form-field-22" class="form-control"></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Customer
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="form-field-1" class="form-control">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Assigned to
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<select name="" id="" class="form-control">
+												<option value="1">Peter Smith</option>
+												<option value="2">Ali Adam</option>
+											</select>
+										</div>
+									</div>
+									<a class="white" href="dashboard.html"><button type="button" class="btn btn-green margin-top-8">Submit</button></a>
+								</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="new-process-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="myModalLabel">New Process</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+								<form role="form" class="form-horizontal col-sm-9">
+									<div class="form-group">
+									<div class="col-sm-9">
+										<label class="checkbox-inline">
+											<input type="radio" class="" name="radio-1" value="1">
+											Generic
+										</label>
+									</div>
+									<div class="col-sm-9">
+										<label class="checkbox-inline">
+											<input type="radio" class="" name="radio-1" value="2">
+											Process related
+										</label>
+										<select name="" id="show-select" class="form-control inline-block margin-top-bottom-10-20" style="display:none;">
+											<option value="1">Signing contract</option>
+											<option value="2">Waiting for Confirmation</option>
+											<option value="3">Receiving initial reading</option>
+										</select>
+									</div>
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Name
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="form-field-1" class="form-control">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Description
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<textarea id="form-field-22" class="form-control"></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Customer
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="form-field-1" class="form-control" placeholder="Priit Kongo">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-9">
+											<label class="col-sm-2 control-label text-field-label" for="form-field-1">
+												Assigned to
+											</label>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="form-field-1" class="form-control">
+										</div>
+									</div>
+									<button type="button" class="btn btn-green">Save</button>
+								</form>
+						</div>
+			</div>
+		</div>
+	</div>
+</div>
   </div>
 </div>
 
@@ -239,8 +378,8 @@
   <thead>
     <tr>
       <th class="hidden-xs"></th>
-      <th class="hidden-xs">Kuupäev</th>
-      <th>Pealkiri</th>
+      <th class="hidden-xs">Date</th>
+      <th>Subject</th>
       <th class="hidden-xs"></th>
     </tr>
   </thead>
@@ -248,19 +387,31 @@
     <tr>
       <td class="border-left-green hidden-xs"></td>
       <td class="hidden-xs">12.12.2014 </td>
-      <td class="hidden-xs"><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit.</strong></td>
+      <td class="hidden-xs"><strong>Planned Electricity Outage</strong>
+      		<br><br>
+	   		Today, there is an planned electricity outage in the area of High Park from 09:30 – 11:00.<br>
+	   		Responsible foreman: Mr. Jackson Green, gsm: +1 450 88 500.
+      </td>
       <td><i class="fa fa-trash-o"></i></td>
      </tr>
      <tr>
      <td class="border-left-green hidden-xs"></td>
       <td class="hidden-xs">12.12.2014 </td>
-      <td class="hidden-xs"><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit.</strong></td>
+      <td class="hidden-xs"><strong>Marketing Campaign for Green Electricity Buyers</strong>
+	      	<br><br>
+	   		From 01.01.2016 onwards the new sales campaign for new contractors is activated.<br>
+	   		All new contracts will be provided zero margin over first 3 month.
+      </td>
       <td><i class="fa fa-trash-o"></i></td>
      </tr>
      <tr>
      <td class="hidden-xs"></td>
       <td class="hidden-xs color-gray padding-left-6">12.12.2014 </td>
-      <td class="hidden-xs color-gray">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+      <td class="hidden-xs color-gray">Transition to Winter time
+	      	<br><br>
+	   		From 26.10.2014 at 04. a.m. clocks will be turned backwards 1 hr. All changes in metering devices<br>
+	   		will be updated by the evening of 26.10.2014. Responsible MDM manager Mr. Bill Smith. 
+      </td>
       <td><i class="fa fa-trash-o"></i></td>
      </tr>
    </tbody>
@@ -766,7 +917,6 @@
           jQuery(document).ready(function() {
             Main.init();
             SVExamples.init();
-            Index.init();
             // FormElements.init();
             $('.date-picker').datepicker({
                 autoclose: true
@@ -784,6 +934,8 @@
                     $('#show-select').hide();
                 }
             });
+            
+            Index.init();
           });
         </script>
 

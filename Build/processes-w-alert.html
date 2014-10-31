@@ -107,7 +107,7 @@
             <a href="dashboard.html"><i class="fa fa-home left-sidebar-icon"></i> <span class="title">My Desk</span> </a>
           </li>
           <li>
-            <a href="customer_list.html"><i class="fa fa-user left-sidebar-icon"></i> <span class="title">Customer view</span><i class="icon-arrow"></i> </a>
+            <a href="customer_list.html"><i class="fa fa-user left-sidebar-icon"></i> <span class="title">Customer View</span><i class="icon-arrow"></i> </a>
           </li>
           <li>
             <a href="processes_list_view.html"><i class="fa fa-cubes left-sidebar-icon"></i> <span class="title">Processes</span><i class="icon-arrow"></i> </a>
@@ -220,7 +220,7 @@
 	      </li>
 	      <li>
 	        <a href="#">
-	          Concluding Electricity sale contrast
+	          Concluding Electricity Sales Contract
 	        </a>
 	      </li>
 	      <li class="active">
@@ -243,7 +243,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				<h4 class="modal-title" id="myModalLabel">New Process</h4>
+				<h4 class="modal-title" id="myModalLabel">New Notification</h4>
 			</div>
 			<div class="modal-body">
 				<div class="row">
@@ -304,7 +304,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				<h4 class="modal-title" id="myModalLabel">New Notification</h4>
+				<h4 class="modal-title" id="myModalLabel">New Process</h4>
 			</div>
 			<div class="modal-body">
 				<div class="row">
@@ -380,10 +380,10 @@
   <div class="col-sm-12">
 		<div id="nav-wizard-w-alert">
 			<ul class="nav-wizard-w-alert">
-		   	<li class="completed"><a href="#step1" data-toggle="tab">Signing Contract<span class="nav-wizard-w-alert-tip-pink">Z3</span></a></li>
-		   	<li class="completed"><a href="#step2" data-toggle="tab">Confirmation<span class="nav-wizard-w-alert-tip">Z4</span></a></li>
-		   	<li class="completed"><a>Receiving Initial Reading<span class="nav-wizard-w-alert-tip">Z11</span></a></li>
-		   	<li class="last"><a>Finalization<span class="nav-wizard-w-alert-tip">NONE</span></a></li>
+		   	<li class="completed"><div class="process-breadcrum-wrap"><a href="#step1" data-toggle="tab" class="black"><span class="bold black">Z3</span> <span class="black">Signing Contract</span></a></div></li>
+		   	<li class="completed"><a href="#step2" data-toggle="tab"><div class="process-breadcrum-wrap"><span class="bold">Z4</span> Confirmation</div></a></li>
+		   	<li class="completed"><a><div class="process-breadcrum-wrap"><span class="bold">Z11</span> Receiving Initial Reading</div></a></li>
+		   	<li class="last"><a><div class="process-breadcrum-wrap"><span class="bold">NONE</span> Finalization</div></a></li>
 			</ul>
 		</div>
   </div>
@@ -936,7 +936,6 @@
           jQuery(document).ready(function() {
             Main.init();
             SVExamples.init();
-            Index.init();
             // FormElements.init();
             $('.date-picker').datepicker({
                 autoclose: true
@@ -954,6 +953,8 @@
                     $('#show-select').hide();
                 }
             });
+            
+            Index.init();
           });
         </script>
 

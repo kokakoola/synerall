@@ -30,12 +30,12 @@ var Index = function() {"use strict";
 			createSeries();
 
 			var data = [{
-				"key": "Quantity",
+				"key": "Quantity (kWh)",
 				"bar": true,
-				"values": series1
+				"values": series1,
 			}, {
-				"key": "Price",
-				"values": series2
+				"key": "Price (USD)",
+				"values": series2,
 			}];
 			nv.addGraph(function() {
 				var chart = nv.models.linePlusBarChart().margin({

@@ -107,7 +107,7 @@
             <a class='current' href="dashboard.html"><i class="fa fa-home left-sidebar-icon"></i> <span class="title">My Desk</span> </a>
           </li>
           <li>
-            <a href="customer_list.html"><i class="fa fa-user left-sidebar-icon"></i> <span class="title">Customer view</span><i class="icon-arrow"></i> </a>
+            <a href="customer_list.html"><i class="fa fa-user left-sidebar-icon"></i> <span class="title">Customer View</span><i class="icon-arrow"></i> </a>
           </li>
           <li>
             <a href="processes_list_view.html"><i class="fa fa-cubes left-sidebar-icon"></i> <span class="title">Processes</span><i class="icon-arrow"></i> </a>
@@ -238,7 +238,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				<h4 class="modal-title" id="myModalLabel">New Process</h4>
+				<h4 class="modal-title" id="myModalLabel">New Notification</h4>
 			</div>
 			<div class="modal-body">
 				<div class="row">
@@ -299,7 +299,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				<h4 class="modal-title" id="myModalLabel">New Notification</h4>
+				<h4 class="modal-title" id="myModalLabel">New Process</h4>
 			</div>
 			<div class="modal-body">
 				<div class="row">
@@ -387,7 +387,7 @@
       <div class="padding-15">
         <p>
           Today, there is an planned electricity outage in the area of High Park from 09:30 – 11:00. Responsible foreman: Mr. Jackson Green, gsm: +1 450 88 500.<br/><br/>
-          <a href="#" style="color: white;">See more</a>
+          <a href="notification_view.html" style="color: white;">See more</a>
         </p>
       </div>
       <div class="green-panel-time">
@@ -410,7 +410,7 @@
       <div class="padding-15">
         <p>
           From 01.01.2016 onwards the new sales campaign for new contractors is activated. All new contracts will be provided zero margin over first 3 month.<br/><br/>
-          <a href="#" style="color: white;">See more</a>
+          <a href="notification_view.html" style="color: white;">See more</a>
         </p>
       </div>
       <div class="green-panel-time">
@@ -423,7 +423,7 @@
   <div>
     <div class="panel panel-red panel-calendar">
       <div class="panel-heading border-light">
-        <h4 class="panel-title">Ongoing Campaigns</h4>
+        <h4 class="panel-title">Market Messages</h4>
       </div>
       <div class="panel-body">
         <div class="height-180">
@@ -470,32 +470,22 @@
                   <div class="e-slider owl-carousel owl-theme" data-plugin-options='{"transitionStyle": "goDown", "pagination": false}'>
                     <div class="item">
                       <div class="inline-block padding-10 border-right border-light">
-                        <span class="bold-text text-small"><i class="fa fa-clock-o"></i> 17:00</span>
-                        <span class="text-light text-extra-small">1 hour</span>
+                        <span class="bold-text text-small"><i class="fa fa-clock-o"></i> 08:19</span>
+                        <span class="text-light text-extra-small">27.10.14</span>
                       </div>
                       <div class="inline-block padding-10">
-                        <span class="bold-text text-small">NETWORKING</span>
-                        <span class="text-light text-small">Out to design conference</span>
+                        <a href="http://umm.nordpoolspot.com/messages/40975" target="_blank"><span class="bold-text text-small white">NORDPOOL</span>
+                        <span class="text-light text-small">Limitation Grid</span></a>
                       </div>
                     </div>
                     <div class="item">
                       <div class="inline-block padding-10 border-right border-light">
-                        <span class="bold-text text-small"><i class="fa fa-clock-o"></i> 18:30</span>
-                        <span class="text-light text-extra-small">30 mins</span>
+                        <span class="bold-text text-small"><i class="fa fa-clock-o"></i> 15:49</span>
+                        <span class="text-light text-extra-small">26.10.14</span>
                       </div>
                       <div class="inline-block padding-10">
-                        <span class="bold-text text-small">BOOTSTRAP SEMINAR</span>
-                        <span class="text-light text-small">Problem Solving</span>
-                      </div>
-                    </div>
-                    <div class="item">
-                      <div class="inline-block padding-10 border-right border-light">
-                        <span class="bold-text text-small"><i class="fa fa-clock-o"></i> 20:00</span>
-                        <span class="text-light text-extra-small">2 hour</span>
-                      </div>
-                      <div class="inline-block padding-10">
-                        <span class="bold-text text-small">Lunch with Nicole</span>
-                        <span class="text-light text-small">Next on Tuesday</span>
+                        <a href="http://umm.nordpoolspot.com/messages/40975" target="_blank"><span class="bold-text text-small white">NORDPOOL</span>
+                        <span class="text-light text-small">Maintenance</span></a>
                       </div>
                     </div>
                   </div>
@@ -514,6 +504,7 @@
   <div class="col-lg-8 col-md-7">
     <div class="panel panel-white">
   <div class="panel-body">
+  	<h4 class="panel-title bold padding-10-0-10-8">Pending Processes</h4>
     <table class="table table-hover" id="sample-table-1">
   <thead>
     <tr>
@@ -529,7 +520,7 @@
           </ul>
         </div>
       </th>
-      <th class="hidden-xs">Client</th>
+      <th class="hidden-xs">Customer</th>
       <th></th>
     </tr>
   </thead>
@@ -547,7 +538,7 @@
     <tr class="border-left-pink">
       <td class="hidden-xs pink bold">Concluding Electricity Sale Contract; Problem: Z3</td>
       <td>Priit Kongo</td>
-      <td><a href="#" rel="nofollow" target="_blank">View</a></td>
+      <td><a href="processes-w-alert.html" rel="nofollow" target="_blank">View</a></td>
     </tr>
     <tr class="border-left-pink">
       <td class="hidden-xs pink bold">Concluding Electricity Sale Contract; Problem: Z4</td>
@@ -611,7 +602,7 @@
   <div class="col-lg-8 col-md-7">
     <div class="panel panel-white">
       <div class="panel-heading border-light">
-        <h4 class="panel-title">Earnings</h4>
+        <h4 class="panel-title">Sales</h4>
         <ul class="panel-heading-tabs border-light">
           <li>
             <div id="reportrange" class="pull-right">
@@ -683,7 +674,7 @@
                 </div>
                 <div class="values">
                   <strong>&#36;848</strong>
-                  Referrals
+                  Budget
                 </div>
               </li>
             </ul>
@@ -1214,7 +1205,6 @@
           jQuery(document).ready(function() {
             Main.init();
             SVExamples.init();
-            Index.init();
             // FormElements.init();
             $('.date-picker').datepicker({
                 autoclose: true
@@ -1232,6 +1222,8 @@
                     $('#show-select').hide();
                 }
             });
+            
+            Index.init();
           });
         </script>
 

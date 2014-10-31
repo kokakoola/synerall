@@ -105,7 +105,7 @@
             <a href="dashboard.html"><i class="fa fa-home left-sidebar-icon"></i> <span class="title">My Desk</span> </a>
           </li>
           <li>
-            <a href="customer_list.html"><i class="fa fa-user left-sidebar-icon"></i> <span class="title">Customer view</span><i class="icon-arrow"></i> </a>
+            <a href="customer_list.html"><i class="fa fa-user left-sidebar-icon"></i> <span class="title">Customer View</span><i class="icon-arrow"></i> </a>
           </li>
           <li>
             <a href="processes_list_view.html"><i class="fa fa-cubes left-sidebar-icon"></i> <span class="title">Processes</span><i class="icon-arrow"></i> </a>
@@ -1453,7 +1453,6 @@ Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatib
           jQuery(document).ready(function() {
             Main.init();
             SVExamples.init();
-            Index.init();
             // FormElements.init();
             $('.date-picker').datepicker({
                 autoclose: true
@@ -1471,6 +1470,8 @@ Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatib
                     $('#show-select').hide();
                 }
             });
+            
+            Index.init();
           });
         </script>
 
