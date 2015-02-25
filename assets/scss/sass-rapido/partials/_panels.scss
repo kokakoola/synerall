@@ -273,9 +273,9 @@
   }  
 }
 .panel-blue, .partition-blue  {
-  background-color: $blue;
+  background-color: #7B839B;
   position: relative;
-  @include background-gradient(lighten($blue,5%) 0px, $blue 100%);
+  @include background-gradient(lighten(#7B839B,5%) 0px, #7B839B 100%);
   color: $white;
   .panel-tools {
     .btn, > a {
